@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unstable SMP // 宇宙編年史與主角全紀錄 | The Ultimate Lore Vault & Interactive Experience</title>
+  <meta name="description" content="Minecraft 史上最震撼的劇情式極限硬核伺服器 Unstable SMP 完整故事解說！收錄 Parrot、Wemmbu、Spoke、FlameFrags 四大主角個人故事、所有影片劇集、意外禁忌漏洞神器與互動冒險小遊戲。純靜態 HTML，支援 GitHub Pages 免伺服器即開即用。">
+  <meta name="keywords" content="Unstable SMP, ParrotX2, Wemmbu, Spoke, FlameFrags, Minecraft, SMP, 劇情解說, 意外物品, 漏洞, GitHub Pages">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://minotar.net/helm/ParrotX2/64.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 虛空粒子背景畫布 (純 Canvas 原生繪製，無外部依賴) -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- 頂部導覽列 -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo" title="Unstable SMP Archives">
+        <div class="brand-icon">US</div>
+        <div class="brand-text">
+          <h1>UNSTABLE SMP</h1>
+          <span>THE CHRONICLES</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">✦ 概覽</a></li>
+          <li><a href="#character-section" class="nav-link">👤 主角檔案</a></li>
+          <li><a href="#timeline-section" class="nav-link">📜 四視角矩陣</a></li>
+          <li><a href="#quest-section" class="nav-link">🎮 冒險模擬器</a></li>
+          <li><a href="#lore-section" class="nav-link">🌐 宇宙法則</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- 全域搜尋按鈕 -->
+        <button class="search-trigger" id="search-trigger-btn" title="搜尋影片、主角或物品 (Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>搜尋</span>
+          <span class="kbd">⌘K</span>
+        </button>
+
+        <!-- 音效開關 (Web Audio API 合成) -->
+        <button class="btn-icon active" id="audio-toggle-btn" title="切換 Minecraft 音效">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+
+        <!-- GitHub Repo 捷徑 -->
+        <a href="https://github.com/hsiaoyujui114-code/unstable-smp-chronicles" target="_blank" rel="noopener noreferrer" class="btn-icon" title="查看 GitHub 源代碼">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主頁英雄區塊 (Hero) -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>TIMELINE ANOMALY DETECTED // SECTOR 04</span>
+      </div>
+
+      <h1 class="hero-title">
+        UNSTABLE SMP<br>
+        <span class="glitch-text">宇宙編年史與主角全紀錄</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        這不是普通的 Minecraft 生存伺服器，而是一場由四位傳奇主角交織出的宏大史詩。
+        探索他們個人的命運起伏、全集影片解說、意外挖掘到的禁忌神裝，並體驗內建互動決策遊戲！
+      </p>
+
+      <!-- 四大主角快速導覽卡片 (點擊切換視角) -->
+      <div class="hero-characters-nav">
+        <!-- Parrot -->
+        <div class="hero-char-card active" data-char-id="parrot" style="--char-color: var(--parrot-color); --char-glow: var(--parrot-glow);">
+          <img src="https://minotar.net/bust/ParrotX2/128.png" alt="Parrot" class="hero-char-avatar">
+          <div class="hero-char-meta">
+            <h3>Parrot</h3>
+            <span>第一任國王 · 智謀越獄</span>
+            <p>挖出毀滅按鈕、突破 Paragon 黑牢、百日治世</p>
+          </div>
+        </div>
+
+        <!-- Wemmbu -->
+        <div class="hero-char-card" data-char-id="wemmbu" style="--char-color: var(--wemmbu-color); --char-glow: var(--wemmbu-glow);">
+          <img src="https://minotar.net/bust/Wemmbu/128.png" alt="Wemmbu" class="hero-char-avatar">
+          <div class="hero-char-meta">
+            <h3>Wemmbu</h3>
+            <span>力量泰坦 · 金庫掠奪者</span>
+            <p>強襲基岩金庫、洗劫神兵、開創繁盛帝國</p>
+          </div>
+        </div>
+
+        <!-- Spoke -->
+        <div class="hero-char-card" data-char-id="spoke" style="--char-color: var(--spoke-color); --char-glow: var(--spoke-glow);">
+          <img src="https://minotar.net/bust/SpokeIsHere/128.png" alt="Spoke" class="hero-char-avatar">
+          <div class="hero-char-meta">
+            <h3>Spoke</h3>
+            <span>漏洞神偷 · 黑手黨臥底</span>
+            <p>偷走千萬複製裝備、搞垮全服首富、引爆教父</p>
+          </div>
+        </div>
+
+        <!-- FlameFrags -->
+        <div class="hero-char-card" data-char-id="flamefrags" style="--char-color: var(--flame-color); --char-glow: var(--flame-glow);">
+          <img src="https://minotar.net/bust/FlameFrags/128.png" alt="FlameFrags" class="hero-char-avatar">
+          <div class="hero-char-meta">
+            <h3>FlameFrags</h3>
+            <span>不死戰神 · 萬軍先鋒</span>
+            <p>硬核卡出永生金心、拜師死神、萬人內戰衝鋒</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 區塊 1: 主角個人全檔案與深探 (Character Deep Dive) -->
+  <section class="main-section" id="character-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// PROTAGONIST ARCHIVES</span>
+        <h2 class="section-title">傳奇主角個人全檔案</h2>
+        <p class="section-desc">
+          深入四位主角各自的人生視角：從他們的背景動機、完整紀元旅程、意外獲得的伺服器代碼神器，到所有核心影片的逐集深度解析。
+        </p>
+      </div>
+
+      <!-- 角色詳細動態渲染容器 -->
+      <div id="character-deep-dive-mount"></div>
+    </div>
+  </section>
+
+  <!-- 區塊 2: 四視角多維度事件編年史 (Multi-POV Timeline Matrix) -->
+  <section class="main-section" id="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// CHRONOLOGICAL SYNCHRONICITY</span>
+        <h2 class="section-title">四視角同步事件矩陣</h2>
+        <p class="section-desc">
+          在同一個伺服器大事件中，這四位主角分別在做什麼？透過矩陣視角，直觀見證他們的命運如何交錯、對立與結盟。
+        </p>
+      </div>
+
+      <!-- 時間矩陣渲染容器 -->
+      <div id="timeline-mount"></div>
+    </div>
+  </section>
+
+  <!-- 區塊 3: 內建互動冒險遊戲 (Interactive Survival Quest Mini-Game) -->
+  <section class="main-section" id="quest-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// INTERACTIVE EXPERIENCE</span>
+        <h2 class="section-title">🎮 Unstable Survival Quest 模擬器</h2>
+        <p class="section-desc">
+          完全免伺服器、純前端運行的互動決策文字 RPG！選擇扮演 Parrot、Wemmbu、Spoke 或 FlameFrags，動用他們身上的意外神器，改寫伺服器歷史命運！
+        </p>
+      </div>
+
+      <!-- 小遊戲渲染容器 -->
+      <div id="quest-game-mount"></div>
+    </div>
+  </section>
+
+  <!-- 區塊 4: Unstable SMP 宇宙法則與歷史解析 (Lore Encyclopedia) -->
+  <section class="main-section" id="lore-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// UNIVERSE MECHANICS</span>
+        <h2 class="section-title">Unstable SMP 宇宙運作法則</h2>
+        <p class="section-desc">
+          為什麼 Unstable SMP 能夠在 Minecraft 社群掀起巨大轟動？解析這個宇宙背後的核心機制與哲學。
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
+        <!-- 規則 1 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2rem;">
+          <div style="font-family: var(--font-mono); color: var(--theme-current); font-size: 0.8rem; margin-bottom: 0.6rem;">RULE 01 // METANARRATIVE</div>
+          <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem;">代碼與漏洞成為敘事武器</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+            與傳統生存不同，Unstable 將伺服器的「不穩定性（Unstable）」直接作為世界觀的核心設定。非法的 NBT 裝備、複製漏洞、崩潰重置、甚至被抹除的幽靈代碼，都是角色爭奪力量的合法武器。
+          </p>
+        </div>
+
+        <!-- 規則 2 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2rem;">
+          <div style="font-family: var(--font-mono); color: var(--theme-current); font-size: 0.8rem; margin-bottom: 0.6rem;">RULE 02 // MULTI-PERSPECTIVE</div>
+          <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem;">多重視角下的真相碎片</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+            沒有單一主角能看清整個世界的全貌。Parrot 追尋真相、Wemmbu 爭奪力量、Spoke 掀起混亂、FlameFrags 守護榮耀。唯有將四人的故事拼湊在一起，觀眾才能拼出這個伺服器背後的巨大迷局。
+          </p>
+        </div>
+
+        <!-- 規則 3 -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2rem;">
+          <div style="font-family: var(--font-mono); color: var(--theme-current); font-size: 0.8rem; margin-bottom: 0.6rem;">RULE 03 // ILLUSION OF SURVIVAL</div>
+          <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.8rem;">生存的假象與人性的試煉</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+            表面上是極限硬核環境，但真正致命的從來不是苦力怕或飢餓，而是政治腐敗、黑手黨地下洗錢、偽善帝國的背叛，以及面對權力時個人內心的扭曲與救贖。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影片影院彈窗 (Theater Modal) -->
+  <div class="modal-overlay" id="theater-modal">
+    <div class="theater-modal-content">
+      <div class="modal-header">
+        <h3 id="theater-title">Unstable SMP 劇集放映室</h3>
+        <button class="btn-close-modal" id="btn-close-theater" title="關閉">&times;</button>
+      </div>
+      <div class="video-frame-wrap">
+        <iframe id="theater-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-details-wrap">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--theme-current); margin-bottom: 4px;">✦ OFFICIAL POV ARCHIVE</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          提示：若 YouTube 播放器因原創者設定受限，您亦可點擊「在 YouTube 上觀看」直接跳轉官方頻道觀看高畫質正片。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全域搜尋彈窗 (Search Modal) -->
+  <div class="modal-overlay" id="search-modal">
+    <div class="search-modal-content">
+      <div class="search-input-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-dim);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="global-search-input" placeholder="搜尋主角名、影片標題、意外物品或漏洞..." autocomplete="off">
+        <button class="btn-close-modal" id="btn-close-search">&times;</button>
+      </div>
+      <div class="search-results-list" id="search-results-list">
+        <div style="padding: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.9rem;">
+          輸入關鍵字快速檢索 Unstable SMP 宇宙檔案...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 (Footer) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-text" style="margin-bottom: 1rem;">
+            <h1 style="font-size: 1.3rem;">UNSTABLE SMP CHRONICLES</h1>
+            <span style="font-size: 0.75rem;">100% STATIC SERVERLESS ARCHIVE FOR GITHUB PAGES</span>
+          </div>
+          <p>
+            專為 Minecraft 與 Unstable SMP 愛好者打造的高深度編年史與主角檔案庫。整合四位主角的完整故事、影片播放、意外神器檔案以及純前端文字冒險小遊戲，開箱即用，零伺服器架構。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>四大主角官方頻道</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@ParrotX2" target="_blank" rel="noopener noreferrer">Parrot (ParrotX2) ↗</a></li>
+            <li><a href="https://www.youtube.com/@Wemmbu" target="_blank" rel="noopener noreferrer">Wemmbu ↗</a></li>
+            <li><a href="https://www.youtube.com/@SpokeIsHere" target="_blank" rel="noopener noreferrer">Spoke (SpokeIsHere) ↗</a></li>
+            <li><a href="https://www.youtube.com/@FlameFrags" target="_blank" rel="noopener noreferrer">FlameFrags ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>專案與技術架構</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/hsiaoyujui114-code/unstable-smp-chronicles" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></li>
+            <li><a href="https://hsiaoyujui114-code.github.io/unstable-smp-chronicles/" target="_blank" rel="noopener noreferrer">GitHub Pages 線上預覽 ↗</a></li>
+            <li><a href="#">純原生 HTML5 / CSS3 / ES6</a></li>
+            <li><a href="#">Web Audio API 合成音效引擎</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Unstable SMP Chronicles. Non-commercial fan-created interactive lore portal.</div>
+        <div>Made with ⚡ for Minecraft Story Lovers</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 模組腳本載入 (純靜態原生 JavaScript，無任何外部捆綁依賴) -->
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
