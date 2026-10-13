@@ -45,7 +45,7 @@ const UNSTABLE_DATA = {
       personality: "冷靜敏銳的戰略家與真相追尋者。他不輕易相信任何人，善於在重重謊言中找到系統底層漏洞，但當身負王國責任時，展現出無與倫比的領導擔當。",
       biography: `Parrot 是 Unstable SMP 的靈魂敘事核心之一。從最初無意間挖出足以毀滅整個伺服器的「紅石異常按鈕」開始，他就被捲入了隱藏在日常生存背後的龐大陰謀。
 
-面對由腐敗勢力打造的「Paragon 絕海黑牢」，他憑藉精密計算的紅石走私技巧完成不可思議的破獄脫逃；在伺服器陷入無序廝殺時，他挺身而出競選第一任國王，在王座上治理風雨飄搖的 Unstable 長達 100 天，抵禦刺殺與內部叛變。在最後的千人大內戰中，他更統帥聯合軍團直面伺服器最黑暗的命運。`,
+面對由腐敗勢力打造的「Paragon 絕海黑牢」，他憑藉精密計算的紅石走私技巧完成不可思議的破獄脫逃；在伺服器陷入無序廝殺時，他挺身而出競選第一任國王，在王座上竭力治理風雨飄搖的 Unstable，抵禦刺殺與內部叛變。在最後的千人大內戰中，他更統帥聯合軍團直面伺服器最黑暗的命運。`,
       storyArcs: [
         {
           title: "第一紀元：代碼裂痕與毀滅世界的按鈕",
@@ -56,8 +56,8 @@ const UNSTABLE_DATA = {
           summary: "因為追查失蹤玩家的名單，Parrot 遭到黑勢力伏擊，被秘密押送至號稱『絕對無法生還』的 Paragon 監獄。在禁錮中，他暗中策劃數週，利用衛兵輪班的視線死角，以不可思議的紅石走私手段藏匿關鍵物資，最終炸穿基岩屏障上演全服震驚的大越獄。"
         },
         {
-          title: "第三紀元：王權大選與王座上的 100 天",
-          summary: "伺服器進入群雄割據時代，各方勢力肆意屠殺新手。Parrot 決定站出來參選 Unstable 首任國王。在經歷殘酷的政治鬥爭、造勢演說與暗殺防禦後，他以壓倒性票數登基。即位後他推行《治安法典》、設立物資安全區，但在百日統治期間，他必須同時對抗來自地下黑手黨的賄賂威脅與野心領主的叛變。"
+          title: "第三紀元：王權大選與王座治理風暴",
+          summary: "伺服器進入群雄割據時代，各方勢力肆意屠殺新手。Parrot 決定站出來參選 Unstable 首任國王。在經歷殘酷的政治鬥爭、造勢演說與暗殺防禦後，他以壓倒性票數登基。即位後他推行《治安法典》、設立物資安全區，但在執政期間，他必須同時對抗來自地下黑手黨的賄賂威脅與野心領主的叛變。"
         },
         {
           title: "第四紀元：揭發偽善文明與萬人內戰大決戰",
@@ -173,13 +173,13 @@ const UNSTABLE_DATA = {
         },
         {
           id: "unstable_parrot_100days",
-          title: "100 Days as King of the Unstable SMP",
-          titleZh: "在 Unstable SMP 擔任國王的 100 天極限統治",
+          title: "King of the Unstable SMP: The Reign",
+          titleZh: "在 Unstable SMP 擔任國王的極限統治紀實",
           publishDate: "2024-11-20",
           duration: "42:15",
           thumbnail: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=ParrotX2+100+Days+King+Unstable+SMP",
-          summary: "百日王權下的殘酷現實：物資短缺、黑手黨在暗處滋生、邊疆領主密謀造反。Parrot 在這 100 天裡經歷了最考驗人性的抉擇，如何在暴政與滅亡之間維持王國的脆弱平衡？",
+          youtubeUrl: "https://www.youtube.com/results?search_query=ParrotX2+King+Unstable+SMP",
+          summary: "王權統治下的殘酷現實：物資短缺、黑手黨在暗處滋生、邊疆領主密謀造反。Parrot 在執政期間經歷了最考驗人性的抉擇，如何在暴政與滅亡之間維持王國的脆弱平衡？",
           keyMoments: [
             "平定西境礦業同盟的武裝叛亂",
             "查抄地下走私集團的非法複製窩點",
@@ -240,7 +240,7 @@ const UNSTABLE_DATA = {
       storyArcs: [
         {
           title: "第一紀元：突襲全服最非法的地下金庫",
-          summary: "數個大公會暗中將全服透過漏洞複製的神級物資存放在深層基岩金庫。Wemmbu 鎖定目標，耗時數天計算活塞防爆盲區與珍珠拋擲角度，以不可思議的單兵戰力強行破庫，將堆積成山的違法神裝席捲一空，一戰封神。"
+          summary: "數個大公會暗中將全服透過漏洞複製的神級物資存放在深層基岩金庫。Wemmbu 鎖定目標，耗費漫長心力縝密計算活塞防爆盲區與珍珠拋擲角度，以不可思議的單兵戰力強行破庫，將堆積成山的違法神裝席捲一空，一戰封神。"
         },
         {
           title: "第二紀元：全服大追捕中的不可捕捉者",
@@ -424,13 +424,13 @@ const UNSTABLE_DATA = {
         stealth: 99
       },
       personality: "幽默搞怪的外表下藏著令人膽寒的極限智商與破壞慾。他是無序混亂的化身，對伺服器底層機制瞭若指掌。他以玩弄強大勢力為樂，無論是富豪帝國還是殘暴黑手黨，最後都淪為他惡作劇陷阱的犧牲品。",
-      biography: `Spoke 是 Unstable SMP 開播首日就引爆整個宇宙的傳奇引路人。他在第一天就聯手夥伴發現了震撼伺服器的古老漏洞，直接預告了世界的不穩定本質。
+      biography: `Spoke 是 Unstable SMP 開播初始就引爆整個宇宙的傳奇引路人。他在系列揭幕之際就聯手夥伴發現了震撼伺服器的古老漏洞，直接預告了世界的不穩定本質。
 
 他的事蹟充满了令人瞠目結舌的荒誕與精妙：從洗劫超過 10,000,000 件非法複製裝備、以假貨和陷阱逼得全服首富破產，到孤身潛伏進橫行霸道的黑手黨擔任雙面間諜，在最關鍵一刻將整個犯罪家族連根拔起。在面對「不存在的玩家」與代碼亂碼狂潮時，他更是唯一的代碼引路人。`,
       storyArcs: [
         {
-          title: "第一紀元：第一天就教你如何毀滅 Unstable SMP",
-          summary: "作為全系列開山第一集，Spoke 與 Jamato 發掘了數個伺服器架構漏洞。透過特殊方塊更新阻斷與漏斗傳輸延遲，他展示了如何用最廉價的材料讓整個伺服器瀕臨崩潰，點燃了整個 Unstable Universe 的狂暴導火線。"
+          title: "第一紀元：啟動毀滅伺服器的古老漏洞",
+          summary: "作為全系列開山首部曲，Spoke 與 Jamato 發掘了數個伺服器架構漏洞。透過特殊方塊更新阻斷與漏斗傳輸延遲，他展示了如何用最廉價的材料讓整個伺服器瀕臨崩潰，點燃了整個 Unstable Universe 的狂暴導火線。"
         },
         {
           title: "第二紀元：狂偷一千萬件複製神級物資",
@@ -496,7 +496,7 @@ const UNSTABLE_DATA = {
           duration: "21:15",
           thumbnail: "https://i.ytimg.com/vi/wG9dbWNsems/maxresdefault.jpg",
           youtubeUrl: "https://www.youtube.com/watch?v=wG9dbWNsems",
-          summary: "震撼全網的 Unstable SMP 系列第一部影片！Spoke 與 Jamato 在第一天就打破常規，不走傳統開荒路線，而是直接利用機制缺陷製造連鎖混亂，奠定了伺服器註定走向動盪的宿命基調。",
+          summary: "震撼全網的 Unstable SMP 系列第一部影片！Spoke 與 Jamato 在開端之際就打破常規，不走傳統開荒路線，而是直接利用機制缺陷製造連鎖混亂，奠定了伺服器註定走向動盪的宿命基調。",
           keyMoments: [
             "發掘第一處利用水流與漏斗卡死伺服器 tick 的漏洞",
             "向全服玩家發出混亂宣戰通告",
@@ -647,7 +647,7 @@ const UNSTABLE_DATA = {
           name: "Flame’s Bespoke Warplate（烈焰專屬下界合金重戰甲）",
           rarity: "MYTHIC",
           rarityColor: "#f97316",
-          howAcquired: "由全服頂級鍛造師親自調試，在熔岩熔爐中淬火七天七夜，專門為 FlameFrags 量身打造的近戰胸甲。",
+          howAcquired: "由全服頂級鍛造師親自調試，在極溫熔岩熔爐中歷經千錘百煉淬火鍛造，專門為 FlameFrags 量身打造的近戰胸甲。",
           effectDesc: "附帶最高等級保護與荊棘反射，受到近戰攻擊時自帶短暫灼燒與擊退抗性，防禦性能傲視全服。",
           glitchCode: "NBT: {Armor: 'FlameNetherite_V2', Protection: 5, Thorns: 4, KnockbackResist: 0.8}"
         },
@@ -777,20 +777,20 @@ const UNSTABLE_DATA = {
     }
   },
 
-  // 四主角多視角大事件矩陣（同一時間節點，四位主角在做什麼）
+  // 四主角多視角大事件矩陣（同一歷史節點，四位主角在做什麼）
   timelineMatrix: [
     {
-      epoch: "第一紀元：代碼裂縫與伺服器初啼 (Day 1 - 30)",
+      epoch: "第一紀元：代碼裂縫與伺服器初啼",
       headline: "世界規則開始扭曲，禁忌金庫與毀滅按鈕出土",
       details: {
         parrot: "在廢棄地下室挖出『毀滅世界按鈕』，首次發現伺服器底層隨時可能崩潰的致命代碼。",
         wemmbu: "單槍匹馬突襲全服公認無法攻破的基岩違法金庫，奪走 The Crucible 巨刃與海量禁忌物資。",
-        spoke: "開播第一天就發掘出利用水流漏斗讓伺服器瀕臨跳 tick 的古老漏洞，向全服宣告混亂來臨。",
+        spoke: "在系列揭開序幕之際就發掘出利用水流漏斗讓伺服器瀕臨跳 tick 的古老漏洞，向全服宣告混亂來臨。",
         flamefrags: "在極限硬核環境下，以毫秒級判定卡出令全服震驚的常駐不死金心，奠定戰狂傳奇。"
       }
     },
     {
-      epoch: "第二紀元：大追捕與 Paragon 絕海黑牢大越獄 (Day 31 - 70)",
+      epoch: "第二紀元：大追捕與 Paragon 絕海黑牢大越獄",
       headline: "統治階層加強打壓，通緝與反抗狂潮席捲全服",
       details: {
         parrot: "遭伏擊押入號稱無人生還的 Paragon 監獄，暗中策劃數週引發暴動並成功炸穿基岩脫逃。",
@@ -800,7 +800,7 @@ const UNSTABLE_DATA = {
       }
     },
     {
-      epoch: "第三紀元：文明崛起、帝國爭雄與經濟崩盤 (Day 71 - 120)",
+      epoch: "第三紀元：文明崛起、帝國爭雄與經濟崩盤",
       headline: "巨型要塞拔地而起，億萬經濟在一夕之間傾覆",
       details: {
         parrot: "深入荒原搜查失蹤名單，在迷霧中獲得靈魂觀測望遠鏡，察覺幕後更大黑手。",
@@ -810,7 +810,7 @@ const UNSTABLE_DATA = {
       }
     },
     {
-      epoch: "第四紀元：暗夜風暴！黑手黨崛起與無間滲透 (Day 121 - 180)",
+      epoch: "第四紀元：暗夜風暴！黑手黨崛起與無間滲透",
       headline: "地下犯罪帝國操控全服，暗殺、臥底與復仇怒火",
       details: {
         parrot: "被推舉為王位候選人，在黑手黨的暗殺威脅下發表廣場演說，以壓倒性票數加冕為王。",
@@ -820,7 +820,7 @@ const UNSTABLE_DATA = {
       }
     },
     {
-      epoch: "第五紀元：王權百日與萬人大內戰（終局之戰）(Day 181 - 250)",
+      epoch: "第五紀元：王權興衰與萬人大內戰（終局之戰）",
       headline: "四條命運之線匯聚，千人軍團在主城盆地打響宇宙決戰",
       details: {
         parrot: "以國王身份統帥自由聯合軍團，發表最後戰鬥檄文，率眾直面腐敗殘餘勢力。",
@@ -1021,7 +1021,7 @@ const UNSTABLE_DATA = {
       {
         id: "parrot_ending_king",
         name: "結局：王座上的守護者（Parrot 經典線）",
-        description: "你成功加冕為 Unstable SMP 首任國王！在百日治理中，你用智慧抵禦了背叛與刺殺，建立起受全服敬仰的新秩序。你的名字被永遠刻在主城法典第一頁！",
+        description: "你成功加冕為 Unstable SMP 首任國王！在治理王國期間，你用智慧抵禦了背叛與刺殺，建立起受全服敬仰的新秩序。你的名字被永遠刻在主城法典第一頁！",
         badge: "👑 傳奇國王 (The Sovereign)",
         isEnding: true
       },
