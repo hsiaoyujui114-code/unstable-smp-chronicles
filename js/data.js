@@ -24,8 +24,17 @@ const UNSTABLE_DATA = {
       themeColor: "#38bdf8", // Sky / Blue
       accentGlow: "rgba(56, 189, 248, 0.4)",
       badge: "INTEL & STRATEGY",
-      avatar: "https://minotar.net/bust/ParrotX2/128.png",
-      skinBody: "https://minotar.net/armor/body/ParrotX2/300.png",
+      avatar: "assets/avatars/parrot.jpg",
+      skinBody: "assets/skins/parrot_3d.png",
+      appearance: {
+        summary: "身穿標誌性海軍藍連帽衫，配戴紅黃藍三色金剛鸚鵡羽飾耳機，眼神冷靜而睿智。",
+        features: [
+          "標誌性服飾：深海藍色高領兜帽風衣，袖口飾有輕靈羽翼紋理",
+          "頭部配飾：模仿金剛鸚鵡色彩（紅、黃、藍三色漸變）的特製羽飾耳機",
+          "神態特質：冷靜敏銳的洞察者，隨時保持防範與觀察姿態",
+          "現實說明：ParrotX2 為未公開面孔之創作者（Faceless），本照片為其 YouTube 官方百萬頻道當前最新使用之形象照"
+        ]
+      },
       stats: {
         intellect: 98,
         strategy: 95,
@@ -206,8 +215,17 @@ const UNSTABLE_DATA = {
       themeColor: "#f59e0b", // Amber / Gold
       accentGlow: "rgba(245, 158, 11, 0.4)",
       badge: "MIGHT & WEALTH",
-      avatar: "https://minotar.net/bust/Wemmbu/128.png",
-      skinBody: "https://minotar.net/armor/body/Wemmbu/300.png",
+      avatar: "assets/avatars/wemmbu.jpg",
+      skinBody: "assets/skins/wemmbu_3d.png",
+      appearance: {
+        summary: "一頭俐落黑髮，頭頂配戴暗紫色龍角/惡魔雙角與精緻銀紫王冠（Tiara），身披暗色戰袍，霸氣十足。",
+        features: [
+          "標誌性特徵：頭部兩側高聳的暗紫色龍角 / 惡魔尖角",
+          "專屬頭飾：象徵至高統治權限的銀紫色細緻王冠（Tiara）",
+          "服裝風格：深色高階合金戰鎧與長袍，散發令人窒息的壓迫感",
+          "現實說明：Wemmbu 為未公開面孔之創作者（Faceless），本照片為其 YouTube 官方頻道當前最新使用之標誌性頭冠形象照"
+        ]
+      },
       stats: {
         intellect: 88,
         strategy: 92,
@@ -387,9 +405,17 @@ const UNSTABLE_DATA = {
       tagline: "「只要伺服器還在運算，就沒有我找不出的漏洞與陷阱。」",
       themeColor: "#10b981", // Emerald / Toxic Green
       accentGlow: "rgba(16, 185, 129, 0.4)",
-      badge: "EXPLOITS & CHAOS",
-      avatar: "https://minotar.net/bust/SpokeIsHere/128.png",
-      skinBody: "https://minotar.net/armor/body/SpokeIsHere/300.png",
+      avatar: "assets/avatars/spoke.jpg",
+      skinBody: "assets/skins/spoke_3d.png",
+      appearance: {
+        summary: "標誌性的螢光翠綠色連帽衫（Green Hoodie），金棕色微卷髮絲從兜帽垂下，嘴角帶著一抹招牌壞笑。",
+        features: [
+          "標誌性服飾：高飽和度螢光綠色運動連帽衫（Iconic Green Hoodie）",
+          "面部神韻：嘴角揚起標誌性的戲謔與自信微笑（Signature Smirk）",
+          "角色氣質：混亂與代碼漏洞的狂熱藝術家，行動神出鬼沒",
+          "現實說明：Spoke 為未公開面孔之創作者（Faceless），本照片為其 YouTube 官方百萬頻道當前最新使用之綠衣招牌頭像"
+        ]
+      },
       stats: {
         intellect: 96,
         strategy: 93,
@@ -568,10 +594,17 @@ const UNSTABLE_DATA = {
       roleTitle: "不死戰神 · 極限生存先鋒 · 千人萬軍角鬥之王",
       tagline: "「在無情的戰火與追殺中，唯有純粹的戰鬥技藝才能換來永生。」",
       themeColor: "#f97316", // Flame Orange / Crimson
-      accentGlow: "rgba(249, 115, 22, 0.4)",
-      badge: "COMBAT & IMMORTALITY",
-      avatar: "https://minotar.net/bust/FlameFrags/128.png",
-      skinBody: "https://minotar.net/armor/body/FlameFrags/300.png",
+      avatar: "assets/avatars/flamefrags.jpg",
+      skinBody: "assets/skins/flamefrags_3d.png",
+      appearance: {
+        summary: "烈焰赤紅與深黑交織的作戰裝束，手持近戰戰刃，眼神如鷹隼般銳利冷冽，周身環繞著不滅戰火。",
+        features: [
+          "色彩基調：熔岩赤紅（Flame Red）與深淵黑曜石黑（Obsidian Black）之高對比戰甲",
+          "裝備輪廓：特製下界合金重裝戰甲，胸口刻有不死吸血銘文",
+          "戰鬥神態：目光如電，手握死神戰鐮，時刻處於無懈可擊的臨戰姿態",
+          "現實說明：FlameFrags 為未公開面孔之創作者（Faceless），本照片為其 YouTube 官方百萬頻道當前最新使用之烈焰紅黑頭像"
+        ]
+      },
       stats: {
         intellect: 84,
         strategy: 89,

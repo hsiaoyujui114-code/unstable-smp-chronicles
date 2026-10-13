@@ -379,9 +379,13 @@ body {
   border: 2px solid var(--char-color);
   background: #000;
   flex-shrink: 0;
-  box-shadow: 0 0 12px var(--char-glow);
+  box-shadow: 0 0 14px var(--char-glow);
   object-fit: cover;
-  image-rendering: pixelated;
+  transition: transform var(--transition-fast);
+}
+
+.hero-char-card:hover .hero-char-avatar {
+  transform: scale(1.08);
 }
 
 .hero-char-meta h3 {
@@ -499,22 +503,75 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  gap: 1rem;
+}
+
+/* 官方形象照與 3D 皮膚切換按鈕組 */
+.photo-switch-bar {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.photo-switch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 5px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.photo-switch-btn.active {
+  background: var(--theme-current);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 12px var(--theme-glow);
+}
+
+/* 形象預覽框架 */
+.portrait-visual-frame {
+  width: 240px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.char-avatar-render {
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  object-fit: cover;
+  border: 2px solid var(--theme-current);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--theme-glow);
+  transition: transform var(--transition-smooth);
+}
+
+.char-avatar-render:hover {
+  transform: scale(1.04) rotate(1deg);
 }
 
 .char-skin-render {
-  width: 220px;
+  width: 140px;
   height: auto;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 15px var(--theme-glow));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 18px var(--theme-glow));
   transition: transform var(--transition-smooth);
-  image-rendering: pixelated;
 }
 
 .char-skin-render:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.06) rotate(1deg);
 }
 
 .char-role-badge {
-  margin-top: 1rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--theme-current);
   color: var(--theme-current);
@@ -523,6 +580,71 @@ body {
   padding: 4px 14px;
   border-radius: 50px;
   letter-spacing: 1px;
+}
+
+/* 當前長相與視覺解析卡片 */
+.appearance-card {
+  margin-top: 1.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--theme-current);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.appearance-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.appearance-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.appearance-card-summary {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.appearance-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.appearance-features-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.appearance-features-list li::before {
+  content: '✦';
+  color: var(--theme-current);
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.faceless-notice {
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
 }
 
 .char-info-col h2 {

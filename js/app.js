@@ -281,12 +281,30 @@ class AppController {
     const char = UNSTABLE_DATA.characters[charId];
     if (!char) return;
 
+    this.portraitViewMode = this.portraitViewMode || "avatar";
+
     // 渲染角色主面板
     container.innerHTML = `
       <div class="character-detail-container fade-in" style="border-color: ${char.themeColor};">
         <div class="char-hero-banner">
           <div class="char-portrait-box">
-            <img src="${char.skinBody}" alt="${char.name}" class="char-skin-render">
+            <!-- 視角切換器 (官方形象照 / 3D 遊戲皮膚) -->
+            <div class="photo-switch-bar">
+              <button class="photo-switch-btn ${this.portraitViewMode === 'avatar' ? 'active' : ''}" data-view="avatar">
+                📸 現今官方形象照
+              </button>
+              <button class="photo-switch-btn ${this.portraitViewMode === 'skin' ? 'active' : ''}" data-view="skin">
+                🧊 3D 遊戲皮膚
+              </button>
+            </div>
+
+            <div class="portrait-visual-frame">
+              ${this.portraitViewMode === 'avatar'
+                ? `<img src="${char.avatar}" alt="${char.name}" class="char-avatar-render" title="${char.name} 當前官方形象照">`
+                : `<img src="${char.skinBody}" alt="${char.name}" class="char-skin-render" title="${char.name} 遊戲內 3D 皮膚">`
+              }
+            </div>
+
             <span class="char-role-badge">${char.badge}</span>
           </div>
 
@@ -338,6 +356,24 @@ class AppController {
                 <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: ${char.stats.stealth}%;"></div></div>
               </div>
             </div>
+
+            <!-- 當前長相與外貌特徵解析卡片 -->
+            <div class="appearance-card">
+              <div class="appearance-card-header">
+                <div class="appearance-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                  <span>現今外貌與長相特徵解析 (Current Look & Appearance)</span>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--theme-current); background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px;">OFFICIAL PFP & SKIN</span>
+              </div>
+              <div class="appearance-card-summary">${char.appearance.summary}</div>
+              <ul class="appearance-features-list">
+                ${char.appearance.features.map(f => `<li>${f}</li>`).join("")}
+              </ul>
+              <div class="faceless-notice">
+                💡 創作者說明：所有主角在現實中均為未公開真容的創作者（Faceless），全球社群所熟知的代表性長相即為此官方繪師形象與專屬 3D 外觀。
+              </div>
+            </div>
           </div>
         </div>
 
@@ -360,6 +396,15 @@ class AppController {
         </div>
       </div>
     `;
+
+    // 綁定官方形象照與 3D 皮膚切換事件
+    container.querySelectorAll(".photo-switch-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        this.soundEngine.playClick();
+        this.portraitViewMode = btn.getAttribute("data-view");
+        this.renderCharacterDeepDive(charId);
+      });
+    });
 
     // 綁定子分頁點擊事件
     container.querySelectorAll(".char-subtab-btn").forEach(btn => {
