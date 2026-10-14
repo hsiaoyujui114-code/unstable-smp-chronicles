@@ -224,7 +224,7 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "The Sovereign Scepter（國王權杖）"
         },
         {
-          id: "unstable_parrot_100days",
+          id: "unstable_parrot_reign",
           title: "King of the Unstable SMP: The Reign",
           titleZh: "在 Unstable SMP 擔任國王的極限統治紀實",
           publishDate: "2024-11-20",
@@ -747,7 +747,7 @@ const UNSTABLE_DATA = {
       id: "flamefrags",
       name: "FlameFrags",
       realHandle: "FlameFrags",
-      roleTitle: "不死戰神 · 極限生存先鋒 · 千人萬軍角鬥之王",
+      roleTitle: "極限戰神 · Terminus 破獄者 · 千人萬軍先鋒統帥",
       tagline: "「在無情的戰火與追殺中，唯有純粹的戰鬥技藝才能換來永生。」",
       themeColor: "#f97316", // Flame Orange / Crimson
       avatar: "assets/avatars/flamefrags.jpg",
@@ -756,8 +756,8 @@ const UNSTABLE_DATA = {
         summary: "烈焰赤紅與深黑交織的作戰裝束，手持近戰戰刃，眼神如鷹隼般銳利冷冽，周身環繞著不滅戰火。",
         features: [
           "色彩基調：熔岩赤紅（Flame Red）與深淵黑曜石黑（Obsidian Black）之高對比戰甲",
-          "裝備輪廓：特製下界合金重裝戰甲，胸口刻有不死吸血銘文",
-          "戰鬥神態：目光如電，手握死神戰鐮，時刻處於無懈可擊的臨戰姿態",
+          "裝備輪廓：特製下界合金重裝戰甲，胸口刻有先鋒軍團專屬銘文",
+          "戰鬥神態：目光如電，手握 Truth-Seeker 處決戰刃，時刻處於無懈可擊的臨戰姿態",
           "現實說明：FlameFrags 為未公開面孔之創作者（Faceless），本照片為其 YouTube 官方百萬頻道當前最新使用之烈焰紅黑頭像"
         ]
       },
@@ -769,34 +769,34 @@ const UNSTABLE_DATA = {
         stealth: 76
       },
       personality: "熱血堅韌、為戰而生的絕對武力代表。他不在乎繁複的政治權謀，只相信手中揮舞的戰刃與流淌的熱血。在隊友陷入絕境時，他永遠是那個一人一劍擋在萬軍之前的最堅固盾牌。",
-      biography: `FlameFrags 在 Unstable SMP 的登場徹底改變了伺服器的戰力格局。身處殘酷的極限硬核環境，死亡即代表失去一切，但他卻透過對遊戲底層生命機制與同步封包的極限理解，卡出了令全服聞風喪膽的「永生不死心數」。
+      biography: `FlameFrags 在 Unstable SMP 的登場徹底改變了伺服器的戰力格局。身處殘酷的極限硬核環境，他以純粹的原生近戰技藝與身法登頂全服最強戰神之位（The Skill & Training Arc）。
 
-他曾隻身一人全殲由五名頂級殺手組成的惡質霸凌公會；為了追求武道的終極境界，他甚至主動拜伺服器最恐怖的死神 ClownPierce 為師，經受地獄修煉獲得傳奇收割戰鐮。在震驚宇宙的千人大內戰中，他是衝在最前線、帶領部隊撕裂敵軍防線的狂暴戰神。`,
+他曾隻身一人在雪峰全殲盤踞作惡的五人霸凌公會；更在遭到暗算押入全服最恐怖的特級死刑黑牢「Terminus」時上演絕命大逃亡；在全服公開大會上，他當眾戳穿所謂『最強戰神』的作弊外掛假面具；在爭奪資源命脈的「巨型農場爭奪戰（The Great Farm War）」與震驚宇宙的千人大內戰中，他更作為自由同盟的突擊先鋒總司令，一人一劍撕裂敵軍防線！`,
       storyArcs: [
         {
-          title: "第一章：生死毫秒差！極限硬核卡出不死金心之謎",
-          subtitle: "深海遺跡的瀕死絕境、數據封包溢出與突破極限的不死金心",
-          summary: "在人人自危、死亡即永久除名的極限硬核生存初期，FlameFrags 於深海神殿探索中遭遇遠古守衛者與溺屍大軍的致命合圍。在圖騰碎裂與生命歸零的萬分之一秒，他藉由金蘋果飽食度延遲與伺服器區塊保存的微小卡頓，觸發了客戶端與服務端的生命封包溢出衝突，意外將自己的血條永久鎖定在額外 10 顆常駐金心，成為全服首位實質上的『不死戰神』。",
-          genesis: "極限硬核模式的殘酷之處在於零容錯率，任何一次意外都意味著一切歸零。為了獲取稀缺的深海潮汐之心，FlameFrags 在尚未配備頂級神甲的初期冒險潛入未探索的大型深海神殿，卻因水肺藥水耗盡與多隻遠古守衛者的雷射鎖定而陷入絕境。",
-          conflict: "在深海無光環境下，三道雷射同時充能完畢，周圍更有十餘名手持三叉戟的溺屍群瘋狂穿刺。FlameFrags 的護甲在瞬間破裂，唯一的副手不死圖騰在雷射轟擊下化作金光碎裂。就在圖騰無敵時間消逝、第二波致命傷害降臨的萬分之一秒，FlameFrags 吞下了最後一顆附魔金蘋果，而此刻伺服器恰好發生了常規的區塊自動保存（Autosave Lag）。極限的判定毫秒差導致客戶端上報的吸收生命增益與服務端確認的扣血封包發生邏輯衝突，數據產生不可逆的溢出。當 FlameFrags 掙扎游出水面時，驚異地發現自己的血條下方多出了一整排閃耀著金芒的吸收心，且無論時間推移還是自然消耗，這 10 顆額外金心都牢牢鎖定不再消失。他隨即以身試法進行了高空墜落與烈焰焚燒測試，確認自己真正打破了系統的生命限制，獲得了令全宇宙震撼的不死之軀。",
-          lootAndAnomaly: "覺醒神技《Glitched Immortal Heart Reservoir（代碼異常不死金心）》，享有超越常規玩家一倍以上的硬核血量儲備。",
-          impact: "這起奇蹟般的代碼漏洞事件徹底重塑了 FlameFrags 的戰鬥哲學，消除了他對硬核死亡的後顧之憂，使他從一名普通的求生戰士升華為敢於在萬軍之中捨命衝鋒的無敵先鋒。",
+          title: "第一章：加冕最強之人！Unstable SMP 的極限戰技之路",
+          subtitle: "極限硬核環境的殘酷修煉、破盾技巧巔峰與全服最強戰神傳奇",
+          summary: "在人人自危、死亡即永久除名的 Unstable SMP 極限硬核生存中，FlameFrags 不追求繁複的政治權謀與虛偽結盟，而是將全部心力投入到 Minecraft 極限格鬥與身法修煉中（The Skill & Training Arc）。在全服各路高手雲集的生死決鬥與野外遭遇戰中，他以無懈可擊的跳劈走砍、360 度無死角瞬切盾牌與水晶爆破防禦力克群雄，未嘗一敗，正式加冕為 Unstable SMP 公認的近戰最強之人。",
+          genesis: "伺服器開荒初期動盪不安，各大公會恃強凌弱、搶佔資源。看著弱小散戶被逼得無法生存，FlameFrags 決心走出另一條道路——以絕對純粹的原生個人戰鬥力，打破公會集團的霸凌壟斷。",
+          conflict: "在世界各地的險要峽谷與荒野角鬥場中，FlameFrags 展開了長達數月的魔鬼式近戰淬煉。他深入研究服務端判定機制，將跳劈滯空時長、盾牌格擋冷卻毫秒差與斧頭破盾時機磨礪至化境。在面對各路老牌強者的車輪戰挑戰時，FlameFrags 展現了令人窒息的壓迫感：他在刀光劍影中如同穿花繞蝶，無論面對重甲鐵衛還是游擊弓手，均能在數招之內精準破盾並實施致命走砍斬殺。在全服關注的頂級巔峰對決中，他連克八位公會王牌守擂者，全場觀眾起立致敬，由全服強者共同為其披上象徵至高武力的戰神披風。",
+          lootAndAnomaly: "收繳並鍛造專屬神裝《Flame’s Bespoke Warplate（烈焰專屬下界合金重戰甲）》，獲得全服最高近戰抗性與格鬥榮譽。",
+          impact: "此役確立了他在 Unstable SMP 中『近戰天花板』的至高威名，樹立了純技術流派的傳奇標竿，使無數散戶與自由玩家在面對強權時有了最強大的精神指引。",
           keyPlotPoints: [
-            "初期單兵勇闖深海神殿，遭遇三頭遠古守衛者與溺屍大軍的致命夾擊",
-            "水下激戰護甲破碎，副手不死圖騰遭雷射穿透瞬間碎裂觸發瀕死",
-            "於圖騰破碎與服務端區塊保存延遲間卡入金蘋果吸收封包判定",
-            "生命數據溢出導致服務端將 10 顆額外金色吸收心永久固化於角色數據庫",
-            "經嚴苛極限測試確認不死金心穩定生效，奠定全服最強近戰坦克的威名"
+            "拒絕拉幫結派，深入險惡荒野開啟專注於純戰技磨礪的訓練紀元",
+            "破譯極限破盾節奏與 360 度無死角瞬切盾牌身法，完成技術質變",
+            "在全服武道決鬥場中以一敵多連續擊潰八名老牌公會頂級打手",
+            "展現無瑕疵近戰壓制，力挫神裝守擂霸主贏得全服強者集體致敬",
+            "加冕為 Unstable SMP 最強之人，被各大勢力公認為不可招惹的戰神"
           ],
-          psychology: "「當死亡的陰影在深海中扼住我的咽喉時，我聽到了代碼崩裂的聲音。從那一刻起，恐懼不再屬於我，而是屬於每一個在戰場上面對我的敵人。」"
+          psychology: "「在極限硬核的世界裡，權謀與謊言終會隨風而逝，唯有手中那把歷經千錘百煉的利刃，才是捍衛尊嚴與守護弱者的唯一真理。」"
         },
         {
           title: "第二章：孤狼血戰！單兵團滅五人霸凌毒瘤公會",
           subtitle: "以身作餌誘敵深入、雪峰峭壁的極限連劈與誓死守護之花",
-          summary: "惡名昭彰的五人惡意公會『掠奪之影（Shadow Raiders）』霸佔核心礦區，無差別虐殺新手掠奪資產。目睹無辜同伴被害的 FlameFrags 怒火中燒，決心以暴制暴。他故意身著破損甲冑將敵方全體主力誘至險峻雪峰，在長達兩小時的殊死搏殺中以一敵五，憑藉不死身法與破盾走砍完成全殲團滅，一戰名震全服。",
+          summary: "惡名昭彰的五人惡意公會『掠奪之影（Shadow Raiders）』在核心礦區橫行霸道，無差別虐殺新手掠奪資產。目睹友善同伴遭害的 FlameFrags 怒火中燒，決心以暴制暴。他故意身著破損甲冑將敵方全體主力誘至險峻雪峰，在長達兩小時的殊死搏殺中以一敵五，憑藉極限身法與破盾走砍完成全殲團滅，一戰名震全宇宙。",
           genesis: "一個剛加入伺服器不久的友善散戶新手，在中央盆地辛勤搭建的小屋遭到掠奪之影五名幹部無情焚毀，該新手在絕望求饒中被當眾虐殺。目睹這一切的 FlameFrags 在廢墟中握緊拳頭，決心用這群惡霸的鮮血來告慰亡者。",
-          conflict: "掠奪之影五人皆為滿裝精銳，且戰術狡詐。FlameFrags 故意脫下重裝戰甲，換上破爛皮甲出現在敵方斥候視野中，佯裝驚慌逃向荒無人煙的高聳雪山。五名貪婪的惡霸見狀全員出動狂追不捨。踏入雪山之巔的狂風暴雪中，FlameFrags 驟然止步，在敵方包圍網合攏的剎那瞬間換回滿級下界合金神裝。在長達兩個多小時的殘酷拉鋸死鬥中，FlameFrags 頂著漫天箭雨與藥水轟擊，將不死金心的容錯率發揮到極致。他利用陡峭地形卡位，使敵方無法同時五人近身，隨即以精準的跳劈接橫掃破開前排兩人的重盾，連續斬殺敵軍前鋒。剩下的三人企圖搭乘鞘翅四散逃跑，FlameFrags 換上強弓以神級預判凌空穿透敵方翅膀，在積雪染紅的懸崖上完成了不可思議的 1v5 團滅奇蹟。戰後，他在廢墟中拾起新手生前贈予的一朵小黃花插在胸甲之上，誓言做全服弱者的盾牌。",
-          lootAndAnomaly: "收繳《Annihilator's Trophy Armor（被全殲公會的染血五套頂裝）》與隨身佩戴的紀念小花《Hope of the Fallen》。",
+          conflict: "掠奪之影五人皆為滿裝精銳，且戰術狡詐。FlameFrags 故意脫下重裝戰甲，換上破爛皮甲出現在敵方斥候視野中，佯裝驚慌逃向荒無人煙的高聳雪山。五名貪婪的惡霸見狀全員出動狂追不捨。踏入雪山之巔的狂風暴雪中，FlameFrags 驟然止步，在敵方包圍網合攏的剎那瞬間換回滿級下界合金神裝。在長達兩個多小時的殘酷拉鋸死鬥中，FlameFrags 頂著漫天箭雨與藥水轟擊，利用陡峭地形卡位使敵方無法同時五人近身，隨即以精準的跳劈接橫掃破開前排兩人的重盾，連續斬殺敵軍前鋒。剩下的三人企圖搭乘鞘翅四散逃跑，FlameFrags 換上強弓以神級預判凌空穿透敵方翅膀，在積雪染紅的懸崖上完成了不可思議的 1v5 團滅奇蹟。戰後，他在廢墟中拾起新手生前贈予的一朵小黃花插在胸甲之上，誓言做全服弱者的盾牌。",
+          lootAndAnomaly: "收繳敵方全套滿裝並拾獲隨身佩戴的紀念小花《Rejoice’s Flower（戰火廢墟中的純白之花）》。",
           impact: "這場以少勝多的傳奇血戰徹底打碎了毒瘤公會橫行霸道的囂張氣焰，震撼了全服各大勢力，FlameFrags 的『正義孤狼戰神』之名自此深植於每位玩家心中。",
           keyPlotPoints: [
             "目睹善良新手遭惡霸公會殘虐殺害，誓言踏上以暴制暴的正義復仇之路",
@@ -808,72 +808,72 @@ const UNSTABLE_DATA = {
           psychology: "「他們以為人多勢眾就可以踐踏弱小的尊嚴，但我會用手中的刀告訴他們——當正義的怒火燃燒時，人數只不過是一串等待被收割的數字。」"
         },
         {
-          title: "第三章：拜師死神 ClownPierce！地獄特訓獲死神戰鐮",
-          subtitle: "黑曜石荒原尋訪死神、角鬥場無裝十招試煉與死神親傳戰鐮",
-          summary: "隨著伺服器進入全面軍備競賽，各路野心領主勾結頂尖 PVP 僱傭兵，FlameFrags 意識到單憑本能的勇猛已不足以應對即將到來的宇宙浩劫。他遠赴世界邊界尋訪號稱『Minecraft 死神』的傳奇殺神 ClownPierce，在經歷了生不如死的殘酷特訓與試煉後，領悟了絕世近戰刀法，獲贈象徵死神傳承的傳奇收割戰鐮。",
-          genesis: "多次小規模遭遇戰中，FlameFrags 察覺到敵軍開始頻繁使用複雜的水晶爆破與雙手盾瞬切戰術。為了在正面戰場上達到無可匹敵的武道極致，他決定尋找全服唯一被奉為天花板的存在——殺神 ClownPierce。",
-          conflict: "在世界邊境由純黑曜石構築的死亡角鬥場中，FlameFrags 見到了氣場森然的 ClownPierce。起初死神對收徒嗤之以鼻，只給了他一個近乎必死的考驗：卸下所有防具與藥水，在空手狀態下接下死神十刀。在無數次被擊飛、骨骼碎裂的劇痛中，FlameFrags 依靠不可思議的意志力死死咬牙站起，在第九招利用極限側滑避開要害，硬生生撐到了第十刀落地，贏得了傲慢死神的敬重。在隨後長達數週的地獄特訓中，ClownPierce 親自教授他毫秒級走砍連擊、聽聲辨位盲打以及反破盾身法。出師之日，ClownPierce 在祭壇前將親自附魔、泛著深邃紫黑光芒的《ClownPierce's Netherite Scythe（死神親傳收割戰鐮）》鄭重授予他，象徵新一代戰神的正式誕生。",
-          lootAndAnomaly: "獲贈傳奇兵器《ClownPierce's Netherite Scythe（死神親傳收割戰鐮）》，並領悟全服最高境界的近戰連鎖斬殺技巧。",
-          impact: "這次特訓完成了 FlameFrags 從『蠻勇戰士』到『近戰殺戮宗師』的終極蛻變，使自由聯盟獲得了在未來千人大戰中足以對抗任何敵軍王牌的核武級常規戰力。",
+          title: "第三章：逃離 Terminus！Minecraft 史上最致命死刑黑牢",
+          subtitle: "基岩深淵中的活體死刑牢獄、防守空隙捕捉與極限反殺越獄",
+          summary: "在 Unstable SMP 的強權暗湧中，FlameFrags 遭到惡名昭彰的敵對聯盟秘密設伏暗算，被奪走全部裝備並押送進全服最恐怖的特級死刑監獄「Terminus」。面對基岩壁壘、浸水黑曜石與守衛者激光陣列的重重殺局，FlameFrags 展現出鋼鐵意志，在暗無天日的絕境中反殺獄卒奪回神裝，炸開排氣天井完成震驚全服的絕命大逃亡！",
+          genesis: "為了調查邊境頻繁發生的散戶綁架事件，FlameFrags 循線追查至荒原廢墟，不料落入敵方三個主力公會聯合布設的重晶石壓制陷阱。在苦戰斬落三名敵將、圖騰用盡後不幸力竭被俘，被秘密押往號稱『入者必死』的深淵黑牢 Terminus。",
+          conflict: "Terminus 建立在世界最深處的基岩夾層之中，周圍布滿了多層浸水黑曜石防爆層、常駐遠古守衛者的虛弱與挖掘疲勞結界，以及二十四小時不斷的致命激光防禦網。面對非人的折磨與嚴密看守，FlameFrags 始終保持冷靜。他暗中記錄守衛者的激光充能間歇與獄卒換崗的時間差，利用胃袋私藏的微型紅石粉與鐵粒在牢房牆角拼裝出簡易短路器，在深夜突然引發牢區電網癱瘓與警報大作。當三名手持特製刑具的重裝獄卒破門而入時，空手的 FlameFrags 閃電奪刀，以不可思議的近身搏擊反殺看守。他奪回了特級破獄神鎬，在激光重新鎖定的千鈞一髮之際，暴力鑿穿了監獄頂部的基岩排氣管道，在整座監獄坍塌的烈火中宛如浴火鳳凰般殺出重圍！",
+          lootAndAnomaly: "奪取傳奇神鎬《Terminus Breaker Pickaxe（Terminus 破獄者合金鎬）》與典獄長的特級禁忌印記。",
+          impact: "Terminus 黑牢百年不可攻破的死刑神話被 FlameFrags 親手粉碎，宣告特權勢力企圖將其永久抹殺的陰謀徹底破產，他的強勢歸來直接逆轉了整個伺服器的反抗力量對比。",
           keyPlotPoints: [
-            "為了突破個人武力瓶頸，歷經萬里跋涉尋訪隱居邊界的傳奇死神 ClownPierce",
-            "在黑曜石角鬥場無甲狀態硬接死神十記殺招，憑鋼鐵意志贏得尊重",
-            "在日夜無休的地獄式實戰對決中，磨礪出無懈可擊的走砍與盲打身法",
-            "破譯頂級 PVP 領域的瞬切防禦與反制節奏，戰鬥思維全面昇華",
-            "於世界邊緣祭壇獲贈死神親傳戰鐮，正式晉升為全宇宙公認的戰神宗師"
+            "追查人口失蹤線索中伏力戰被俘，被剝奪全部兵刃押入特級死刑牢 Terminus",
+            "在浸水黑曜石與遠古守衛者激光封鎖下，精準計算出激光充能的 1.5 秒盲區",
+            "利用私藏微型元件短路癱瘓監獄供電網絡，徒手搏殺奪回被扣押神裝",
+            "手持 Terminus 破獄者神鎬暴力鑿穿基岩夾層排氣天井",
+            "在警報震天與烈焰翻滾中殺出絕境黑牢，強勢重返 Unstable SMP 宇宙"
           ],
-          psychology: "「在死神的刀鋒下，我學會了放下憤怒，將呼吸與心跳融入手中的利刃。真正的強大不是毀滅，而是在生死的狹縫中精準把握那一線生機。」"
+          psychology: "「Terminus 可以奪走我的護甲與兵器，但它奪不走我刻在骨子裡的戰鬥本能。只要我還有一口氣在，任何監獄都只能成為我封神路上的踏腳石。」"
         },
         {
-          title: "第四章：千人大內戰總先鋒！一人一劍撕裂敵軍陣線",
-          subtitle: "萬人血戰的號角、血色軍旗開路與直插敵軍心臟的決定性衝鋒",
-          summary: "在 Unstable SMP 迎來命運終結的『萬人大內戰（The Great Civil War）』中，FlameFrags 被三巨頭共同推舉為自由同盟突擊先鋒總司令。身披重裝染血戰甲、高擎同盟戰旗，他率領前鋒衛隊頂著狂風暴雨般的炮火與箭雨發起撼地衝鋒，在重圍之中手起鐮落連破敵方三道防禦壁壘，為大部隊奠定了整場史詩決戰的勝局。",
-          genesis: "烏托邦偽善帝國聯合金錢黑手黨與野心領主，組建了數百名滿裝戰士的龐大軍團在中央平原列陣。自由同盟面臨著生死存亡的一役，必須有一支無畏的先鋒部隊頂住第一波滅頂之災般的遠程火力，鑿開敵軍護城要塞的缺口。",
-          conflict: "衝鋒號角長鳴，大地為之顫抖。FlameFrags 一馬當先，左手緊握《Vanguard Flag of Unstable（內戰先鋒之血色軍旗）》，右手揮舞死神戰鐮，率領兩百名敢死隊員踏入敵方致命的火力交叉網。數以百計的滯留型傷害藥水與 TNT 投石彈在他身邊接連爆炸，FlameFrags 憑藉不死金心的高額吸收護盾硬頂衝擊，身先士卒狠狠撞碎了敵方前哨的水晶防線。在戰事最膠著的關頭，敵方兩名重裝近衛隊長企圖繞後突襲指揮官 Parrot，FlameFrags 敏銳察覺，飛身橫空攔截。在以一敵二的搏殺中，他施展出死神親傳的連鎖戰鐮技巧，雙刀連斬順勢旋轉破盾，當場斬殺兩名敵酋。士氣大振的同盟主力隨即全線壓上，順著 FlameFrags 親手鑿開的三道防禦缺口湧入敵營，徹底擊潰了敵軍主力，迎來了決定宇宙歸宿的偉大勝利。",
-          lootAndAnomaly: "高舉象徵永不屈服的《Vanguard Flag of Unstable（內戰先鋒之血色軍旗）》，獲封自由同盟至高榮譽勳章。",
-          impact: "這場波瀾壯闊的先鋒衝鋒成為 Unstable SMP 歷史上最激勵人心的戰鬥史詩，FlameFrags 用無可爭議的血性與武道，向全宇宙詮釋了何為真正的守護者與不死戰神。",
+          title: "第四章：戳穿作弊偽神！揭發全服『最強』玩家假面具",
+          subtitle: "公開擂台抓包延遲外掛、巨型農場爭奪戰與千人大內戰先鋒之鋒",
+          summary: "某位備受各大資本公會追捧的明星玩家自封為無可戰勝的『伺服器戰神』，實則暗中使用延遲補償外掛與替身打假賽牟利。FlameFrags 在一場全服公開賭鬥與『巨型農場爭奪戰（The Great Farm War）』中佈置了紅石測速時鐘，當眾抓包其作弊鐵證並以純技術將其斬滅！在隨後的萬人大內戰中，他擔任自由同盟突擊先鋒總司令，一人一劍撕裂敵軍防線，贏得宇宙終局勝利。",
+          genesis: "作弊者打著無敵旗號成立了壟斷工會，要求所有散戶交出農場收成作為保護費，甚至在公頻公開嘲諷技術玩家。FlameFrags 察覺到該選手在歷次戰鬥中的移動幀數極不自然，決心為整個競技生態討回公道。",
+          conflict: "在萬人圍觀的中央大擂台上，FlameFrags 欣然應戰。他暗中在擂台四角布設了紅石脈衝封包計時器，當對方再度啟動延遲外掛試圖瞬移背刺時，計時器發出刺耳警報，投射出對方違法修改服務端補償參數的確鑿日誌。在騙局被當場戳穿、作弊者惱羞成怒企圖仗著數值優勢強攻時，FlameFrags 拔出《The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）》，以完全無外掛的純粹跳劈連斬，在不到三十秒內三次破盾並將作弊偽神斬落擂台，將其名牌釘在恥辱柱上！隨後，在爭奪全服資源命脈的「巨型農場爭奪戰（The Great Farm War）」與最終的「萬人大內戰（1000 VS 1000 Civil War）」中，FlameFrags 被推舉為突擊先鋒總司令。他手持血色戰旗身先士卒衝破敵軍三道基岩防線，與盟友 Parrot、Wemmbu 共同登上敵城要塞頂峰，迎來了 Unstable SMP 的輝煌勝利。",
+          lootAndAnomaly: "斬獲《The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）》與象徵同盟無畏精神的《1000-Player Vanguard War Banner（萬人大內戰先鋒軍旗）》。",
+          impact: "徹底肅清了 Unstable SMP 的作弊陰霾與虛偽炒作，還原了純粹競技的尊嚴，FlameFrags 在萬人內戰中的先鋒衝鋒更成為整個宇宙歷史上最蕩氣迴腸的英雄史詩。",
           keyPlotPoints: [
-            "受全體同盟軍推舉出任萬人大內戰先鋒總司令，立下有我無敵之誓",
-            "手擎血色戰旗率先發起衝鋒，肉身硬抗敵軍暴雨般的轟炸與箭網",
-            "千鈞一髮之際回身格殺企圖刺殺 Parrot 的敵軍斬首王牌小隊",
-            "死神戰鐮狂暴橫掃，一人之姿強行鑿穿敵軍要塞三道核心防線",
-            "引領自由大軍直插敵營心臟擊潰偽善聯軍，為全服贏得傳奇終章"
+            "擂台四角布設紅石封包測速器，公開對抗聲勢浩大的作弊偽神",
+            "現場抓包延遲補償作弊數據日誌，當眾撕碎所謂最強戰神的虛偽包裝",
+            "以純粹的原生破盾刀法在三十秒內速殺作弊者，為全服競技正名",
+            "在巨型農場爭霸戰（The Great Farm War）中擊潰敵對壟斷集團",
+            "出任千人大內戰先鋒總司令，身披戰旗鑿穿敵陣迎來自由聯盟大勝"
           ],
-          psychology: "「只要我的戰鐮還在揮舞，只要胸膛中的熱血尚未冷卻，我就永遠是阻擋在暴政與苦難之前的第一道高牆。為了自由，衝鋒！」"
+          psychology: "「外掛可以篡改你的數據，但它買不來面對強敵時的勇氣，更買不來日夜苦練出的真正技藝。站在虛妄頂峰的偽神，終將在真實的刀鋒下現出原形。」"
         }
       ],
       unexpectedItems: [
         {
-          name: "Glitched Immortal Heart Reservoir（代碼異常不死金心）",
+          name: "Terminus Breaker Pickaxe（Terminus 破獄者合金鎬）",
           rarity: "ANOMALY",
           rarityColor: "#ea580c",
-          howAcquired: "在生死一線時利用生命同步延遲意外觸發的數據溢出，使生命值在客戶端與服務端之間鎖定在額外高值。",
-          effectDesc: "使持有者多出 10 顆常駐吸收心數，大幅降低被高爆 TNT 或神裝暴擊秒殺的風險。",
-          glitchCode: "NBT: {AbsorptionLock: 20, HealthSyncGlitch: true, ImmortalityStatus: 'ACTIVE'}"
+          howAcquired: "在特級死刑牢 Terminus 底層，利用私藏微型元件與被磨去序列號的合金殘渣熔鑄而成的破獄神兵。",
+          effectDesc: "具備無視挖掘疲勞的極速鑿擊效能，能瞬間粉碎敵軍布置的黑曜石防線與密室屏障。",
+          glitchCode: "NBT: {Tool: 'TerminusBreaker', Efficiency: 7, HasteImmunity: true, Origin: 'Terminus_Prison_Cell'}"
+        },
+        {
+          name: "The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）",
+          rarity: "MYTHIC",
+          rarityColor: "#ef4444",
+          howAcquired: "在公開大擂台上當眾戳穿作弊偽神時使用的公正利刃，劍身銘刻著破除一切虛妄的真實符文。",
+          effectDesc: "自帶破盾與反制延遲補償的鎖定攻擊判定，使一切身法外掛與假動作無所遁形。",
+          glitchCode: "NBT: {Weapon: 'TruthSeeker', AntiLagSwitch: true, Sharpness: 6, SweepDamage: 0.9}"
+        },
+        {
+          name: "Ghost Vault Keycard（虛空金庫幽靈密匙）",
+          rarity: "GLITCHED",
+          rarityColor: "#06b6d4",
+          howAcquired: "在追蹤傳說中『不存在的金色寶庫（Searching for a Vault that Doesn't Exist）』時，於世界代碼殘渣中發掘的幽靈卡片。",
+          effectDesc: "能感應隱藏在虛空裂隙中的非法儲物箱，是探秘 Unstable 隱密地下網絡的關鍵憑證。",
+          glitchCode: "NBT: {VaultKey: 'Ghost_Sector_404', PhaseDetect: true, Lore: ['Opens that which does not exist.']}"
         },
         {
           name: "Flame’s Bespoke Warplate（烈焰專屬下界合金重戰甲）",
           rarity: "MYTHIC",
           rarityColor: "#f97316",
-          howAcquired: "由全服頂級鍛造師親自調試，在極溫熔岩熔爐中歷經千錘百煉淬火鍛造，專門為 FlameFrags 量身打造的近戰胸甲。",
-          effectDesc: "附帶最高等級保護與荊棘反射，受到近戰攻擊時自帶短暫灼燒與擊退抗性，防禦性能傲視全服。",
+          howAcquired: "在加冕為 Unstable SMP 最強之人時，由全服頂級工匠在極溫熔岩爐中千錘百煉打造的專屬胸甲。",
+          effectDesc: "附帶最高等級保護與抗擊退特性，受到近戰暴擊時自帶短暫灼燒反噬，防禦力冠絕全服。",
           glitchCode: "NBT: {Armor: 'FlameNetherite_V2', Protection: 5, Thorns: 4, KnockbackResist: 0.8}"
-        },
-        {
-          name: "ClownPierce’s Training Scythe（死神親傳連斬戰鐮）",
-          rarity: "RELIC",
-          rarityColor: "#ef4444",
-          howAcquired: "在完成 ClownPierce 設置的三道殘酷生死決鬥試煉後，由死神親自遞交的傳承兵刃。",
-          effectDesc: "橫掃之刃半徑擴大 150%，且每次成功連擊將堆疊短暫移動速度提升，戰場收割能力所向披靡。",
-          glitchCode: "NBT: {MasterBlade: 'ClownPierce_Legacy', SweepRadius: 2.5, ComboSpeed: true}"
-        },
-        {
-          name: "Rejoice’s Flower（戰火廢墟中的純白之花）",
-          rarity: "LORE",
-          rarityColor: "#fef08a",
-          howAcquired: "在清剿毒瘤公會的燃燒要塞殘骸時，於一處破裂花盆中偶然拾獲並小心翼翼收在背包裡的蒲公英。",
-          effectDesc: "沒有任何數值加成，卻是 FlameFrags 在血腥殺戮世界中始終珍藏的信物，時刻提醒他為何而戰。",
-          glitchCode: "NBT: {Item: 'White_Flower', PreservedInWar: true, Lore: ['A spark of innocence in endless war.']}"
         },
         {
           name: "1000-Player Vanguard War Banner（萬人大內戰先鋒軍旗）",
@@ -886,20 +886,20 @@ const UNSTABLE_DATA = {
       ],
       videos: [
         {
-          id: "Vhnn_sG7xUk",
-          title: "I Became Immortal on a Hardcore Minecraft SMP",
-          titleZh: "我在極限硬核 Minecraft SMP 成為不死之身",
+          id: "unstable_flame_strongest",
+          title: "I Became the Strongest on the Unstable SMP",
+          titleZh: "我加冕成為 Unstable SMP 的最強戰神",
           publishDate: "2024-05-18",
-          duration: "25:40",
-          thumbnail: "https://i.ytimg.com/vi/Vhnn_sG7xUk/maxresdefault.jpg",
-          youtubeUrl: "https://www.youtube.com/watch?v=Vhnn_sG7xUk",
-          summary: "FlameFrags 在 Unstable SMP 最震撼的封神之戰！面對死亡即封禁的殘酷環境，他透過對極限機制的鑽研與冒險測試，意外卡出了永久不死心數，奠定了他作為無敵先鋒的傳奇起點。",
+          duration: "32:50",
+          thumbnail: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+I+Became+the+Strongest+on+the+Unstable+SMP",
+          summary: "FlameFrags 在 Unstable SMP 的封神之戰！面對各路豪強公會的圍剿與比武大會挑戰，他憑藉極致的近戰刀速與瞬切盾牌身法力挫守擂霸主，奪得全服最強戰神稱號。",
           keyMoments: [
-            "在殘血 0.5 顆心的極限狀態下完成機制卡位",
-            "在全服公頻引來管理員與強者的不可置信圍觀",
-            "親身測試承受一次高空墜落與 TNT 直擊依然屹立不倒"
+            "八強賽 10 秒速勝破盾戰術展示",
+            "決賽長達 15 分鐘的極限耐久大對決",
+            "全場觀眾起立致敬，披上最強戰神披風"
           ],
-          unexpectedLoot: "Glitched Immortal Heart Reservoir"
+          unexpectedLoot: "Flame’s Bespoke Warplate（烈焰專屬重戰甲）"
         },
         {
           id: "unstable_flame_solo",
@@ -909,7 +909,7 @@ const UNSTABLE_DATA = {
           duration: "28:15",
           thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
           youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+SOLO+Player+VS+Toxic+Minecraft+Team",
-          summary: "毒瘤公會佔山為王並獵殺弱小，FlameFrags 隻身下戰書。在複雜的山脈地形中，他以高超的三叉戟追擊與水晶放置技術，以 1 敵 5 斬殺對方全員，繳獲整座基地的戰利品。",
+          summary: "毒瘤公會佔山為王並獵殺弱小，FlameFrags 隻身下戰書。在複雜的山脈雪原地形中，他以高超的破盾走砍與預判反擊，以 1 敵 5 斬殺對方全員，在廢墟中拾起純潔小花。",
           keyMoments: [
             "雪山頂峰的水晶瞬爆雙殺反擊",
             "在追逐戰中冷靜預判並截斷敵軍退路",
@@ -918,20 +918,20 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Rejoice’s Flower & Overlord's Slain Trophy"
         },
         {
-          id: "unstable_flame_strongest",
-          title: "I Became the Strongest on the Unstable SMP",
-          titleZh: "我加冕成為 Unstable SMP 的最強戰神",
-          publishDate: "2024-08-14",
-          duration: "32:50",
-          thumbnail: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+I+Became+the+Strongest+on+the+Unstable+SMP",
-          summary: "伺服器舉辦武道大會，各路豪強雲集。FlameFrags 一路過關斬將，在決賽中面對神裝拉滿的守擂霸主，以極限刀速與步法粉碎對手防線，奪得全服最強稱號。",
+          id: "unstable_flame_terminus",
+          title: "Escaping Terminus: The Deadliest Minecraft Prison",
+          titleZh: "逃離 Terminus：Minecraft 最致命的死刑黑牢",
+          publishDate: "2024-08-30",
+          duration: "34:20",
+          thumbnail: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+Escaping+Terminus+The+Deadliest+Minecraft+Prison",
+          summary: "遭敵對勢力暗算被押入 Unstable 伺服器中最致命的黑牢 Terminus。在多重守衛者激光與基岩絕境中，FlameFrags 徒手擊殺獄卒奪回兵器，炸穿排氣閥完成震驚全服的大逃亡！",
           keyMoments: [
-            "八強賽 10 秒速勝破盾戰術展示",
-            "決賽長達 15 分鐘的極限耐久大對決",
-            "全場觀眾起立致敬，披上最強戰神披風"
+            "在浸水黑曜石牢房摸清守衛激光死角",
+            "利用私藏微型紅石短路癱瘓牢區電網",
+            "擊殺典獄長奪得 Terminus 破獄者合金鎬"
           ],
-          unexpectedLoot: "Flame’s Bespoke Warplate"
+          unexpectedLoot: "Terminus Breaker Pickaxe（Terminus 破獄鎬）"
         },
         {
           id: "unstable_flame_expose",
@@ -941,29 +941,29 @@ const UNSTABLE_DATA = {
           duration: "27:30",
           thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
           youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+I+Exposed+Minecraft%27s+Strongest+Player",
-          summary: "某位備受推崇的明星選手暗中利用伺服器延遲外掛與替身打假賽。FlameFrags 在一場公開賭鬥中佈置了無延遲鏡頭與紅石檢測，在百萬觀眾面前當場戳穿騙局並給予審判。",
+          summary: "某位備受推崇的明星選手暗中利用伺服器延遲外掛與替身打假賽。FlameFrags 在一場公開賭鬥中佈置了紅石測速時鐘，在百萬觀眾面前當場戳穿作弊騙局，並拔刀將其斬落擂台！",
           keyMoments: [
             "用紅石時鐘封包計時器現場抓包延遲作弊",
             "以純粹的原生技術在零外掛狀態下擊碎對手",
             "將偽強者的名牌釘在主城恥辱柱上"
           ],
-          unexpectedLoot: "Exposed Cheat Module Evidence"
+          unexpectedLoot: "The Truth-Seeker's Executioner Blade"
         },
         {
-          id: "yBy5NnLTiWQ",
-          title: "I Got Trained By a Minecraft Combat Master",
-          titleZh: "我接受了 Minecraft 死神 ClownPierce 的魔鬼特訓",
-          publishDate: "2024-12-10",
-          duration: "36:45",
-          thumbnail: "https://i.ytimg.com/vi/yBy5NnLTiWQ/maxresdefault.jpg",
-          youtubeUrl: "https://www.youtube.com/watch?v=yBy5NnLTiWQ",
-          summary: "為了突破自己的戰力瓶頸，FlameFrags 找到全服聞風喪膽的傳奇死神 ClownPierce。面對一擊必殺的魔鬼特訓，他經歷了上百次陣亡邊緣的痛苦淬煉，最終繼承死神戰鐮！",
+          id: "unstable_flame_vault",
+          title: "Searching for a Vault that Doesn't Exist",
+          titleZh: "尋找那座『不存在的隱形金庫』",
+          publishDate: "2024-12-18",
+          duration: "31:45",
+          thumbnail: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
+          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+Searching+for+a+Vault+that+Doesn%27t+Exist",
+          summary: "為追尋失落代碼的真相，FlameFrags 根據殘破線索深入虛空邊界，尋找地圖上未標註的幽靈寶庫。面對致命虛空斷層與隱形陷阱，他成功解開古代代碼密碼！",
           keyMoments: [
-            "在狹窄黑曜石角鬥場對決 ClownPierce 的恐怖壓迫感",
-            "領悟 360 度無死角切刀與破防節奏",
-            "完成最終考核獲贈 ClownPierce 親傳戰鐮"
+            "利用盲跳與珍珠定位虛空邊界隱形路徑",
+            "破譯失落古代密室的十六進制代碼門",
+            "在寶庫核心取得 Ghost Vault Keycard"
           ],
-          unexpectedLoot: "ClownPierce’s Training Scythe（死神親傳戰鐮）"
+          unexpectedLoot: "Ghost Vault Keycard（虛空金庫幽靈密匙）"
         },
         {
           id: "unstable_flame_1000war",
@@ -1024,7 +1024,7 @@ const UNSTABLE_DATA = {
         parrot: "被推舉為王位候選人，在黑手黨的暗殺威脅下發表廣場演說，以壓倒性票數加冕為王。",
         wemmbu: "面對黑手黨綁架摯友 Eggchan 的威脅，隻身血洗黑手黨總舵，在最後 3 秒救出夥伴。",
         spoke: "假意投誠黑手黨擔任雙面間諜，在教父首腦峰會時引爆共振瞬爆礦車，埋葬犯罪家族。",
-        flamefrags: "深感自身實力不足，尋訪死神 ClownPierce 經歷地獄修煉，繼承傳奇連斬戰鐮。"
+        flamefrags: "遭陷害被關入全服最殘酷死刑黑牢 Terminus，憑藉極限技巧破獄而出，化身復仇戰神。"
       }
     },
     {
@@ -1122,7 +1122,8 @@ const UNSTABLE_DATA = {
           },
           {
             text: "掏出鞘翅高速低空俯衝，從通風換氣孔直插核心金庫！",
-            nextId: "wemmbu_c2_air",
+            nextId: "wemmbu_c2_raid",
+            itemGain: "The Crucible & Gambit",
             statCheck: "strategy"
           }
         ]
@@ -1160,8 +1161,9 @@ const UNSTABLE_DATA = {
             statCheck: "intellect"
           },
           {
-            text: "在管道終點堆疊 400 輛共振 TNT 礦車，送他們一場伺服器卡頓煙火！",
-            nextId: "spoke_c2_boom",
+            text: "在管道終點堆疊 400 輛共振 TNT 礦車，送他們一場伺服器卡頓煙火並順手牽羊！",
+            nextId: "spoke_c2_heist",
+            itemGain: "Resonance TNT Minecart Core",
             statCheck: "strategy"
           }
         ]
@@ -1189,38 +1191,40 @@ const UNSTABLE_DATA = {
       // FlameFrags 線
       {
         id: "flame_c1",
-        name: "FlameFrags 篇：卡出不死之身",
+        name: "FlameFrags 篇：逃離最致命黑牢 Terminus",
         charId: "flamefrags",
-        description: "在極限硬核伺服器中，你身陷五名賞金殺手的包圍，生命值僅剩半顆心！此時你背包裡只剩一顆金蘋果與一個圖騰，判定時間只剩 50 毫秒！",
+        description: "你遭到陷害被關入 Unstable SMP 最恐怖的特級死刑黑牢 Terminus，四周被多重浸水黑曜石、遠古守衛者結界與精銳獄卒嚴密看守。此時你手邊只有一把手工打磨的破壞鎬碎片！",
         choices: [
           {
-            text: "極限同步吃下金蘋果並切換副手圖騰，觸發封包延遲卡出不死金心！",
-            nextId: "flame_c2_immortal",
-            itemGain: "Glitched Immortal Heart Reservoir",
+            text: "利用微型紅石元件短路電網，在激光充能盲區手持破壞鎬鑿穿基岩天井！",
+            nextId: "flame_c2_breakout",
+            itemGain: "Terminus Breaker Pickaxe",
             statCheck: "pvpCombat"
           },
           {
-            text: "以命相搏！揮舞戰刃直接衝向獵人首領，誓死同歸於盡！",
-            nextId: "flame_c2_berserk",
+            text: "正面徒手格鬥反殺獄卒隊長，奪回神裝並搶走金庫通行卡殺出重圍！",
+            nextId: "flame_c2_breakout",
+            itemGain: "Ghost Vault Keycard",
             statCheck: "pvpCombat"
           }
         ]
       },
       {
-        id: "flame_c2_immortal",
+        id: "flame_c2_breakout",
         name: "FlameFrags 篇：萬人大內戰的先鋒號角",
         charId: "flamefrags",
-        description: "你擁有了十顆常駐不死心數，並完成了 ClownPierce 的地獄修煉！萬人大內戰打響，自由同盟被敵軍基岩城牆阻攔，全軍士氣低落！",
+        description: "你成功越獄重返自由同盟，並在擂台上當眾戳穿作弊偽神的面具！千人大內戰全面打響，自由同盟被敵軍基岩城牆阻攔，全軍士氣低落！",
         choices: [
           {
-            text: "扛起 1000-Player 先鋒軍旗，揮舞死神連斬戰鐮，隻身撞碎城門！",
+            text: "扛起 1000-Player 先鋒軍旗，揮舞 Truth-Seeker 處決戰刃，隻身鑿碎敵軍防線！",
             nextId: "flame_ending_vanguard",
-            itemGain: "ClownPierce’s Training Scythe",
+            itemGain: "The Truth-Seeker's Executioner Blade",
             statCheck: "pvpCombat"
           },
           {
-            text: "在敵軍後方發起刺殺戰術，陣斬敵方主將奪回戰場主導權！",
+            text: "身披特製重裝戰甲發起刺殺戰術，陣斬敵方作弊主將奪回戰場主導權！",
             nextId: "flame_ending_assassin",
+            itemGain: "Flame’s Bespoke Warplate",
             statCheck: "strategy"
           }
         ]
@@ -1277,16 +1281,16 @@ const UNSTABLE_DATA = {
       },
       {
         id: "flame_ending_vanguard",
-        name: "結局：萬軍莫敵的不死戰神（FlameFrags 經典線）",
-        description: "你手持先鋒軍旗與死神戰鐮，以一己之力鑿穿千人敵陣！戰爭結束之時，你站在殘垣斷壁之上，全服戰士為你的勇武齊聲高呼！",
-        badge: "⚡ 不朽戰神 (The Immortal Vanguard)",
+        name: "結局：萬軍莫敵的先鋒戰神（FlameFrags 經典線）",
+        description: "你手持先鋒軍旗與 Truth-Seeker 處決戰刃，以一己之力鑿穿千人敵陣！戰爭結束之時，你站在殘垣斷壁之上，全服戰士為你的勇武齊聲高呼！",
+        badge: "⚡ 先鋒戰神 (The Vanguard Sovereign)",
         isEnding: true
       },
       {
         id: "flame_ending_assassin",
-        name: "結局：幽影戰刃",
-        description: "敵將首級在瞬息之間落地。無人知曉你是如何接近的，只知道戰場上曾劃過一抹致命的死神紅光！",
-        badge: "🗡️ 戰場收割者 (The Silent Reaper)",
+        name: "結局：幽影處決者",
+        description: "作弊敵將首級在瞬息之間落地，偽神的謊言被徹底撕碎。戰場上只留下烈焰劃過的赤紅殘影與永恆傳奇！",
+        badge: "🗡️ 破偽處決者 (The Truth Executor)",
         isEnding: true
       }
     ]
