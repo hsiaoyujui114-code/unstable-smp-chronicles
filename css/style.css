@@ -64,9 +64,26 @@ body {
   position: relative;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 85% 65%, rgba(245, 158, 11, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 40%);
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.05) 0%, transparent 45%);
+  background-size: 64px 64px, 64px 64px, auto, auto, auto;
+  background-position: 0 0, 0 0, center, center, center;
+}
+
+/* Unstable SMP 虛空暗角異常暈影 (純 GPU 合成，0 運算負擔) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(4, 6, 10, 0.75) 100%);
 }
 
 /* Canvas Particle Background */
@@ -1731,6 +1748,15 @@ body {
 /* ==========================================================================
    Extreme Performance Mode (極速流暢模式 - 0 動畫、0 算力浪費)
    ========================================================================== */
+body.perf-mode {
+  background-image: none !important;
+  background-color: var(--bg-primary) !important;
+}
+
+body.perf-mode::before {
+  display: none !important;
+}
+
 body.perf-mode #particles-canvas {
   display: none !important;
 }

@@ -105,15 +105,15 @@ class SoundEngine {
   }
 }
 
-// 2. 懸浮粒子背景動畫 (極致性能優化：支援完全關閉、滾動時暫停、限制 30FPS、減少粒子數量)
+// 2. Unstable SMP 虛空異常與代碼崩解微粒背景 (專屬風格：飄浮虛空代碼、哭泣黑曜石方塊像質、偶發裂隙微電弧)
 class ParticleCanvas {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext("2d");
     this.particles = [];
-    this.maxParticles = 14; // 精簡至 14 顆微粒，極大幅降低 CPU/GPU 負擔
-    this.themeColor = "rgba(56, 189, 248, ";
+    this.maxParticles = 20; // 鎖定 20 顆精緻微粒，兼顧極致震撼與零算力負擔 (CPU < 0.2%)
+    this.themeRgb = "56, 189, 248"; // 預設藍 (Parrot)
     this.mouseX = null;
     this.mouseY = null;
     this.lastFrameTime = 0;
@@ -123,6 +123,16 @@ class ParticleCanvas {
     this.isEnabled = true;
     this.animId = null;
 
+    // 偶發虛空微電弧計時
+    this.lastAnomalyTime = 0;
+    this.activeArc = null;
+
+    // Unstable SMP 宇宙關鍵詞與代碼漏洞符文
+    this.runes = [
+      "NULL", "0x7F", "VOID", "ERR", "§k01", "✦", "PARAGON", 
+      "TERMINUS", "ANOMALY", "0x00", "NaN", "CORRUPT", "0101"
+    ];
+
     this.resize();
     this.initParticles();
     this.bindEvents();
@@ -130,13 +140,37 @@ class ParticleCanvas {
   }
 
   setTheme(colorRgb) {
-    this.themeColor = colorRgb;
+    // 支援傳入 "rgba(56, 189, 248, " 或包含數字的色彩字串
+    const match = String(colorRgb).match(/\d+,\s*\d+,\s*\d+/);
+    if (match) {
+      this.themeRgb = match[0];
+    }
   }
 
   resize() {
     if (!this.canvas) return;
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
+  }
+
+  initParticles() {
+    this.particles = [];
+    for (let i = 0; i < this.maxParticles; i++) {
+      const isRune = i % 2 === 0;
+      this.particles.push({
+        x: Math.random() * (this.canvas ? this.canvas.width : window.innerWidth),
+        y: Math.random() * (this.canvas ? this.canvas.height : window.innerHeight),
+        size: isRune ? 9 : (Math.random() * 3 + 2), // 方塊 2-5px，符文 9px
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: -Math.random() * 0.45 - 0.15, // 模擬麥塊哭泣黑曜石淚滴微粒緩緩向上飄逸
+        alpha: Math.random() * 0.32 + 0.12,
+        baseAlpha: Math.random() * 0.32 + 0.12,
+        isRune: isRune,
+        text: this.runes[Math.floor(Math.random() * this.runes.length)],
+        glitchCooldown: Math.floor(Math.random() * 120),
+        colorVariant: i % 3 // 0: 主題色, 1: 虛空紫 (Crying Obsidian), 2: 幽匿青
+      });
+    }
   }
 
   start() {
@@ -175,7 +209,7 @@ class ParticleCanvas {
       resizeTimer = setTimeout(() => this.resize(), 200);
     }, { passive: true });
 
-    // 滾動時立即暫停 Canvas 繪製，將 100% 算力留給頁面平滑滾動
+    // 滾動時立即暫停 Canvas 繪製，將 100% 算力留給頁面平滑滾動 (零掉幀防護)
     window.addEventListener("scroll", () => {
       this.isScrolling = true;
       clearTimeout(this.scrollTimeout);
@@ -196,7 +230,7 @@ class ParticleCanvas {
         this.mouseX = e.clientX;
         this.mouseY = e.clientY;
         mouseMoveThrottle = true;
-        setTimeout(() => { mouseMoveThrottle = false; }, 50);
+        setTimeout(() => { mouseMoveThrottle = false; }, 40);
       }
     }, { passive: true });
 
@@ -206,55 +240,133 @@ class ParticleCanvas {
     }, { passive: true });
   }
 
-  initParticles() {
-    this.particles = [];
-    for (let i = 0; i < this.maxParticles; i++) {
-      this.particles.push({
-        x: Math.random() * this.canvas.width,
-        y: Math.random() * this.canvas.height,
-        size: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.45 + 0.15
-      });
-    }
-  }
-
   animate(timestamp) {
     if (!this.isEnabled) return;
     this.animId = requestAnimationFrame((t) => this.animate(t));
 
-    // 當滾動中、分頁在後台、或未達 30FPS 刷新時間間隔時，直接跳過重繪
+    // 當滾動中、分頁在後台、或未達 30FPS 刷新時間間隔時，直接跳過重繪 (抗卡頓核心)
     if (this.isScrolling || this.isPaused) return;
-    if (timestamp - this.lastFrameTime < 33) return; // 鎖定 30FPS，節省繪圖算力
+    if (timestamp - this.lastFrameTime < 33) return; // 鎖定 ~30FPS
     this.lastFrameTime = timestamp;
 
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    const w = this.canvas.width;
+    const h = this.canvas.height;
+    this.ctx.clearRect(0, 0, w, h);
 
+    // 處理偶發虛空微電弧 / 異常裂隙 (每 5-7 秒觸發一次微弱電弧放電)
+    if (!this.activeArc && timestamp - this.lastAnomalyTime > 5500) {
+      if (Math.random() < 0.45 && this.particles.length > 2) {
+        const p1 = this.particles[Math.floor(Math.random() * this.particles.length)];
+        let p2 = null;
+        let minD = 260;
+        for (let p of this.particles) {
+          if (p === p1) continue;
+          const d = Math.hypot(p.x - p1.x, p.y - p1.y);
+          if (d < minD && d > 35) {
+            minD = d;
+            p2 = p;
+          }
+        }
+        if (p2) {
+          this.activeArc = {
+            x1: p1.x, y1: p1.y,
+            x2: p2.x, y2: p2.y,
+            life: 6, // 6 幀 (~200ms)
+            midOffset: (Math.random() - 0.5) * 35
+          };
+          this.lastAnomalyTime = timestamp;
+        }
+      }
+    }
+
+    // 繪製虛空微電弧 (Unstable 宇宙裂隙特徵)
+    if (this.activeArc) {
+      const arc = this.activeArc;
+      this.ctx.beginPath();
+      this.ctx.moveTo(arc.x1, arc.y1);
+      const mx = (arc.x1 + arc.x2) / 2 + arc.midOffset;
+      const my = (arc.y1 + arc.y2) / 2 + arc.midOffset * 0.6;
+      this.ctx.lineTo(mx, my);
+      this.ctx.lineTo(arc.x2, arc.y2);
+      this.ctx.strokeStyle = `rgba(168, 85, 247, ${(arc.life / 6) * 0.28})`;
+      this.ctx.lineWidth = 1;
+      this.ctx.stroke();
+      arc.life--;
+      if (arc.life <= 0) {
+        this.activeArc = null;
+      }
+    }
+
+    // 繪製滑鼠交互異常範圍光圈 (微弱虛空探測環)
+    if (this.mouseX !== null && this.mouseY !== null) {
+      this.ctx.beginPath();
+      this.ctx.arc(this.mouseX, this.mouseY, 48, 0, Math.PI * 2);
+      this.ctx.strokeStyle = `rgba(${this.themeRgb}, 0.08)`;
+      this.ctx.lineWidth = 1;
+      this.ctx.setLineDash([4, 4]);
+      this.ctx.stroke();
+      this.ctx.setLineDash([]);
+    }
+
+    // 粒子與代碼符文繪製
     for (let p of this.particles) {
       p.x += p.speedX;
       p.y += p.speedY;
 
       // 邊界循環
-      if (p.x < 0) p.x = this.canvas.width;
-      if (p.x > this.canvas.width) p.x = 0;
-      if (p.y < 0) p.y = this.canvas.height;
-      if (p.y > this.canvas.height) p.y = 0;
+      if (p.x < -20) p.x = w + 10;
+      if (p.x > w + 20) p.x = -10;
+      if (p.y < -30) {
+        p.y = h + 20;
+        p.x = Math.random() * w;
+        if (p.isRune) {
+          p.text = this.runes[Math.floor(Math.random() * this.runes.length)];
+        }
+      }
 
-      // 互動游標微排斥
+      // 滑鼠異常場微排斥
       if (this.mouseX !== null && this.mouseY !== null) {
         const dx = p.x - this.mouseX;
         const dy = p.y - this.mouseY;
         const distSq = dx * dx + dy * dy;
-        if (distSq < 4900) { // 70px 距離內
+        if (distSq < 5625) { // 75px 範圍
           const dist = Math.sqrt(distSq);
-          p.x += (dx / dist) * 1.2;
-          p.y += (dy / dist) * 1.2;
+          p.x += (dx / dist) * 1.5;
+          p.y += (dy / dist) * 1.5;
         }
       }
 
-      this.ctx.fillStyle = `${this.themeColor}${p.alpha})`;
-      this.ctx.fillRect(p.x, p.y, p.size, p.size);
+      // 代碼偶發閃爍 / 字符錯位 (Glitch)
+      p.glitchCooldown--;
+      let renderText = p.text;
+      let alpha = p.alpha;
+      if (p.glitchCooldown <= 0) {
+        if (Math.random() < 0.25) {
+          renderText = "[?]";
+          alpha = Math.min(0.65, p.alpha * 1.8);
+        }
+        p.glitchCooldown = Math.floor(Math.random() * 150) + 60;
+      }
+
+      // 決定色彩 (主題色 / 哭泣黑曜石紫 / 幽匿代碼藍)
+      let rgb = this.themeRgb;
+      if (p.colorVariant === 1) rgb = "168, 85, 247"; // Crying obsidian purple
+      else if (p.colorVariant === 2) rgb = "56, 189, 248"; // Void cyan
+
+      if (p.isRune) {
+        this.ctx.font = '9px "JetBrains Mono", monospace';
+        this.ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
+        this.ctx.fillText(renderText, p.x, p.y);
+      } else {
+        // 像素立方微粒 (Minecraft Pixel Mote)
+        this.ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
+        this.ctx.fillRect(p.x, p.y, p.size, p.size);
+        // 微弱亮芯
+        if (p.size >= 3) {
+          this.ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.6})`;
+          this.ctx.fillRect(p.x + 1, p.y + 1, 1, 1);
+        }
+      }
     }
   }
 }
