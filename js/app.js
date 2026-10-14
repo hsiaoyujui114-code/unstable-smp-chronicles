@@ -297,7 +297,7 @@ class ParticleCanvas {
       }
     }
 
-    // 繪製滑鼠交互異常範圍光圈 (微弱虛空探測環)
+    // 繪製滑鼠互動異常範圍光圈 (微弱虛空探測環)
     if (this.mouseX !== null && this.mouseY !== null) {
       this.ctx.beginPath();
       this.ctx.arc(this.mouseX, this.mouseY, 48, 0, Math.PI * 2);

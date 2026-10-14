@@ -18,7 +18,7 @@
 * **Parrot (ParrotX2)**：
   * **稱號**：伺服器調查者 · 越獄智將 · 第一任民選國王
   * **主線故事**：從意外挖出「毀滅世界按鈕」、在絕海黑牢 Paragon 監獄中以紅石偷運物資大越獄、加冕登基為王經歷凶險治理風暴，到統帥千人大內戰。
-  * **意外神器**：`Parrot's Spyglass`（靈魂觀測望遠鏡）、`World Destroyer Button`（世界毀滅按鈕）、`Smuggled Paragon Shulker`（走私黑牢潛影盒）、`The Sovereign Scepter`（國王權杖）、`Null Code Compass`（虛空代碼羅盤）。
+  * **意外神器**：`Parrot's Spyglass`（靈魂觀測望遠鏡）、`World Destroyer Button`（世界毀滅按鈕）、`Smuggled Paragon Shulker`（走私黑牢界伏盒）、`The Sovereign Scepter`（國王權杖）、`Null Code Compass`（虛空代碼羅盤）。
 * **Wemmbu**：
   * **稱號**：力量泰坦 · 禁忌金庫掠奪者 · 帝國文明統治者
   * **主線故事**：隻身強攻全服防守最森嚴的非法基岩金庫奪取神物、在數十名獵人圍攻下化身「不可捕捉者」、建立繁盛文明摧毀 PrinceZam 帝國、為洗滌腐敗親手毀滅伺服器，以及為了摯友 Eggchan 血洗黑手黨。
@@ -30,7 +30,7 @@
 * **FlameFrags**：
   * **稱號**：不死戰神 · 極限生存先鋒 · 萬軍角鬥之王
   * **主線故事**：在硬核極限環境下利用生命同步毫秒差卡出令全服震驚的「常駐不死金心」、孤狼 1v5 剿滅毒瘤公會並在廢墟中拾獲純真之花、拜師死神 ClownPierce 經歷地獄修煉繼承收割戰鐮，並在萬人大內戰中身扛先鋒軍旗鑿穿敵陣。
-  * **意外神器**：`Glitched Immortal Heart Reservoir`（代碼異常不死金心）、`Flame’s Bespoke Warplate`（烈焰專屬下界合金重戰甲）、`ClownPierce’s Training Scythe`（死神親傳連斬戰鐮）、`Rejoice’s Flower`（戰火廢墟中的純白之花）、`1000-Player Vanguard War Banner`（萬人大內戰先鋒軍旗）。
+  * **意外神器**：`Glitched Immortal Heart Reservoir`（代碼異常不死金心）、`Flame’s Bespoke Warplate`（烈焰專屬獄髓重戰甲）、`ClownPierce’s Training Scythe`（死神親傳連斬戰鐮）、`Rejoice’s Flower`（戰火廢墟中的純白之花）、`1000-Player Vanguard War Banner`（萬人大內戰先鋒軍旗）。
 
 ---
 
