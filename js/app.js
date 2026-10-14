@@ -105,14 +105,14 @@ class SoundEngine {
   }
 }
 
-// 2. 懸浮粒子背景動畫 (極致性能優化：滾動時暫停、限制 30FPS、減少粒子數量)
+// 2. 懸浮粒子背景動畫 (極致性能優化：支援完全關閉、滾動時暫停、限制 30FPS、減少粒子數量)
 class ParticleCanvas {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext("2d");
     this.particles = [];
-    this.maxParticles = 18; // 精簡至 18 顆微粒，極大幅降低 CPU/GPU 負擔
+    this.maxParticles = 14; // 精簡至 14 顆微粒，極大幅降低 CPU/GPU 負擔
     this.themeColor = "rgba(56, 189, 248, ";
     this.mouseX = null;
     this.mouseY = null;
@@ -120,11 +120,13 @@ class ParticleCanvas {
     this.isScrolling = false;
     this.scrollTimeout = null;
     this.isPaused = false;
+    this.isEnabled = true;
+    this.animId = null;
 
     this.resize();
     this.initParticles();
     this.bindEvents();
-    this.animate(0);
+    this.start();
   }
 
   setTheme(colorRgb) {
@@ -132,8 +134,38 @@ class ParticleCanvas {
   }
 
   resize() {
+    if (!this.canvas) return;
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
+  }
+
+  start() {
+    if (!this.canvas || !this.isEnabled || this.animId) return;
+    this.canvas.style.display = "block";
+    this.animId = requestAnimationFrame((t) => this.animate(t));
+  }
+
+  stop() {
+    this.isEnabled = false;
+    if (this.animId) {
+      cancelAnimationFrame(this.animId);
+      this.animId = null;
+    }
+    if (this.canvas) {
+      this.canvas.style.display = "none";
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+  }
+
+  toggle(enable) {
+    if (enable === undefined) enable = !this.isEnabled;
+    if (enable) {
+      this.isEnabled = true;
+      this.start();
+    } else {
+      this.stop();
+    }
+    return this.isEnabled;
   }
 
   bindEvents() {
@@ -159,11 +191,12 @@ class ParticleCanvas {
 
     let mouseMoveThrottle = false;
     window.addEventListener("mousemove", (e) => {
+      if (!this.isEnabled) return;
       if (!mouseMoveThrottle) {
         this.mouseX = e.clientX;
         this.mouseY = e.clientY;
         mouseMoveThrottle = true;
-        setTimeout(() => { mouseMoveThrottle = false; }, 40);
+        setTimeout(() => { mouseMoveThrottle = false; }, 50);
       }
     }, { passive: true });
 
@@ -180,19 +213,20 @@ class ParticleCanvas {
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         size: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 0.35,
-        speedY: (Math.random() - 0.5) * 0.35,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3,
         alpha: Math.random() * 0.45 + 0.15
       });
     }
   }
 
   animate(timestamp) {
-    requestAnimationFrame((t) => this.animate(t));
+    if (!this.isEnabled) return;
+    this.animId = requestAnimationFrame((t) => this.animate(t));
 
     // 當滾動中、分頁在後台、或未達 30FPS 刷新時間間隔時，直接跳過重繪
     if (this.isScrolling || this.isPaused) return;
-    if (timestamp - this.lastFrameTime < 33) return; // 鎖定 30FPS，節省 50% 繪圖算力
+    if (timestamp - this.lastFrameTime < 33) return; // 鎖定 30FPS，節省繪圖算力
     this.lastFrameTime = timestamp;
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -212,7 +246,7 @@ class ParticleCanvas {
         const dx = p.x - this.mouseX;
         const dy = p.y - this.mouseY;
         const distSq = dx * dx + dy * dy;
-        if (distSq < 6400) { // 80px 距離內
+        if (distSq < 4900) { // 70px 距離內
           const dist = Math.sqrt(distSq);
           p.x += (dx / dist) * 1.2;
           p.y += (dy / dist) * 1.2;
@@ -244,9 +278,43 @@ class AppController {
     this.setupModals();
     this.setupSearch();
     this.setupAudioToggle();
+    this.setupPerformanceToggle();
 
     // 初始化小遊戲
     new QuestGameEngine(UNSTABLE_DATA, this.soundEngine);
+  }
+
+  setupPerformanceToggle() {
+    const perfBtn = document.getElementById("perf-toggle-btn");
+    if (!perfBtn) return;
+
+    // 檢查存檔或自動偵測 (低核 CPU 或移動端預設開啟效能模式)
+    const savedPerf = localStorage.getItem("unstable_perf_mode");
+    const isMobileOrLowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+      /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const initialPerf = savedPerf !== null ? savedPerf === "true" : isMobileOrLowEnd;
+    this.setPerformanceMode(initialPerf);
+
+    perfBtn.addEventListener("click", () => {
+      const current = document.body.classList.contains("perf-mode");
+      this.setPerformanceMode(!current);
+      this.soundEngine.playClick();
+    });
+  }
+
+  setPerformanceMode(enable) {
+    const perfBtn = document.getElementById("perf-toggle-btn");
+    document.body.classList.toggle("perf-mode", enable);
+    if (perfBtn) {
+      perfBtn.classList.toggle("active", enable);
+      perfBtn.title = enable 
+        ? "極速效能模式已開啟 (微粒動畫與高耗能陰影已關閉，點擊恢復特效)" 
+        : "切換極速效能模式 (停用背景微粒與陰影)";
+    }
+    this.particleCanvas?.toggle(!enable);
+    localStorage.setItem("unstable_perf_mode", enable);
   }
 
   setupAudioToggle() {
@@ -266,8 +334,16 @@ class AppController {
   setupNavigation() {
     const navLinks = document.querySelectorAll(".nav-link");
     navLinks.forEach(link => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (e) => {
         this.soundEngine.playClick();
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }
       });
     });
   }
@@ -335,8 +411,8 @@ class AppController {
 
             <div class="portrait-visual-frame">
               ${this.portraitViewMode === 'avatar'
-                ? `<img src="${char.avatar}" alt="${char.name}" class="char-avatar-render" title="${char.name} 當前官方形象照">`
-                : `<img src="${char.skinBody}" alt="${char.name}" class="char-skin-render" title="${char.name} 遊戲內 3D 皮膚">`
+                ? `<img src="${char.avatar}" alt="${char.name}" class="char-avatar-render" decoding="async" title="${char.name} 當前官方形象照">`
+                : `<img src="${char.skinBody}" alt="${char.name}" class="char-skin-render" decoding="async" title="${char.name} 遊戲內 3D 皮膚">`
               }
             </div>
 
@@ -507,7 +583,7 @@ class AppController {
           ${char.videos.map(vid => `
             <div class="video-card">
               <div class="video-thumb-container" data-video-id="${vid.id}" data-video-title="${vid.titleZh}">
-                <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy">
+                <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy" decoding="async">
                 <div class="video-play-overlay">
                   <div class="play-circle">
                     <div class="play-triangle"></div>
@@ -574,7 +650,7 @@ class AppController {
               <!-- Parrot POV -->
               <div class="pov-box" style="--pov-color: var(--parrot-color);">
                 <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.parrot.avatar}" class="pov-avatar" alt="Parrot">
+                  <img src="${UNSTABLE_DATA.characters.parrot.avatar}" class="pov-avatar" alt="Parrot" loading="lazy" decoding="async">
                   <span class="pov-name">Parrot</span>
                 </div>
                 <p class="pov-action-text">${item.details.parrot}</p>
@@ -583,7 +659,7 @@ class AppController {
               <!-- Wemmbu POV -->
               <div class="pov-box" style="--pov-color: var(--wemmbu-color);">
                 <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.wemmbu.avatar}" class="pov-avatar" alt="Wemmbu">
+                  <img src="${UNSTABLE_DATA.characters.wemmbu.avatar}" class="pov-avatar" alt="Wemmbu" loading="lazy" decoding="async">
                   <span class="pov-name">Wemmbu</span>
                 </div>
                 <p class="pov-action-text">${item.details.wemmbu}</p>
@@ -592,7 +668,7 @@ class AppController {
               <!-- Spoke POV -->
               <div class="pov-box" style="--pov-color: var(--spoke-color);">
                 <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.spoke.avatar}" class="pov-avatar" alt="Spoke">
+                  <img src="${UNSTABLE_DATA.characters.spoke.avatar}" class="pov-avatar" alt="Spoke" loading="lazy" decoding="async">
                   <span class="pov-name">Spoke</span>
                 </div>
                 <p class="pov-action-text">${item.details.spoke}</p>
@@ -601,7 +677,7 @@ class AppController {
               <!-- FlameFrags POV -->
               <div class="pov-box" style="--pov-color: var(--flame-color);">
                 <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.flamefrags.avatar}" class="pov-avatar" alt="FlameFrags">
+                  <img src="${UNSTABLE_DATA.characters.flamefrags.avatar}" class="pov-avatar" alt="FlameFrags" loading="lazy" decoding="async">
                   <span class="pov-name">FlameFrags</span>
                 </div>
                 <p class="pov-action-text">${item.details.flamefrags}</p>
