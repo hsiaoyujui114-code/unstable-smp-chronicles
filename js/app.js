@@ -544,10 +544,93 @@ class AppController {
           ${char.storyArcs.map((arc, i) => `
             <div class="story-arc-card">
               <div class="arc-header">
-                <span class="arc-num">ARC 0${i + 1}</span>
-                <h4 class="arc-title">${arc.title}</h4>
+                <div class="arc-header-left">
+                  <div class="arc-num-badge">CHAPTER 0${i + 1} // 紀元篇章</div>
+                  <h4 class="arc-title">${arc.title}</h4>
+                  ${arc.subtitle ? `<div class="arc-subtitle">${arc.subtitle}</div>` : ''}
+                </div>
               </div>
-              <p class="arc-desc">${arc.summary}</p>
+
+              <!-- 章節梗概導讀 -->
+              <div class="arc-overview-box">
+                <div class="arc-section-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  <span>章節全景梗概 (Chapter Synopsis)</span>
+                </div>
+                <p class="arc-desc">${arc.summary}</p>
+              </div>
+
+              <!-- 四維度深度劇情解析 -->
+              <div class="arc-deep-grid">
+                ${arc.genesis ? `
+                  <div class="deep-phase-card genesis-card">
+                    <div class="deep-phase-header">
+                      <span class="deep-phase-icon">⚡</span>
+                      <strong>起因與背景 (The Genesis)</strong>
+                    </div>
+                    <p class="deep-phase-text">${arc.genesis}</p>
+                  </div>
+                ` : ''}
+
+                ${arc.conflict ? `
+                  <div class="deep-phase-card conflict-card">
+                    <div class="deep-phase-header">
+                      <span class="deep-phase-icon">⚔️</span>
+                      <strong>具體交鋒與轉折 (Conflict & Turning Point)</strong>
+                    </div>
+                    <p class="deep-phase-text">${arc.conflict}</p>
+                  </div>
+                ` : ''}
+
+                ${arc.lootAndAnomaly ? `
+                  <div class="deep-phase-card loot-card">
+                    <div class="deep-phase-header">
+                      <span class="deep-phase-icon">💎</span>
+                      <strong>關鍵意外收穫與漏洞 (Crucial Loot & Anomaly)</strong>
+                    </div>
+                    <p class="deep-phase-text">${arc.lootAndAnomaly}</p>
+                  </div>
+                ` : ''}
+
+                ${arc.impact ? `
+                  <div class="deep-phase-card impact-card">
+                    <div class="deep-phase-header">
+                      <span class="deep-phase-icon">🌐</span>
+                      <strong>歷史意義與深遠影響 (Historical Impact)</strong>
+                    </div>
+                    <p class="deep-phase-text">${arc.impact}</p>
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- 關鍵情節節點標籤 -->
+              ${arc.keyPlotPoints && arc.keyPlotPoints.length > 0 ? `
+                <div class="arc-plot-steps-box">
+                  <div class="plot-steps-heading">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                    <span>本章核心劇情節點 (Key Plot Milestones)</span>
+                  </div>
+                  <ul class="plot-steps-list">
+                    ${arc.keyPlotPoints.map((step, sIdx) => `
+                      <li class="plot-step-item">
+                        <span class="plot-step-num">${sIdx + 1}</span>
+                        <span class="plot-step-text">${step}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+
+              <!-- 主角心境演變與獨白 -->
+              ${arc.psychology ? `
+                <div class="arc-psychology-box">
+                  <div class="psychology-quote-icon">“</div>
+                  <div class="psychology-content">
+                    <div class="psychology-label">主角心境演變與內心審判</div>
+                    <p class="psychology-quote-text">${arc.psychology}</p>
+                  </div>
+                </div>
+              ` : ''}
             </div>
           `).join("")}
         </div>

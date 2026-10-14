@@ -776,30 +776,213 @@ body {
 
 .arc-header {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 0.8rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
-.arc-num {
+.arc-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.arc-num-badge {
+  display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: rgba(56, 189, 248, 0.12);
   color: var(--theme-current);
-  padding: 2px 8px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 10px;
   border-radius: 4px;
+  align-self: flex-start;
 }
 
 .arc-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
   color: #fff;
+  line-height: 1.3;
+}
+
+.arc-subtitle {
+  font-size: 0.9rem;
+  color: var(--theme-current);
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+/* 章節全景概括 */
+.arc-overview-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--theme-current);
+}
+
+.arc-section-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
 }
 
 .arc-desc {
-  color: var(--text-muted);
+  color: #e2e8f0;
   font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* 四維度深度劇情解析網格 */
+.arc-deep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.deep-phase-card {
+  background: #090e18;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition-fast);
+}
+
+.deep-phase-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.genesis-card { border-top: 2px solid #38bdf8; }
+.conflict-card { border-top: 2px solid #f97316; }
+.loot-card { border-top: 2px solid #facc15; }
+.impact-card { border-top: 2px solid #10b981; }
+
+.deep-phase-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+.deep-phase-icon {
+  font-size: 1.1rem;
+}
+
+.deep-phase-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
   line-height: 1.7;
+}
+
+/* 核心情節節點里程碑 */
+.arc-plot-steps-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.plot-steps-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--theme-current);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.plot-steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.plot-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.plot-step-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--theme-current);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 主角心境演變獨白 */
+.arc-psychology-box {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #facc15;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.psychology-quote-icon {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #facc15;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.psychology-content {
+  flex: 1;
+}
+
+.psychology-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #facc15;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.psychology-quote-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  line-height: 1.6;
 }
 
 /* Unexpected Items & Glitch Armory */
