@@ -99,9 +99,9 @@ const UNSTABLE_DATA = {
           psychology: "「戴上冠冕的那一刻，我明白了王冠不是榮耀的裝飾，而是一條沉重到足以壓垮靈魂的鎖鏈。但我若退縮，這座世界將重歸黑暗。」"
         },
         {
-          title: "第四章：揭發偽善文明與萬人內戰大決戰",
-          subtitle: "烏托邦假面具撕碎、三巨頭同盟締結與決定宇宙命運的終局決戰",
-          summary: "表面繁華祥和的超級文明『烏托邦（Utopia）』暗中實施人口奴役與殘酷的活體代碼抽取。Parrot 深入虎穴蒐集鐵證，在全服最高代表大會上當眾戳穿偽善帝國的謊言，引發了 Unstable SMP 史上規模最宏大的『萬人大內戰（The Great Civil War）』。Parrot 統率王國大軍，攜手 Wemmbu 與 FlameFrags 組成自由同盟，在漫天烽火中迎戰終局。",
+          title: "第四章：揭發偽善文明與千人大內戰風雲",
+          subtitle: "烏托邦假面具撕碎、三巨頭同盟締結與席捲全服的歷史性決戰",
+          summary: "表面繁華祥和的超級文明『烏托邦（Utopia）』暗中實施人口奴役與殘酷的活體代碼抽取。Parrot 深入虎穴蒐集鐵證，在全服最高代表大會上當眾戳穿偽善帝國的謊言，引發了 Unstable SMP 史上規模最宏大的『千人大內戰（The Great Civil War）』。Parrot 統率王國大軍，攜手 Wemmbu 與 FlameFrags 組成自由同盟，在漫天烽火中迎戰敵軍並大獲全勝。",
           genesis: "邊境多個村落再度離奇消失，所有線索皆指向東方自稱人間天國的烏托邦帝國。Parrot 攜帶虛空代碼羅盤感應到了前所未有的強烈異常擾動，決定冒險微服潛入烏托邦腹地查明真相。",
           conflict: "在烏托邦富麗堂皇的宮殿地下深處，Parrot 驚駭地目睹了被囚禁在玻璃屏障內的大量失蹤玩家，他們的經驗值與屬性正被非法紅石裝置強制抽取以餵養帝國核心。Parrot 冒死拷貝了實驗日誌與受害者名冊，隨後在全服各勢力齊聚的高峰大會上，當著所有領主與萬民的面將所有鐵證公之於眾。烏托邦首腦惱羞成怒，聯合所有頑固舊勢力發動全面內戰。面對遮天蔽日的敵軍軍團，Parrot 展現出非凡的胸襟與號召力，成功聯手力量霸主 Wemmbu 與不死戰神 FlameFrags 締結三巨頭自由同盟。決戰之日，Parrot 身披王國戰袍屹立於中央要塞指揮塔，調動跨區塊軌道砲陣列壓制敵軍火力，指揮同盟大軍奮勇反攻，親手終結了偽善帝國的殘暴統治。",
           lootAndAnomaly: "收繳《Null Code Compass（虛空異常代碼羅盤）》與烏托邦地下抽取代碼核心殘卷，拼湊出完整的宇宙真相圖譜。",
@@ -114,6 +114,23 @@ const UNSTABLE_DATA = {
             "全殲偽善帝國主力，為飽經滄桑的 Unstable SMP 迎來自由與曙光"
           ],
           psychology: "「歷史是由戰勝恐懼的人寫下的。我們所守護的從來不是某個虛幻的帝國，而是每一個在這片土地上自由奔跑、勇敢生存的靈魂。」"
+        },
+        {
+          title: "第五章：新文明重構、礦場黑牢實驗與幽冥深淵大逃亡（持續進行中）",
+          subtitle: "戰後高科技懸浮衛城崛起、千人黑牢暴動與墜入地底幽冥世界",
+          summary: "內戰並未讓 Unstable SMP 徹底歸於平靜。戰後 Parrot 著手打造全服最先進的科技文明（I Built Minecraft's Most Advanced Civilization），並在千人礦場實驗中遭遇空前暴動；在深入地底追查異常時，他不幸墜入世界底層的黑暗幽冥界（The Underworld），在裝備全失的絕境中展開驚心動魄的求生大逃亡，故事仍在激烈連載中！",
+          genesis: "內戰後各地百廢待興，但邊境頻繁傳出地脈塌陷與古代幽冥信號，Parrot 決心帶領團隊深入地下深淵調查真相。",
+          conflict: "在深層礦場實驗中，面對資源爭奪引發的千人暴動，Parrot 巧妙引導礦工突破封鎖；然而在探查地底裂隙時，地表突然崩塌，Parrot 墜入充斥毒瘴與代碼怪物的幽冥深淵（The Underworld）。在無法自然回血、暗無天日的極限環境中，他憑藉微弱光源與求生本能反殺怪物，啟動古老地脈升降機重返地表，見證了更加宏大的未知世界正在浮現。",
+          lootAndAnomaly: "收繳《Quantum Redstone Capacitor（量子紅石電容）》與《Abyssal Netherstone Lantern（幽冥深淵長明提燈）》。",
+          impact: "揭示了 Unstable SMP 地表之下還隱藏著龐大的幽冥維度與失落古代文明，將整個宇宙的世界觀拓展至全新境界。",
+          keyPlotPoints: [
+            "領導戰後文明重構，建成全自動高空懸浮防衛要塞 Sentinel",
+            "在千人黑牢礦場中主導極限社會生存測試，成功平息混亂",
+            "調查深層基岩裂隙時意外墜入充滿致命怪物的幽冥界（The Underworld）",
+            "在無自然回血的絕境中自製解毒劑與火把，突破幽冥迷宮殺回地表",
+            "最新主線持續連載中，預示著更龐大的跨維度紛爭即將展開"
+          ],
+          psychology: "「內戰的結束只是翻開了新篇章。當我們以為已經登頂世界時，深淵才剛剛向我們露出獠牙。無論前路多麼險峻，探索真相的腳步永不停止。」"
         }
       ],
       unexpectedItems: [
@@ -208,13 +225,13 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Parrot's Spyglass（靈魂觀測望遠鏡）"
         },
         {
-          id: "unstable_parrot_king",
+          id: "2WusTNLmBpE",
           title: "I Became King of the Unstable SMP",
           titleZh: "我登基成為 Unstable SMP 的第一任國王",
           publishDate: "2024-09-12",
           duration: "35:10",
-          thumbnail: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=ParrotX2+Unstable+SMP+King",
+          thumbnail: "https://i.ytimg.com/vi/2WusTNLmBpE/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=2WusTNLmBpE",
           summary: "全服群龍無首、混亂升級之際，Parrot 發起大選宣言。面對黑金勢力與暗殺陰謀，他組建公正同盟並在全服大會上力排眾議加冕為王，制定了第一部伺服器和平憲章。",
           keyMoments: [
             "發表震撼全服的中央廣場演說",
@@ -224,14 +241,14 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "The Sovereign Scepter（國王權杖）"
         },
         {
-          id: "unstable_parrot_reign",
-          title: "King of the Unstable SMP: The Reign",
+          id: "TphfLyzVbqQ",
+          title: "100 Days as King of the Unstable SMP",
           titleZh: "在 Unstable SMP 擔任國王的極限統治紀實",
           publishDate: "2024-11-20",
           duration: "42:15",
-          thumbnail: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=ParrotX2+King+Unstable+SMP",
-          summary: "王權統治下的殘酷現實：物資短缺、黑手黨在暗處滋生、邊疆領主密謀造反。Parrot 在執政期間經歷了最考驗人性的抉擇，如何在暴政與滅亡之間維持王國的脆弱平衡？",
+          thumbnail: "https://i.ytimg.com/vi/TphfLyzVbqQ/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=TphfLyzVbqQ",
+          summary: "王權統治下的殘酷現實：物資短缺、Lattice K 率領的 The LAW 與暗處黑手黨在滋生、邊疆領主密謀造反。Parrot 在執政期間經歷了最考驗人性的抉擇，如何在暴政與滅亡之間維持王國的脆弱平衡？",
           keyMoments: [
             "平定西境礦業同盟的武裝叛亂",
             "查抄地下走私集團的非法複製窩點",
@@ -240,20 +257,132 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Null Code Compass（虛空異常代碼羅盤）"
         },
         {
-          id: "unstable_parrot_civilwar",
-          title: "Unstable SMP: Civil War FINALE",
-          titleZh: "Unstable SMP：萬人內戰大結局",
-          publishDate: "2025-02-15",
-          duration: "48:30",
-          thumbnail: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=ParrotX2+Unstable+SMP+Civil+War+Finale",
-          summary: "整個系列的史詩最高潮！四大陣營、上千名武裝玩家在主城盆地打響決定世界歸宿的最後戰役。Parrot 身披殘破戰甲，指揮前線部隊與空中山羊大砲，與昔日對手一同改寫伺服器命運。",
+          id: "zMoihcFz2kY",
+          title: "I Exposed a Corrupt Minecraft Civilization",
+          titleZh: "我揭發了一個虛偽腐敗的超級文明",
+          publishDate: "2026-03-19",
+          duration: "32:40",
+          thumbnail: "https://i.ytimg.com/vi/zMoihcFz2kY/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=zMoihcFz2kY",
+          summary: "表面繁榮的烏托邦文明暗中實施人口奴役與資源掠奪。Parrot 隻身潛入核心議會竊取黑帳，在全服大會中當眾撕碎腐敗文明的偽善假面具，引發全服震動。",
           keyMoments: [
-            "千人軍團衝撞主城護城河基岩防線",
-            "天空要塞墜落與最後的王座守衛戰",
-            "四大主角視角匯聚，迎接新世界的黎明"
+            "利用夜視與隱身藥水滲透秘密地下實驗室",
+            "揭發 Lattice K 與高層秘密簽署的不平等奴役條約",
+            "在議會大廳當眾投影播放走私錄音"
+          ],
+          unexpectedLoot: "Decrypted Council Ledger（解密議會黑帳檔案）"
+        },
+        {
+          id: "O-ipuD6qy1Q",
+          title: "Searching for a Civilization that Doesn't Exist",
+          titleZh: "尋找一個不存在於地圖上的神秘失落文明",
+          publishDate: "2026-04-14",
+          duration: "29:15",
+          thumbnail: "https://i.ytimg.com/vi/O-ipuD6qy1Q/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=O-ipuD6qy1Q",
+          summary: "跟隨虛空代碼羅盤的指引，Parrot 踏入了邊境未生成的破碎區塊，在常理不存在的虛空深淵中尋找古代文明的遺跡，遭遇了前所未見的空間異常。",
+          keyMoments: [
+            "跨越邊界方塊崩解的虛空裂隙",
+            "破解古代代碼方石的對齊拼圖",
+            "在重力異常區尋獲幽魂金庫通行憑證"
+          ],
+          unexpectedLoot: "Ghost Civilization Echo Shard（失落文明回音碎屑）"
+        },
+        {
+          id: "HDDxxeh3r-E",
+          title: "I Created the World's Largest Minecraft Army",
+          titleZh: "我組建了 Minecraft 史上最龐大的玩家軍團",
+          publishDate: "2026-05-04",
+          duration: "38:50",
+          thumbnail: "https://i.ytimg.com/vi/HDDxxeh3r-E/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=HDDxxeh3r-E",
+          summary: "面對 Lattice K 與敵對強權陣營的全面宣戰威脅，Parrot 號召全服自由散戶、流浪傭兵與同盟公會，組建了史無前例的千人自由防衛軍，並展開軍備整合。",
+          keyMoments: [
+            "在中央平原檢閱千人軍團並發表出征誓師宣言",
+            "研製全自動軍火補給列車與投擲發射塔",
+            "挫敗 Lattice K 派出的刺客連環斬首行動"
+          ],
+          unexpectedLoot: "Supreme Commander's War Baton（自由聯軍統帥戰杖）"
+        },
+        {
+          id: "bP86n9nFoJY",
+          title: "Unstable SMP: Civil War",
+          titleZh: "Unstable SMP：千人大內戰全面爆發",
+          publishDate: "2026-05-16",
+          duration: "41:20",
+          thumbnail: "https://i.ytimg.com/vi/bP86n9nFoJY/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=bP86n9nFoJY",
+          summary: "積壓已久的陣營矛盾全面炸裂！各大勢力與千人軍團在主城盆地正式交鋒，火砲轟鳴、箭雨蔽日，Parrot 率領主力正面迎戰 Lattice K 的精銳部隊，戰況慘烈無比。",
+          keyMoments: [
+            "前線第一道防線失守後的極限撤退反擊戰",
+            "與 Wemmbu、FlameFrags 協同發起兩翼鉗形攻勢",
+            "防空網擊墜敵軍轟炸飛艇"
+          ],
+          unexpectedLoot: "Civil War Trench Standard（內戰壕溝戰旗）"
+        },
+        {
+          id: "NT2Is90lFoI",
+          title: "Unstable SMP: Civil War FINALE",
+          titleZh: "Unstable SMP：內戰總決戰（Civil War FINALE）",
+          publishDate: "2026-06-03",
+          duration: "48:30",
+          thumbnail: "https://i.ytimg.com/vi/NT2Is90lFoI/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=NT2Is90lFoI",
+          summary: "千人內戰篇章的史詩巔峰！四大主角在主城要塞廢墟前展開殊死對決，破除敵軍最後一道防線，為漫長的內戰畫下句點。但戰爭結束並非終點，更大的未知深淵才正要展開。",
+          keyMoments: [
+            "千人軍團鑿穿敵軍核心基岩堡壘",
+            "主城頂峰與敵方最高將領的生死決鬥",
+            "同盟大勝後立下休戰公約，開啟戰後重建紀元"
           ],
           unexpectedLoot: "Shattered Crown Shard & Core of Unstable"
+        },
+        {
+          id: "1EgS0othQe4FoI",
+          title: "I Built Minecraft's Most Advanced Civilization",
+          titleZh: "我在戰後廢墟打造了最先進的高科技文明",
+          publishDate: "2026-08-12",
+          duration: "36:15",
+          thumbnail: "https://i.ytimg.com/vi/1EgS0othQe4/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=1EgS0othQe4",
+          summary: "內戰硝煙散去後，Parrot 展開宏大的戰後文明重構。利用收集來的古代代碼與紅石科技，建造了全服最先進的自動化物流、防空天幕與懸浮衛城，宣告文明的重生。",
+          keyMoments: [
+            "啟動全服最大型自動化資源分揀中心",
+            "建造高空懸浮防衛要塞 Sentinel",
+            "截獲邊境地底傳來的神秘求救信號"
+          ],
+          unexpectedLoot: "Quantum Redstone Capacitor（量子紅石電容神核）"
+        },
+        {
+          id: "we2dBzQxtgQ",
+          title: "1000 Players Simulate Mining Prison in Minecraft",
+          titleZh: "1000 名玩家在極限黑牢礦場模擬生存",
+          publishDate: "2026-09-06",
+          duration: "39:40",
+          thumbnail: "https://i.ytimg.com/vi/we2dBzQxtgQ/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=we2dBzQxtgQ",
+          summary: "為了測試新型防衛機制與調查黑牢秘密，Parrot 召集千名玩家建立極限礦場實驗社會。在嚴苛的配給與層層監管下，一場由底層礦工發起的越獄風暴悄然爆發。",
+          keyMoments: [
+            "地下深層礦井資源分配引發的暴動",
+            "暗中策應礦工代表突破三道安檢閘門",
+            "在監獄底層發現通往幽冥地底的禁忌裂縫"
+          ],
+          unexpectedLoot: "Sub-Bedrock Mining Drill（深層基岩採礦鑽頭）"
+        },
+        {
+          id: "BWmWZTDxFrk",
+          title: "Escaping the Minecraft Underworld",
+          titleZh: "逃離 Minecraft 幽冥地底深淵（最新熱播中！）",
+          publishDate: "2026-09-22",
+          duration: "44:05",
+          thumbnail: "https://i.ytimg.com/vi/BWmWZTDxFrk/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=BWmWZTDxFrk",
+          summary: "墜入世界底層的黑暗深淵！Parrot 身處充斥未知代碼怪物與毒瘴的地底幽冥界（The Underworld），在裝備全毀、無法自然回血的極限絕境中，展開重返地表的大逃亡。",
+          keyMoments: [
+            "在無光源幽冥迷宮中躲避盲目行刑者",
+            "利用地底發光真菌合成簡易急救藥劑",
+            "啟動古代地脈升降機在最後關頭衝出地表重見天日"
+          ],
+          unexpectedLoot: "Abyssal Netherstone Lantern（幽冥深淵長明提燈）"
         }
       ]
     },
@@ -342,21 +471,38 @@ const UNSTABLE_DATA = {
           psychology: "「我的帝國從不主動尋釁，但也絕不吞下任何侮辱。如果你選擇踏入我的領地揮動屠刀，那就準備好承擔整座文明從地圖上消失的代價。」"
         },
         {
-          title: "第四章：終結腐敗輪迴！親手引爆 Unstable SMP",
-          subtitle: "摯友被縛的絕命營救、對世界道德的死心與最終毀滅抉擇",
-          summary: "當發現伺服器底層已被地下黑手黨的洗錢網絡與腐敗管理階層徹底蛀空時，Wemmbu 逐漸看透了這個世界的荒誕輪迴。尤其在生死之交 Eggchan 遭到黑手黨綁架勒索後，Wemmbu 孤身殺穿黑手黨總部救出摯友，但深感道德修復無望的他，最終做出了極端而悲壯的抉擇：親手引爆埋藏於地脈的終極炸藥陣列，埋葬 Unstable SMP 的一切罪惡。",
+          title: "第四章：終結腐敗輪迴！親手引爆舊主城",
+          subtitle: "摯友被縛的絕命營救、對世界道德的死心與轟殺黑手黨老巢",
+          summary: "當發現伺服器底層已被地下黑手黨的洗錢網絡與腐敗管理階層徹底蛀空時，Wemmbu 逐漸看透了這個世界的荒誕輪迴。尤其在生死之交 Eggchan 遭到黑手黨綁架勒索後，Wemmbu 孤身殺穿黑手黨總部救出摯友，並親手引爆埋藏於地脈的終極炸藥陣列，埋葬犯罪家族的一切罪惡。",
           genesis: "伺服器表面上的大和平掩蓋著更深層的骯髒交易。地下黑手黨為了逼迫 Wemmbu 交出國庫所有權，卑劣地設伏綁架了 Wemmbu 唯一的生死盟友 Eggchan，並在公頻限時威脅：若不交出所有裝備，將當眾處死 Eggchan。",
-          conflict: "Wemmbu 沒有絲毫妥協，他攜帶全部家當直奔黑手黨總部老巢。面對上百名武裝歹徒與密布的陷阱陣列，Wemmbu 化作一尊狂暴修羅，憑藉 The Crucible 巨刃的撕裂護甲效果強行開路，在最後 3 秒的倒數前斬殺處刑看守，將渾身是傷的 Eggchan 救入懷中。然而救出摯友後的 Wemmbu 凝視著遍地狼藉與背叛者的屍體，內心湧起無邊的疲倦。他明白只要這座世界的代碼與貪婪依然存在，無論消滅多少敵人，新的惡霸總會捲土重來。在把 Eggchan 送往遠離戰火的安全邊界後，Wemmbu 獨自返回伺服器中心。他接通了耗費數週在世界地脈深處布設的數萬枚連鎖 TNT 引信，在漫天月光下平靜地按下了《Annihilation Remote Detonator（虛空重置引爆終端）》。大地開裂、天塌地陷，這座充斥著背叛與榮耀的 Unstable SMP 在他眼前化為壯烈的火海星塵。",
+          conflict: "Wemmbu 沒有絲毫妥協，他攜帶全部家當直奔黑手黨總部老巢。面對上百名武裝歹徒與密布的陷阱陣列，Wemmbu 化作一尊狂暴修羅，憑藉 The Crucible 巨刃的撕裂護甲效果強行開路，在最後 3 秒的倒數前斬殺處刑看守，將渾身是傷的 Eggchan 救入懷中。在把 Eggchan 送往安全邊界後，Wemmbu 獨自返回引爆點，接通埋設的連鎖 TNT 引信，徹底摧毀黑手黨地下巢穴與罪惡老巢。",
           lootAndAnomaly: "持有《Annihilation Remote Detonator（虛空重置引爆終端）》與保存著兩人約定的《Eggchan’s Keepsake Book（摯友的血盟筆記）》。",
-          impact: "Wemmbu 親手為 Unstable SMP 畫下了無可挽回的震撼休止符。他從萬人景仰的鐵血霸主變成了爭議無盡的滅世狂徒，但這場終極引爆也徹底淨化了盤根錯節的腐朽利益鏈，成為全宇宙玩家心中永遠的傳奇哀歌。",
+          impact: "Wemmbu 親手摧毀了黑手黨的腐敗帝國，雖然付出了慘痛代價，但也徹底肅清了盤根錯節的利益鏈，為 Unstable 宇宙重啟了新的篇章。",
           keyPlotPoints: [
             "黑手黨卑鄙綁架摯友 Eggchan 敲詐勒索，觸碰 Wemmbu 唯一不可逾越的逆鱗",
             "單刀赴會血洗黑手黨總舵，在最後幾秒極限救出夥伴破除必死之局",
-            "送別摯友遠赴安寧之所，徹底看清伺服器制度性腐敗與永無休止的貪婪輪迴",
-            "返回世界核心，接通蔓延數萬格的地下連鎖引爆電路網絡",
-            "從容按下引爆終端，在撼天動地的火光與廢墟中親手終結 Unstable 宇宙時代"
+            "送別摯友遠赴安寧之所，徹底看清制度性腐敗與永無休止的貪婪輪迴",
+            "返回罪惡核心，接通蔓延數萬格的地下連鎖引爆電路網絡",
+            "從容按下引爆終端，在撼天動地的火光與廢墟中埋葬黑手黨時代"
           ],
-          psychology: "「如果這座世界只剩下背叛、貪婪與對弱者的掠奪，那它的繁華不過是一場病態的幻覺。今天由我親手點火，讓這片腐朽的焦土在烈焰中重獲安寧。」"
+          psychology: "「如果這座世界只剩下背叛、貪婪與對弱者的掠奪，那它的繁華不過是一場病態的幻覺。今天由我親手點火，讓這片腐朽的焦土在烈焰中重獲新生。」"
+        },
+        {
+          title: "第五章：千人肅清之夜、尋找失蹤摯友與拯救世界（持續進行中）",
+          subtitle: "摯友離奇失蹤、狂暴千人肅清與拯救世界最大伺服器之戰",
+          summary: "伺服器浩劫重生後，Wemmbu 發現摯友 Eggchan 再次神秘失蹤，他踏上艱難的尋友之路（Searching For My Friend Who Went Missing）；在遭遇千人肅清大狂潮（The Purge）與敵對強權偷襲後，Wemmbu 以暴制暴摧毀敵對文明，並在整個 Unstable SMP 面臨不可逆崩解危機的關鍵時刻挺身而出（How I Saved the World's Largest Minecraft Server），武力守護者傳奇仍在續寫！",
+          genesis: "內戰硝煙與爆炸平息後，Eggchan 的通訊信號無故中斷，留下的唯有一本沾血的筆記。Wemmbu 誓死尋回唯一信賴的同伴。",
+          conflict: "在長達數月的搜救中，Wemmbu 遭遇了由暗處敵對勢力引發的『千人肅清極限狂潮（The Purge）』。面對千名陷入瘋狂的武裝暴徒，Wemmbu 手握 The Crucible 巨刃與軌道轟炸系統以一敵百，鑿穿敵陣；在查明幕後黑手操縱的腐敗文明後，Wemmbu 親率艦隊將其連根拔起（How I Destroyed an Entire Minecraft Civilization）。而在世界伺服器代碼瀕臨全面滅頂崩解的終極關頭，Wemmbu 站上了伺服器核心控制台，力挽狂瀾拯救了這片他曾愛過又恨過的宇宙（How I Saved the World's Largest Minecraft Server）。",
+          lootAndAnomaly: "收繳《World Rescuer's Core（世界救贖者代碼核心）》與《Titan Purge Warplate（肅清之夜泰坦重甲）》。",
+          impact: "Wemmbu 從滅世狂徒蛻變為世界守護者，他的力量再次超越了陣營與仇恨，成為整個 Unstable SMP 不可或缺的頂樑之柱。",
+          keyPlotPoints: [
+            "發現摯友 Eggchan 離奇失蹤，展開跨越數萬格大陸的極限追蹤",
+            "在千人暴徒大亂鬥的『肅清之夜（The Purge）』中單挑全場力保據點",
+            "親手摧毀幕後陰謀策源的腐敗文明（How I Destroyed an Entire Minecraft Civilization）",
+            "在伺服器核心能源過載崩塌之際完成極限修復，拯救整個世界（How I Saved the World's Largest Minecraft Server）",
+            "最新主線熱烈更新中，守護者的征程未完待續"
+          ],
+          psychology: "「我曾想親手毀掉這座腐爛的世界，但當我看著並肩作戰的夥伴與無辜者的眼神，我知道只要還有希望，我就會拔刀戰鬥到底。」"
         }
       ],
       unexpectedItems: [
@@ -451,18 +597,18 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Architect's Imperial Seal"
         },
         {
-          id: "5hG_nAYEC2g",
+          id: "unstable_wemmbu_destroy",
           title: "Why I Destroyed the Unstable SMP",
-          titleZh: "為什麼我決定毀滅 Unstable SMP",
+          titleZh: "為什麼我決定毀滅 Unstable SMP 舊主城",
           publishDate: "2024-07-08",
           duration: "38:20",
-          thumbnail: "https://i.ytimg.com/vi/5hG_nAYEC2g/maxresdefault.jpg",
-          youtubeUrl: "https://www.youtube.com/watch?v=5hG_nAYEC2g",
-          summary: "震撼全服的思想轉折！當看透了伺服器內部不可救藥的黑手黨腐敗與暗殺勾結，Wemmbu 毅然按下引爆整個地圖連鎖反應的終極裝置，用烈火與廢墟洗禮這片土地。",
+          thumbnail: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+          youtubeUrl: "https://www.youtube.com/results?search_query=Wemmbu+Why+I+Destroyed+the+Unstable+SMP",
+          summary: "震撼全服的思想轉折！當看透了伺服器內部不可救藥的黑手黨腐敗與暗殺勾結，Wemmbu 毅然按下引爆地下連鎖炸藥的終極裝置，用烈火與廢墟洗禮這片罪惡之地。",
           keyMoments: [
-            "在審訊室直面黑手黨高層的偽善自白",
-            "親自點燃連接伺服器主能源的爆破導線",
-            "主城在熊熊烈火中化為焦土的震撼長鏡頭"
+            "直面地下黑金高層的偽善自白",
+            "親自點燃連接核心能源的爆破導線",
+            "黑手黨要塞在熊熊烈火中化為焦土的震撼長鏡頭"
           ],
           unexpectedLoot: "Orbital Cannon Blueprint & Ashes of the Realm"
         },
@@ -474,7 +620,7 @@ const UNSTABLE_DATA = {
           duration: "31:05",
           thumbnail: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
           youtubeUrl: "https://www.youtube.com/results?search_query=Wemmbu+Sky+Civilization+Unstable+SMP",
-          summary: "浩劫重生後，Wemmbu 駕駛自製飛行器探索伺服器邊境，意外突破雲層高度限制，在 Y=300 發現了從未記載在伺服器檔案裡的古代浮空島群與反重力科技！",
+          summary: "浩劫重生後，Wemmbu 駕駛飛行器探索伺服器邊境，突破雲層高度限制，在 Y=300 發現了古代浮空島群與反重力科技！",
           keyMoments: [
             "穿越狂風與低氧空域的危險登島過程",
             "破解守護浮空神廟的古代遠古守衛者機關",
@@ -490,13 +636,93 @@ const UNSTABLE_DATA = {
           duration: "40:10",
           thumbnail: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
           youtubeUrl: "https://www.youtube.com/results?search_query=Wemmbu+Unstable+SMP+The+Mafia",
-          summary: "黑手黨綁架了 Eggchan 並威脅 Wemmbu 交出所有神級裝備。Wemmbu 孤身殺入黑手黨地下總部，以近乎瘋狂的火力與戰術徹底踏平犯罪帝國，救出摯友！",
+          summary: "黑手黨綁架了 Eggchan 並威脅 Wemmbu 交出所有神裝。Wemmbu 孤身殺入黑手黨地下總部，以近乎瘋狂的火力踏平犯罪帝國，救出摯友！",
           keyMoments: [
             "破門而入單挑黑手黨四大貼身保鏢",
-            "在炸藥倒數計時最後 3 秒抱出 Eggchan",
+            "在炸藥倒數計時最後 3 秒救出 Eggchan",
             "將黑手黨教父逼入牆角完成宿命清算"
           ],
           unexpectedLoot: "Eggchan's Keepsake Book & Mafia Vault Key"
+        },
+        {
+          id: "ZjO0dep5VjU",
+          title: "Searching For My Friend Who Went Missing",
+          titleZh: "尋找離奇失蹤的生死摯友 Eggchan",
+          publishDate: "2026-05-09",
+          duration: "34:10",
+          thumbnail: "https://i.ytimg.com/vi/ZjO0dep5VjU/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=ZjO0dep5VjU",
+          summary: "內戰硝煙平息後，Wemmbu 唯一的摯友 Eggchan 再次神秘失聯。Wemmbu 沿著邊境殘存的血跡與密道展開跨地圖千里追尋，發現了更加黑暗的隱秘組織陰謀。",
+          keyMoments: [
+            "在廢棄哨站檢驗 Eggchan 留下的密碼暗號",
+            "擊破沿途埋伏的賞金暗殺獵人小隊",
+            "鎖定地底隱藏的龐大未知地下文明入口"
+          ],
+          unexpectedLoot: "Eggchan's Broken Compass（碎裂的友情指針）"
+        },
+        {
+          id: "_hyFGrcVv5U",
+          title: "I Went to WAR on a Hardcore Minecraft SMP",
+          titleZh: "我在極限硬核伺服器打響全面戰爭",
+          publishDate: "2026-05-30",
+          duration: "42:25",
+          thumbnail: "https://i.ytimg.com/vi/_hyFGrcVv5U/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=_hyFGrcVv5U",
+          summary: "千人大內戰全面爆發！Wemmbu 率領鋼鐵泰坦重裝部隊踏上戰場，與 Parrot 的王國軍協同作戰，以軌道加農砲轟擊 Lattice K 的前線陣列，浴血推進。",
+          keyMoments: [
+            "泰坦重砲對轟敵方空中山羊飛艇",
+            "手持 The Crucible 巨刃隻身撞碎前線防爆門",
+            "與 FlameFrags 互相掩護完成突擊鑿穿"
+          ],
+          unexpectedLoot: "Vanguard Warplate Shard（先鋒戰鎧破片）"
+        },
+        {
+          id: "4v_jk0w7wR0",
+          title: "1000 Players Simulate THE PURGE in Minecraft",
+          titleZh: "1000 名玩家在 Minecraft 展開無規則肅清之夜",
+          publishDate: "2026-06-06",
+          duration: "37:50",
+          thumbnail: "https://i.ytimg.com/vi/4v_jk0w7wR0/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=4v_jk0w7wR0",
+          summary: "全服進入無法律、無規則的殘酷肅清夜（The Purge）！上千名玩家在黑暗中互相獵殺掠奪。Wemmbu 坐鎮泰坦堡壘，面對四面八方湧來的暴徒狂潮展開鋼鐵防禦！",
+          keyMoments: [
+            "堡壘外圍自動防空火網覆蓋上百名空中突襲者",
+            "陷阱區連環殉爆瓦解敵對聯盟的主攻部隊",
+            "在黎明到來之際屹立於焦土頂端加冕肅清之王"
+          ],
+          unexpectedLoot: "Purge Night Dominance Crown（肅清之夜支配王冠）"
+        },
+        {
+          id: "Ytm8WiQLNZA",
+          title: "How I Destroyed an Entire Minecraft Civilization",
+          titleZh: "我如何親手摧毀了一整座敵對文明",
+          publishDate: "2026-08-26",
+          duration: "39:15",
+          thumbnail: "https://i.ytimg.com/vi/Ytm8WiQLNZA/maxresdefault.jpg",
+          youtubeUrl: "https://youtu.be/Ytm8WiQLNZA",
+          summary: "某個陰謀勢力暗中策劃推翻現有秩序並囚禁無辜玩家。Wemmbu 查明其總部座標後發動了毀滅性雷霆打擊，以高空軌道砲將整座傲慢文明徹底抹除！",
+          keyMoments: [
+            "偽裝潛入敵對文明偵查動力源分佈",
+            "超遠程軌道砲彈道精確命中主能源核心",
+            "在連鎖爆炸與崩塌中親手撕下敵國戰旗"
+          ],
+          unexpectedLoot: "Fallen Civilization Cornerstone（覆滅文明的基石殘塊）"
+        },
+        {
+          id: "5hG_nAYEC2g",
+          title: "How I Saved the World's Largest Minecraft Server",
+          titleZh: "我如何拯救了世界上最龐大的 Minecraft 伺服器（最新熱播中！）",
+          publishDate: "2026-09-19",
+          duration: "45:30",
+          thumbnail: "https://i.ytimg.com/vi/5hG_nAYEC2g/maxresdefault.jpg",
+          youtubeUrl: "https://youtu.be/5hG_nAYEC2g",
+          summary: "整個 Unstable SMP 面臨底層代碼過載與全面滅頂的宇宙級崩解危機！Wemmbu 放下過往恩怨，登上伺服器核心樞紐，在世界倒數計時的絕境中拯救了全服！",
+          keyMoments: [
+            "世界邊界開始碎裂崩解的末日災變長鏡頭",
+            "在狂暴虛空亂流中搶修核心伺服器散熱矩陣",
+            "在最後一秒鎖定世界穩定代碼，挽狂瀾於既倒"
+          ],
+          unexpectedLoot: "World Rescuer's Core（世界救贖者神聖代碼核心）"
         }
       ]
     },
@@ -599,6 +825,23 @@ const UNSTABLE_DATA = {
             "點燃紅石引信瞬間抹殺全體黑道首領，以一己之力終結黑手黨殘暴統治"
           ],
           psychology: "「當一個壞人很容易，但在惡狼身邊扮演更狠的惡狼，同時守住心底那一抹光明，才是一場最危險也最迷人的遊戲。今晚，遊戲通關了。」"
+        },
+        {
+          title: "第五章：終界文明建立、最強軍團與失落維度探索（持續進行中）",
+          subtitle: "千人終界拓荒、組建伺服器最強軍團、穿梭失落維度與締造至高帝國",
+          summary: "黑手黨覆滅與千人內戰之後，Unstable SMP 迎來了跨維度爭霸時代。Spoke 率領上千名追隨者大舉進軍終界，建立了震撼全宇宙的終界巨石文明（1000 Players Build END Civilization）；隨後他親自整訓並指揮了 Minecraft 史上最龐大、裝備隱形突襲戰術的最強軍團（I Created Minecraft's Greatest Military）。在探尋伺服器虛空底層時，他甚至深入傳說中無人踏足的失落維度／幽冥地界（Exploring Minecraft’s Forgotten Dimension），並最終在四方強權環伺下加冕，打造出傲視全服的至高帝國（I Created Minecraft’s Greatest Empire），與統治勢力 The LAW 及其最高領袖 Lattice K 展開高智商角力！",
+          genesis: "伺服器在多場動亂後版圖重新洗牌。Spoke 敏銳察覺到主世界已過度擁擠且處於 The LAW 嚴密監管之下，決定帶領千名散戶與追隨者破界遠征，開闢全新的終界秩序。",
+          conflict: "在深邃的終界虛空中，Spoke 克服了龍息毒霧與虛空跌落的致命威脅，指揮千名工匠在浮空島群間搭建起綿延數萬格的黑曜石空島要塞與物流網絡。為了捍衛終界文明不受各大勢力與 The LAW 的干涉，Spoke 著手打造全服最強軍隊——他將隱形藥水、高頻珍珠突襲與瞬爆礦車戰術系統化，組建出一支戰無不勝的幽靈軍團（I Created Minecraft's Greatest Military）。然而，對世界底層代碼的痴迷促使他進一步涉險：他穿透地獄岩漿海下方的虛空基岩，墜入傳說中的『失落維度（Forgotten Dimension / Underworld）』。在無光的亂碼深淵中，Spoke 避開代碼異獸的追獵，發掘出世界起源的遠古石板；重返世界的他集結所有維度的資源，正式加冕並宣告建立 Minecraft 最強帝國（I Created Minecraft’s Greatest Empire），成為連 Lattice K 也不得不忌憚三分的終界帝皇。",
+          lootAndAnomaly: "收繳並解鎖《End Imperial Scepter（終界帝皇權杖）》與《Forgotten Dimension Relic Plate（失落維度古老銘文石板）》。",
+          impact: "Spoke 成功將勢力版圖從主世界延伸至終界與失落維度，打破了單一維度的地緣政治格局，他的帝國成為所有反抗 The LAW 強權管制的自由玩家最後的避風港。",
+          keyPlotPoints: [
+            "號召千名散戶大軍突破終界傳送門，在虛空空島建立龐大的終界文明",
+            "研發幽靈突襲體系與立體攻防戰術，組建號稱全服最強的精銳軍團",
+            "隻身穿透地底深淵基岩，探索失落維度（Forgotten Dimension）發掘遠古數據",
+            "整合跨維度物資與軍事力量，正式締造全宇宙最強帝國（Greatest Empire）",
+            "主線持續推進中，與 The LAW 及 Lattice K 展開深層智謀對弈"
+          ],
+          psychology: "「他們想用規矩和法律把所有人關在主世界的牢籠裡。但只要頭頂還有星空，腳下還有虛空，我的軍團與帝國就會踏碎一切邊界。」"
         }
       ],
       unexpectedItems: [
@@ -693,13 +936,13 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Roshambogames' Ruined Treasury Bond"
         },
         {
-          id: "V9HzAdwgf-I",
+          id: "3uT7tD24Q8g",
           title: "I Infiltrated The Minecraft Mafia",
           titleZh: "我臥底潛入了橫行霸道的黑手黨犯罪家族",
           publishDate: "2024-11-18",
           duration: "34:50",
-          thumbnail: "https://i.ytimg.com/vi/V9HzAdwgf-I/maxresdefault.jpg",
-          youtubeUrl: "https://www.youtube.com/watch?v=V9HzAdwgf-I",
+          thumbnail: "https://i.ytimg.com/vi/3uT7tD24Q8g/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=3uT7tD24Q8g",
           summary: "Spoke 假意向黑手黨低頭稱臣，通過多重忠誠考驗打入內部。他表面上幫黑手黨收保護費，暗地裡在每個堂口地下埋設連環共振炸彈並複印黑帳，上演頂級無間道！",
           keyMoments: [
             "通過教父的逼供椅心理測謊考驗",
@@ -739,6 +982,70 @@ const UNSTABLE_DATA = {
             "在崩壞終點成功合成出 Totem of Null"
           ],
           unexpectedLoot: "The Totem of Null（虛空代碼不死圖騰）"
+        },
+        {
+          id: "ynkhNRpQ9Xc",
+          title: "1000 Players Build END Civilization in Hardcore Minecraft",
+          titleZh: "1000 名玩家在極限硬核 Minecraft 建立終界龐大文明",
+          publishDate: "2026-07-26",
+          duration: "1:52:10",
+          thumbnail: "https://i.ytimg.com/vi/ynkhNRpQ9Xc/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=ynkhNRpQ9Xc",
+          summary: "Spoke 號召上千名 NULL 陣營自由玩家大舉進軍終界！在虛空邊界克服龍息與致命高空，以黑曜石與紫珀塊搭建起震撼全宇宙的終界巨石文明，開拓出全新的世界格局！",
+          keyMoments: [
+            "千人集結跨越終界傳送門展開宏大拓荒",
+            "在虛空深淵搭建懸空防禦平台與自動化補給線",
+            "加冕為終界文明領袖，宣布終界主權獨立"
+          ],
+          unexpectedLoot: "End Imperial Scepter（終界帝皇象徵權杖）"
+        },
+        {
+          id: "V9HzAdwgf-I",
+          title: "I Created Minecraft's Greatest Military",
+          titleZh: "我打造了 Minecraft 史上最強大的精銳軍團",
+          publishDate: "2026-08-13",
+          duration: "38:40",
+          thumbnail: "https://i.ytimg.com/vi/V9HzAdwgf-I/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=V9HzAdwgf-I",
+          summary: "為了捍衛終界文明不受外部強權與 The LAW 侵擾，Spoke 親自整編並訓練了全服最致命的軍隊。結合隱形藥水、立體珍珠跳躍與瞬爆破防陣列，打造出令全服聞風喪膽的鐵血雄師！",
+          keyMoments: [
+            "制定幽靈突擊隊步兵操典與暗殺戰術",
+            "實彈演習驗證瞬爆礦車立體突破戰術",
+            "指揮全軍擊退敵對同盟的先遣偵察部隊"
+          ],
+          unexpectedLoot: "Military High-Command Insignia（最強軍團最高統帥徽章）"
+        },
+        {
+          id: "lA1ohDqw8XA",
+          title: "Exploring Minecraft’s Forgotten Dimension",
+          titleZh: "探索 Minecraft 被遺忘的失落維度（幽冥深淵秘境）",
+          publishDate: "2026-09-06",
+          duration: "42:15",
+          thumbnail: "https://i.ytimg.com/vi/lA1ohDqw8XA/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=lA1ohDqw8XA",
+          summary: "地底最深處隱藏著被伺服器代碼遺忘的神秘空間。Spoke 穿透基岩盲區，隻身降臨漆黑未知的失落維度（Underworld），在無數遠古漏洞生物與崩壞數據中尋找宇宙起源的終極答案！",
+          keyMoments: [
+            "利用基岩碰撞箱穿刺突破至世界負 Y 軸最深處",
+            "在幽冥深淵中躲避未知代碼生物的致命聲波感知",
+            "發掘刻滿古代管理員指令的失落銘文碎片"
+          ],
+          unexpectedLoot: "Forgotten Dimension Relic Plate（失落維度銘文石板）"
+        },
+        {
+          id: "IOS7FKtiyxE",
+          title: "I Created Minecraft’s Greatest Empire",
+          titleZh: "我締造了 Minecraft 史上最偉大的至高帝國（最新熱播中！）",
+          publishDate: "2026-09-20",
+          duration: "48:50",
+          thumbnail: "https://i.ytimg.com/vi/IOS7FKtiyxE/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=IOS7FKtiyxE",
+          summary: "融匯終界文明的財富、最強軍團的武力與失落維度的古代代碼，Spoke 正式宣告成立 Unstable SMP 最龐大的至高帝國！在與 The LAW 領袖 Lattice K 的步步對峙中，帝國宏圖才剛剛拉開序幕！",
+          keyMoments: [
+            "巨型跨維度傳送樞紐與帝國萬神殿竣工",
+            "向全服發布帝國憲章，接納所有反抗 The LAW 的自由散戶",
+            "在皇座之上拔出象徵永恆秩序的帝國寶劍"
+          ],
+          unexpectedLoot: "Greatest Empire Sovereign Core（至高帝國主權核心）"
         }
       ]
     },
@@ -791,11 +1098,11 @@ const UNSTABLE_DATA = {
           psychology: "「在極限硬核的世界裡，權謀與謊言終會隨風而逝，唯有手中那把歷經千錘百煉的利刃，才是捍衛尊嚴與守護弱者的唯一真理。」"
         },
         {
-          title: "第二章：孤狼血戰！單兵團滅五人霸凌毒瘤公會",
+          title: "第二章：孤狼血戰！單兵團滅五人霸凌公會與農場大戰",
           subtitle: "以身作餌誘敵深入、雪峰峭壁的極限連劈與誓死守護之花",
-          summary: "惡名昭彰的五人惡意公會『掠奪之影（Shadow Raiders）』在核心礦區橫行霸道，無差別虐殺新手掠奪資產。目睹友善同伴遭害的 FlameFrags 怒火中燒，決心以暴制暴。他故意身著破損甲冑將敵方全體主力誘至險峻雪峰，在長達兩小時的殊死搏殺中以一敵五，憑藉極限身法與破盾走砍完成全殲團滅，一戰名震全宇宙。",
-          genesis: "一個剛加入伺服器不久的友善散戶新手，在中央盆地辛勤搭建的小屋遭到掠奪之影五名幹部無情焚毀，該新手在絕望求饒中被當眾虐殺。目睹這一切的 FlameFrags 在廢墟中握緊拳頭，決心用這群惡霸的鮮血來告慰亡者。",
-          conflict: "掠奪之影五人皆為滿裝精銳，且戰術狡詐。FlameFrags 故意脫下重裝戰甲，換上破爛皮甲出現在敵方斥候視野中，佯裝驚慌逃向荒無人煙的高聳雪山。五名貪婪的惡霸見狀全員出動狂追不捨。踏入雪山之巔的狂風暴雪中，FlameFrags 驟然止步，在敵方包圍網合攏的剎那瞬間換回滿級下界合金神裝。在長達兩個多小時的殘酷拉鋸死鬥中，FlameFrags 頂著漫天箭雨與藥水轟擊，利用陡峭地形卡位使敵方無法同時五人近身，隨即以精準的跳劈接橫掃破開前排兩人的重盾，連續斬殺敵軍前鋒。剩下的三人企圖搭乘鞘翅四散逃跑，FlameFrags 換上強弓以神級預判凌空穿透敵方翅膀，在積雪染紅的懸崖上完成了不可思議的 1v5 團滅奇蹟。戰後，他在廢墟中拾起新手生前贈予的一朵小黃花插在胸甲之上，誓言做全服弱者的盾牌。",
+          summary: "惡名昭彰的惡意公會『掠奪之影（Shadow Raiders）』在核心礦區橫行霸道，無差別虐殺新手掠奪資產。目睹友善同伴遭害的 FlameFrags 怒火中燒，決心以暴制暴。他故意身著破損甲冑將敵方全體主力誘至險峻雪峰，在殊死搏殺中以一敵五，憑藉極限身法與破盾走砍完成全殲團滅！隨後在爭奪全服核心資源的「巨型農場爭奪戰（The Great Farm War）」中，他再度隻身挫敗企圖壟斷食物鏈的寡頭軍團，一戰名震全宇宙。",
+          genesis: "一個剛加入伺服器不久的友善散戶新手在中央盆地辛勤搭建的小屋遭到五名幹部無情焚毀，該新手在求饒中慘遭虐殺。目睹這一切的 FlameFrags 在廢墟中握緊拳頭，決心用這群惡霸的鮮血來告慰亡者。",
+          conflict: "掠奪之影五人皆為滿裝精銳，且戰術狡詐。FlameFrags 故意脫下重裝戰甲，換上破爛皮甲佯裝驚慌逃向荒無人煙的高聳雪山。五名貪婪的惡霸全員出動狂追不捨。踏入雪山之巔的暴風雪中，FlameFrags 驟然止步，在敵方包圍網合攏的剎那瞬間換回滿級下界合金神裝。在長達兩個多小時的殘酷拉鋸死鬥中，FlameFrags 頂著漫天箭雨與藥水轟擊，利用陡峭地形卡位使敵方無法同時五人近身，隨即以精準的跳劈接橫掃破開前排兩人的重盾，連續斬殺敵軍前鋒。剩下的三人企圖搭乘鞘翅逃跑，FlameFrags 換上強弓以神級預判凌空穿透敵方翅膀，在雪嶺絕壁完成 1v5 團滅奇蹟。戰後，他在廢墟中拾起新手生前贈予的一朵小黃花插在胸甲之上，誓言做全服弱者的盾牌。",
           lootAndAnomaly: "收繳敵方全套滿裝並拾獲隨身佩戴的紀念小花《Rejoice’s Flower（戰火廢墟中的純白之花）》。",
           impact: "這場以少勝多的傳奇血戰徹底打碎了毒瘤公會橫行霸道的囂張氣焰，震撼了全服各大勢力，FlameFrags 的『正義孤狼戰神』之名自此深植於每位玩家心中。",
           keyPlotPoints: [
@@ -803,43 +1110,60 @@ const UNSTABLE_DATA = {
             "身穿殘破偽裝以身為餌，將傲慢的五名滿裝惡霸誘入無退路的絕境雪峰",
             "雪巔絕境暴風雪中瞬間披掛神裝反打，打破敵方包圍陣列卡死地形走位",
             "以驚人的破盾跳劈與近戰走砍節奏連續斬殺前排兩名重裝首領",
-            "預判神射擊墜敵方逃竄的鞘翅成員，達成全服震動的 1v5 團滅神話"
+            "在巨型農場爭霸戰（The Great Farm War）中擊潰敵對壟斷集團"
           ],
           psychology: "「他們以為人多勢眾就可以踐踏弱小的尊嚴，但我會用手中的刀告訴他們——當正義的怒火燃燒時，人數只不過是一串等待被收割的數字。」"
         },
         {
-          title: "第三章：逃離 Terminus！Minecraft 史上最致命死刑黑牢",
-          subtitle: "基岩深淵中的活體死刑牢獄、防守空隙捕捉與極限反殺越獄",
-          summary: "在 Unstable SMP 的強權暗湧中，FlameFrags 遭到惡名昭彰的敵對聯盟秘密設伏暗算，被奪走全部裝備並押送進全服最恐怖的特級死刑監獄「Terminus」。面對基岩壁壘、浸水黑曜石與守衛者激光陣列的重重殺局，FlameFrags 展現出鋼鐵意志，在暗無天日的絕境中反殺獄卒奪回神裝，炸開排氣天井完成震驚全服的絕命大逃亡！",
-          genesis: "為了調查邊境頻繁發生的散戶綁架事件，FlameFrags 循線追查至荒原廢墟，不料落入敵方三個主力公會聯合布設的重晶石壓制陷阱。在苦戰斬落三名敵將、圖騰用盡後不幸力竭被俘，被秘密押往號稱『入者必死』的深淵黑牢 Terminus。",
-          conflict: "Terminus 建立在世界最深處的基岩夾層之中，周圍布滿了多層浸水黑曜石防爆層、常駐遠古守衛者的虛弱與挖掘疲勞結界，以及二十四小時不斷的致命激光防禦網。面對非人的折磨與嚴密看守，FlameFrags 始終保持冷靜。他暗中記錄守衛者的激光充能間歇與獄卒換崗的時間差，利用胃袋私藏的微型紅石粉與鐵粒在牢房牆角拼裝出簡易短路器，在深夜突然引發牢區電網癱瘓與警報大作。當三名手持特製刑具的重裝獄卒破門而入時，空手的 FlameFrags 閃電奪刀，以不可思議的近身搏擊反殺看守。他奪回了特級破獄神鎬，在激光重新鎖定的千鈞一髮之際，暴力鑿穿了監獄頂部的基岩排氣管道，在整座監獄坍塌的烈火中宛如浴火鳳凰般殺出重圍！",
-          lootAndAnomaly: "奪取傳奇神鎬《Terminus Breaker Pickaxe（Terminus 破獄者合金鎬）》與典獄長的特級禁忌印記。",
-          impact: "Terminus 黑牢百年不可攻破的死刑神話被 FlameFrags 親手粉碎，宣告特權勢力企圖將其永久抹殺的陰謀徹底破產，他的強勢歸來直接逆轉了整個伺服器的反抗力量對比。",
-          keyPlotPoints: [
-            "追查人口失蹤線索中伏力戰被俘，被剝奪全部兵刃押入特級死刑牢 Terminus",
-            "在浸水黑曜石與遠古守衛者激光封鎖下，精準計算出激光充能的 1.5 秒盲區",
-            "利用私藏微型元件短路癱瘓監獄供電網絡，徒手搏殺奪回被扣押神裝",
-            "手持 Terminus 破獄者神鎬暴力鑿穿基岩夾層排氣天井",
-            "在警報震天與烈焰翻滾中殺出絕境黑牢，強勢重返 Unstable SMP 宇宙"
-          ],
-          psychology: "「Terminus 可以奪走我的護甲與兵器，但它奪不走我刻在骨子裡的戰鬥本能。只要我還有一口氣在，任何監獄都只能成為我封神路上的踏腳石。」"
-        },
-        {
-          title: "第四章：戳穿作弊偽神！揭發全服『最強』玩家假面具",
-          subtitle: "公開擂台抓包延遲外掛、巨型農場爭奪戰與千人大內戰先鋒之鋒",
-          summary: "某位備受各大資本公會追捧的明星玩家自封為無可戰勝的『伺服器戰神』，實則暗中使用延遲補償外掛與替身打假賽牟利。FlameFrags 在一場全服公開賭鬥與『巨型農場爭奪戰（The Great Farm War）』中佈置了紅石測速時鐘，當眾抓包其作弊鐵證並以純技術將其斬滅！在隨後的萬人大內戰中，他擔任自由同盟突擊先鋒總司令，一人一劍撕裂敵軍防線，贏得宇宙終局勝利。",
+          title: "第三章：戳穿作弊偽神！千人大內戰突擊先鋒總司令",
+          subtitle: "公開擂台抓包延遲外掛、萬軍對陣與千人大內戰先鋒之鋒",
+          summary: "某位備受各大資本公會追捧的明星玩家自封為無可戰勝的『伺服器戰神』，實則暗中使用延遲補償外掛與替身打假賽牟利。FlameFrags 在一場全服公開賭鬥中佈置了紅石測速時鐘，當眾抓包其作弊鐵證並以純技術將其斬滅！在隨後席捲宇宙的「萬人大內戰（1000 VS 1000 Civil War）」中，他擔任自由同盟突擊先鋒總司令，一人一劍撕裂敵軍防線，贏得陣營戰役的輝煌勝利。",
           genesis: "作弊者打著無敵旗號成立了壟斷工會，要求所有散戶交出農場收成作為保護費，甚至在公頻公開嘲諷技術玩家。FlameFrags 察覺到該選手在歷次戰鬥中的移動幀數極不自然，決心為整個競技生態討回公道。",
-          conflict: "在萬人圍觀的中央大擂台上，FlameFrags 欣然應戰。他暗中在擂台四角布設了紅石脈衝封包計時器，當對方再度啟動延遲外掛試圖瞬移背刺時，計時器發出刺耳警報，投射出對方違法修改服務端補償參數的確鑿日誌。在騙局被當場戳穿、作弊者惱羞成怒企圖仗著數值優勢強攻時，FlameFrags 拔出《The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）》，以完全無外掛的純粹跳劈連斬，在不到三十秒內三次破盾並將作弊偽神斬落擂台，將其名牌釘在恥辱柱上！隨後，在爭奪全服資源命脈的「巨型農場爭奪戰（The Great Farm War）」與最終的「萬人大內戰（1000 VS 1000 Civil War）」中，FlameFrags 被推舉為突擊先鋒總司令。他手持血色戰旗身先士卒衝破敵軍三道基岩防線，與盟友 Parrot、Wemmbu 共同登上敵城要塞頂峰，迎來了 Unstable SMP 的輝煌勝利。",
+          conflict: "在萬人圍觀的中央大擂台上，FlameFrags 欣然應戰。他暗中在擂台四角布設了紅石脈衝封包計時器，當對方再度啟動延遲外掛試圖瞬移背刺時，計時器發出刺耳警報，投射出對方違法修改服務端補償參數的確鑿日誌。在騙局被當場戳穿、作弊者惱羞成怒企圖仗著數值優勢強攻時，FlameFrags 拔出《The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）》，以完全無外掛的純粹跳劈連斬，在不到三十秒內三次破盾並將作弊偽神斬落擂台，將其名牌釘在恥辱柱上！隨後，在最終的「千人大內戰（1000 VS 1000 Civil War）」中，FlameFrags 被推舉為突擊先鋒總司令。他手持血色戰旗身先士卒衝破敵軍三道基岩防線，與盟友 Parrot、Wemmbu 共同登上敵城要塞頂峰，迎來了 Unstable SMP 的輝煌勝利。",
           lootAndAnomaly: "斬獲《The Truth-Seeker's Executioner Blade（真實之眼破偽裁決戰刃）》與象徵同盟無畏精神的《1000-Player Vanguard War Banner（萬人大內戰先鋒軍旗）》。",
           impact: "徹底肅清了 Unstable SMP 的作弊陰霾與虛偽炒作，還原了純粹競技的尊嚴，FlameFrags 在萬人內戰中的先鋒衝鋒更成為整個宇宙歷史上最蕩氣迴腸的英雄史詩。",
           keyPlotPoints: [
             "擂台四角布設紅石封包測速器，公開對抗聲勢浩大的作弊偽神",
             "現場抓包延遲補償作弊數據日誌，當眾撕碎所謂最強戰神的虛偽包裝",
             "以純粹的原生破盾刀法在三十秒內速殺作弊者，為全服競技正名",
-            "在巨型農場爭霸戰（The Great Farm War）中擊潰敵對壟斷集團",
-            "出任千人大內戰先鋒總司令，身披戰旗鑿穿敵陣迎來自由聯盟大勝"
+            "出任千人大內戰先鋒總司令，身披戰旗鑿穿敵陣迎來自由聯盟大勝",
+            "與 Parrot、Wemmbu 頂峰會師，奠定無可撼動的先鋒戰狂威名"
           ],
           psychology: "「外掛可以篡改你的數據，但它買不來面對強敵時的勇氣，更買不來日夜苦練出的真正技藝。站在虛妄頂峰的偽神，終將在真實的刀鋒下現出原形。」"
+        },
+        {
+          title: "第四章：對抗 The LAW 強權與追尋不存在的虛空金庫",
+          subtitle: "最高領袖 Lattice K 鐵腕統治、戰神特訓與虛空 404 金庫探秘",
+          summary: "千人大內戰落幕後，伺服器並未歸於平靜，反而是由 Lattice K 創立的執法組織 The LAW 迅速擴張鐵腕統治。FlameFrags 拒絕向任何霸權低頭，先後在多位頂級格鬥大師特訓下精進身法；隨後，他根據世界底層代碼的隱密殘渣，孤身涉險深入地圖不存在的虛空邊界，歷經致命虛空斷層與隱形陷阱，成功解開古代代碼密碼，尋獲了全服無人能見的幽靈金色寶庫（Searching for a Vault that Doesn't Exist）！",
+          genesis: "Lattice K 領導的 The LAW 打著維持世界秩序的名號，對自由冒險者與物資流通實施嚴厲管制。為了探求伺服器背後不為人知的終極秘密，FlameFrags 踏上了追查『幽靈虛空代碼』的獨立征程。",
+          conflict: "在多場遭遇戰中，FlameFrags 與 The LAW 的精銳部隊數度交鋒，並在多位格鬥宗師的魔鬼淬煉下將身法打磨至超凡境界（I Got Trained By a Minecraft Combat Master）。隨後，他循著古代羊皮紙上的亂碼線索，穿越世界邊界的虛空裂隙。在坐標完全失真的『404 虛空扇區』中，四周全是漂浮的未加載方塊與致命虛空虛線。FlameFrags 依靠精準的終界珍珠盲投與鞘翅低空滑翔，在虛空中踩著隱形碰撞箱步步推進，最終解鎖了深埋在伺服器緩存中的神秘隱形保險庫，獲得了足以逆轉戰局的古代神鑰！",
+          lootAndAnomaly: "奪得傳奇秘寶《Ghost Vault Keycard（虛空金庫幽靈密匙）》，解鎖世界代碼邊界的未知權限。",
+          impact: "此舉證明了在 Lattice K 與 The LAW 統治的表面秩序之外，存在著更深層的代碼真相，FlameFrags 成為令 The LAW 最為頭痛的法外獨行俠。",
+          keyPlotPoints: [
+            "拒絕向 Lattice K 統治的 The LAW 妥協，堅守自由戰士信念",
+            "接受頂尖戰神魔鬼式特訓，身法與戰術完成二度質變飛躍",
+            "追蹤世界代碼異常殘留，獨闖坐標失真的虛空 404 扇區",
+            "在無底深淵中盲跳踩踏隱形方塊，破解古代十六進制密碼門",
+            "成功開啟傳說中不存在的金色寶庫（Ghost Vault），取得代碼神鑰"
+          ],
+          psychology: "「Lattice K 和他的 The LAW 以為他們掌握了世界的法律，但這個宇宙從誕生的那一刻起就是 Unstable 的。真正的自由，永遠藏在規則之外。」"
+        },
+        {
+          title: "第五章：逃離 Terminus！Minecraft 史上最致命死刑黑牢大逃亡（持續進行中）",
+          subtitle: "遭 The LAW 設伏囚禁、基岩深淵特級黑牢、破譯激光死角與浴火大越獄",
+          summary: "在 2026 年 10 月的最新震撼主線中，FlameFrags 遭到敵對執法大軍設伏暗算，被剝奪全部兵刃重裝，押入伺服器底層最恐怖的特級死刑黑牢「Terminus」（Escaping Terminus: The Deadliest Minecraft Prison）。面對基岩壁壘、浸水黑曜石與遠古守衛者激光殺局，FlameFrags 憑藉鋼鐵意志與極限近戰本能徒手格殺看守奪回武器，暴力鑿穿排氣天井殺出重圍，宣告戰神回歸，精彩主線持續進行中！",
+          genesis: "在獲取虛空金庫神物後，FlameFrags 成為 The LAW 的頭號追捕目標。在邊界荒原一場力量懸殊的圍剿伏擊戰中，他在力竭後不幸被俘，被秘密押送至號稱『絕對無人生還』的基岩黑牢 Terminus。",
+          conflict: "Terminus 建立在世界負 Y 軸最深處的天然基岩空腔中，四壁由浸水黑曜石與防爆結晶封死，常駐遠古守衛者的挖掘疲勞結界與全自動激光矩陣。面對剝奪裝備的非人困局，FlameFrags 毫無懼色。他利用換崗間隙暗中測算激光充能的 1.5 秒死角，利用私藏的微型紅石元件引發牢房短路停電。在警報大作的瞬間，他徒手奪下獄卒戰刃，連續斬殺三名重裝看守奪回裝備，並使用特製的 Terminus 破獄者神鎬暴力粉碎排氣天井，在坍塌的烈火與警報中宛如鳳凰涅槃般殺回主世界！",
+          lootAndAnomaly: "奪取傳奇神兵《Terminus Breaker Pickaxe（Terminus 破獄者合金鎬）》與典獄長特級執法印記。",
+          impact: "Terminus 號稱永不可攻破的死刑神話被 FlameFrags 親手砸碎，震撼了以 Lattice K 為首的統治階層，宣告戰狂永不言敗，Unstable SMP 戰火愈演愈烈！",
+          keyPlotPoints: [
+            "遭 The LAW 精銳部隊多方圍捕力戰被俘，押入全服最恐怖特級死刑黑牢 Terminus",
+            "在浸水黑曜石與遠古守衛者激光封鎖下，精準計算出激光充能的 1.5 秒盲區",
+            "利用私藏微型元件短路癱瘓監獄供電網絡，徒手搏殺奪回被扣押神裝",
+            "手持 Terminus 破獄者神鎬暴力鑿穿基岩夾層排氣天井",
+            "在警報震天與烈焰翻滾中殺出絕境黑牢，強勢重返 Unstable SMP 宇宙，故事未完待續"
+          ],
+          psychology: "「Terminus 可以奪走我的護甲與兵器，但它奪不走我刻在骨子裡的戰鬥本能。只要我還有一口氣在，任何黑牢都只能成為我封神路上的踏腳石！」"
         }
       ],
       unexpectedItems: [
@@ -886,30 +1210,30 @@ const UNSTABLE_DATA = {
       ],
       videos: [
         {
-          id: "unstable_flame_strongest",
-          title: "I Became the Strongest on the Unstable SMP",
-          titleZh: "我加冕成為 Unstable SMP 的最強戰神",
-          publishDate: "2024-05-18",
-          duration: "32:50",
-          thumbnail: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+I+Became+the+Strongest+on+the+Unstable+SMP",
-          summary: "FlameFrags 在 Unstable SMP 的封神之戰！面對各路豪強公會的圍剿與比武大會挑戰，他憑藉極致的近戰刀速與瞬切盾牌身法力挫守擂霸主，奪得全服最強戰神稱號。",
+          id: "Vhnn_sG7xUk",
+          title: "I Became Immortal on a Hardcore Minecraft SMP",
+          titleZh: "我在極限硬核 Minecraft SMP 成為不死之身",
+          publishDate: "2025-05-03",
+          duration: "24:18",
+          thumbnail: "https://i.ytimg.com/vi/Vhnn_sG7xUk/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=Vhnn_sG7xUk",
+          summary: "FlameFrags 在 Unstable 宇宙的傳奇初亮相！在極限硬核環境中，他以精湛身法卡出令全服震驚的常駐金心與極限護甲，奠定近戰狂魔的無上威名！",
           keyMoments: [
-            "八強賽 10 秒速勝破盾戰術展示",
-            "決賽長達 15 分鐘的極限耐久大對決",
-            "全場觀眾起立致敬，披上最強戰神披風"
+            "極限血量下的精準走砍反打",
+            "在全服獵人圍剿中毫髮無傷脫身",
+            "向各大公會宣告戰神降臨"
           ],
-          unexpectedLoot: "Flame’s Bespoke Warplate（烈焰專屬重戰甲）"
+          unexpectedLoot: "Immortal Heart Relic（不死金心之證）"
         },
         {
-          id: "unstable_flame_solo",
+          id: "UJyBjBXaiZI",
           title: "SOLO Player VS Toxic Minecraft Team",
           titleZh: "孤狼單挑全服最囂張的毒瘤公會",
-          publishDate: "2024-06-22",
+          publishDate: "2025-05-17",
           duration: "28:15",
-          thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+SOLO+Player+VS+Toxic+Minecraft+Team",
-          summary: "毒瘤公會佔山為王並獵殺弱小，FlameFrags 隻身下戰書。在複雜的山脈雪原地形中，他以高超的破盾走砍與預判反擊，以 1 敵 5 斬殺對方全員，在廢墟中拾起純潔小花。",
+          thumbnail: "https://i.ytimg.com/vi/UJyBjBXaiZI/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=UJyBjBXaiZI",
+          summary: "毒瘤公會佔山為王並殘害無辜散戶，FlameFrags 隻身下戰書。在複雜的山脈雪原地形中，他以高超的破盾走砍與預判反擊以 1 敵 5 斬殺全員，拾起純潔小花。",
           keyMoments: [
             "雪山頂峰的水晶瞬爆雙殺反擊",
             "在追逐戰中冷靜預判並截斷敵軍退路",
@@ -918,46 +1242,126 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Rejoice’s Flower & Overlord's Slain Trophy"
         },
         {
-          id: "unstable_flame_terminus",
-          title: "Escaping Terminus: The Deadliest Minecraft Prison",
-          titleZh: "逃離 Terminus：Minecraft 最致命的死刑黑牢",
-          publishDate: "2024-08-30",
-          duration: "34:20",
-          thumbnail: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+Escaping+Terminus+The+Deadliest+Minecraft+Prison",
-          summary: "遭敵對勢力暗算被押入 Unstable 伺服器中最致命的黑牢 Terminus。在多重守衛者激光與基岩絕境中，FlameFrags 徒手擊殺獄卒奪回兵器，炸穿排氣閥完成震驚全服的大逃亡！",
+          id: "xxbwmsi4n-U",
+          title: "Unstable SMP: The Great Farm War",
+          titleZh: "Unstable SMP：全服巨型農場爭奪大戰",
+          publishDate: "2025-08-12",
+          duration: "31:40",
+          thumbnail: "https://i.ytimg.com/vi/xxbwmsi4n-U/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=xxbwmsi4n-U",
+          summary: "各大陣營為了爭奪全服核心資源農場大打出手。FlameFrags 孤身介入戰局，以一人之力粉碎敵對寡頭的包圍網，捍衛了全體自由玩家的生存命脈！",
           keyMoments: [
-            "在浸水黑曜石牢房摸清守衛激光死角",
-            "利用私藏微型紅石短路癱瘓牢區電網",
-            "擊殺典獄長奪得 Terminus 破獄者合金鎬"
+            "農場外圍突破敵方重晶石防線",
+            "高速連續破盾擊潰敵軍三名精銳守將",
+            "奪得農場核心產能並開放給自由散戶"
           ],
-          unexpectedLoot: "Terminus Breaker Pickaxe（Terminus 破獄鎬）"
+          unexpectedLoot: "Harvest Bastion Core（豐饒要塞核心）"
         },
         {
-          id: "unstable_flame_expose",
+          id: "UnFIrVKA9Zc",
+          title: "1000 VS 1000 Player Minecraft Civil War",
+          titleZh: "1000 對 1000 玩家萬人大內戰（先鋒衝鋒視角）",
+          publishDate: "2026-06-01",
+          duration: "45:20",
+          thumbnail: "https://i.ytimg.com/vi/UnFIrVKA9Zc/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=UnFIrVKA9Zc",
+          summary: "Unstable SMP 歷史上最壯烈的總攻！FlameFrags 手持先鋒軍旗，帶領突擊縱隊率先衝入敵軍重裝陣地。火光沖天、殘骸遍野，他以一人之力硬生生鑿穿敵軍中軍大營！",
+          keyMoments: [
+            "扛著 1000-Player War Banner 發起第一波捨身衝鋒",
+            "在密密麻麻的箭雨與高爆火砲中連斬敵方八名大將",
+            "與 Parrot、Wemmbu 共同登上敵軍要塞殘頂迎來勝利"
+          ],
+          unexpectedLoot: "1000-Player Vanguard War Banner"
+        },
+        {
+          id: "Ym2wmd19S_c",
+          title: "I Became the Strongest on the Unstable SMP",
+          titleZh: "我加冕成為 Unstable SMP 的最強戰神",
+          publishDate: "2026-06-09",
+          duration: "35:10",
+          thumbnail: "https://i.ytimg.com/vi/Ym2wmd19S_c/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=Ym2wmd19S_c",
+          summary: "面對全服各路豪強公會的車輪戰挑戰，FlameFrags 展現天花板級別的近戰刀速與瞬切盾牌身法，力挫全部守擂霸主，全場起立致敬披上最強披風！",
+          keyMoments: [
+            "八強賽 10 秒速勝破盾戰術展示",
+            "決賽長達 15 分鐘的極限耐久大對決",
+            "全場觀眾起立致敬，披上最強戰神披風"
+          ],
+          unexpectedLoot: "Flame’s Bespoke Warplate（烈焰專屬重戰甲）"
+        },
+        {
+          id: "ljppGDO4HlU",
+          title: "I Got Hunted By a Minecraft Combat Master",
+          titleZh: "我遭到 Minecraft 頂級格鬥宗師的致命追殺",
+          publishDate: "2026-06-19",
+          duration: "33:25",
+          thumbnail: "https://i.ytimg.com/vi/ljppGDO4HlU/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=ljppGDO4HlU",
+          summary: "一位神祕且技術超群的頂級格鬥宗師受雇前來獵殺 FlameFrags！在險象環生的野外遭遇戰中，兩大天花板高手展開招式與心理的極限對決！",
+          keyMoments: [
+            "在峽谷地形中展開毫秒級盾切與走砍交鋒",
+            "利用地勢反卡對手跳劈盲區完成絕地反擊",
+            "贏得對手尊敬並揭開更深層暗殺懸賞黑幕"
+          ],
+          unexpectedLoot: "Combat Master's Duel Dagger（格鬥宗師決鬥匕首）"
+        },
+        {
+          id: "yBy5NnLTiWQ",
+          title: "I Got Trained By the World's Deadliest Minecraft Player",
+          titleZh: "我接受了世界上最致命玩家的魔鬼特訓",
+          publishDate: "2026-07-03",
+          duration: "36:50",
+          thumbnail: "https://i.ytimg.com/vi/yBy5NnLTiWQ/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=yBy5NnLTiWQ",
+          summary: "為了應對日益強大的 The LAW 組織威脅，FlameFrags 拜訪隱世戰神 TheG0DofWar，在極端惡劣環境下展開特訓，戰技再度突破凡人界限！",
+          keyMoments: [
+            "在岩漿湖與浮空跑酷中完成極限搏擊試煉",
+            "掌握反制延遲判定與多角度穿盾攻擊",
+            "結業考核中擊敗導師投影，獲得戰狂終極認可"
+          ],
+          unexpectedLoot: "God of War's Ancient Discipline Manual（戰神秘傳戰典）"
+        },
+        {
+          id: "BCiRLHaeHkI",
+          title: "Minecraft's Best Players Simulate PVP Tournament",
+          titleZh: "Minecraft 頂尖高手集結模擬殘酷錦標賽",
+          publishDate: "2026-07-21",
+          duration: "40:15",
+          thumbnail: "https://i.ytimg.com/vi/BCiRLHaeHkI/maxresdefault.jpg",
+          youtubeUrl: "https://youtu.be/BCiRLHaeHkI",
+          summary: "全宇宙頂級 PVP 玩家匯聚一堂！在無規則模擬角鬥場中，FlameFrags 以純粹原生戰鬥技巧大殺四方，再次向全服宣告誰才是真正的戰神！",
+          keyMoments: [
+            "單輪 1v3 殘局冷靜利用三叉戟連續破陣",
+            "決賽局的水晶瞬爆極限反制",
+            "奪得全服錦標賽唯一純金桂冠"
+          ],
+          unexpectedLoot: "PVP Tournament Grand Laurels（角鬥大會至高桂冠）"
+        },
+        {
+          id: "BkYekSPynVo",
           title: "I Exposed Minecraft's 'Strongest' Player",
           titleZh: "我當眾撕下了號稱『最強戰神』的虛偽面具",
-          publishDate: "2024-10-05",
-          duration: "27:30",
-          thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+I+Exposed+Minecraft%27s+Strongest+Player",
-          summary: "某位備受推崇的明星選手暗中利用伺服器延遲外掛與替身打假賽。FlameFrags 在一場公開賭鬥中佈置了紅石測速時鐘，在百萬觀眾面前當場戳穿作弊騙局，並拔刀將其斬落擂台！",
+          publishDate: "2026-08-14",
+          duration: "29:40",
+          thumbnail: "https://i.ytimg.com/vi/BkYekSPynVo/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=BkYekSPynVo",
+          summary: "某位被資本公會力捧的選手暗中利用延遲補償外掛牟利。FlameFrags 在公開擂台佈置紅石封包測速器，當眾戳穿作弊騙局，並拔刀將其斬落擂台！",
           keyMoments: [
-            "用紅石時鐘封包計時器現場抓包延遲作弊",
+            "用紅石時鐘封包計時器現場抓包延遲作弊日誌",
             "以純粹的原生技術在零外掛狀態下擊碎對手",
             "將偽強者的名牌釘在主城恥辱柱上"
           ],
           unexpectedLoot: "The Truth-Seeker's Executioner Blade"
         },
         {
-          id: "unstable_flame_vault",
+          id: "h68WUZ8b0O0",
           title: "Searching for a Vault that Doesn't Exist",
           titleZh: "尋找那座『不存在的隱形金庫』",
-          publishDate: "2024-12-18",
-          duration: "31:45",
-          thumbnail: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+Searching+for+a+Vault+that+Doesn%27t+Exist",
-          summary: "為追尋失落代碼的真相，FlameFrags 根據殘破線索深入虛空邊界，尋找地圖上未標註的幽靈寶庫。面對致命虛空斷層與隱形陷阱，他成功解開古代代碼密碼！",
+          publishDate: "2026-09-11",
+          duration: "33:10",
+          thumbnail: "https://i.ytimg.com/vi/h68WUZ8b0O0/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=h68WUZ8b0O0",
+          summary: "為追尋世界深層代碼的真相，FlameFrags 循著線索深入坐標失真的 404 虛空扇區。在無底深淵中盲跳踩踏隱形方塊，成功開啟傳說中不存在的金色寶庫！",
           keyMoments: [
             "利用盲跳與珍珠定位虛空邊界隱形路徑",
             "破譯失落古代密室的十六進制代碼門",
@@ -966,20 +1370,20 @@ const UNSTABLE_DATA = {
           unexpectedLoot: "Ghost Vault Keycard（虛空金庫幽靈密匙）"
         },
         {
-          id: "unstable_flame_1000war",
-          title: "1000 VS 1000 Player Minecraft Civil War",
-          titleZh: "1000 對 1000 玩家萬人大內戰（先鋒衝鋒視角）",
-          publishDate: "2025-02-18",
-          duration: "45:20",
-          thumbnail: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
-          youtubeUrl: "https://www.youtube.com/results?search_query=FlameFrags+1000+VS+1000+Civil+War",
-          summary: "Unstable SMP 歷史上最壯烈的總攻！FlameFrags 手持先鋒軍旗，帶領突擊縱隊率先衝入敵軍重裝陣地。火光沖天、殘骸遍野，他以一人之力硬生生鑿穿敵軍中軍大營！",
+          id: "8t8YBu7bdT0",
+          title: "Escaping Terminus: The Deadliest Minecraft Prison",
+          titleZh: "逃離 Terminus：Minecraft 最致命的死刑黑牢（最新熱播中！）",
+          publishDate: "2026-10-06",
+          duration: "38:45",
+          thumbnail: "https://i.ytimg.com/vi/8t8YBu7bdT0/maxresdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=8t8YBu7bdT0",
+          summary: "2026 年 10 月最新史詩！遭 The LAW 設伏被押入全服最恐怖特級黑牢 Terminus。在多重守衛者激光與基岩絕境中，FlameFrags 徒手擊殺獄卒奪回兵器，炸穿天井完成震驚全宇宙的越獄大逆轉！",
           keyMoments: [
-            "扛著 1000-Player War Banner 發起第一波捨身衝鋒",
-            "在密密麻麻的箭雨與高爆火砲中連斬敵方八名大將",
-            "與 Parrot、Wemmbu 共同登上敵軍要塞殘頂迎來勝利"
+            "在浸水黑曜石牢房摸清守衛激光 1.5 秒盲區",
+            "利用私藏微型紅石短路癱瘓牢區電網",
+            "擊殺典獄長奪得 Terminus 破獄者合金鎬破牆越獄"
           ],
-          unexpectedLoot: "1000-Player Vanguard War Banner"
+          unexpectedLoot: "Terminus Breaker Pickaxe（Terminus 破獄鎬）"
         }
       ]
     }
@@ -1018,23 +1422,33 @@ const UNSTABLE_DATA = {
       }
     },
     {
-      epoch: "第四紀元：暗夜風暴！黑手黨崛起與無間滲透",
-      headline: "地下犯罪帝國操控全服，暗殺、臥底與復仇怒火",
+      epoch: "第四紀元：暗夜風暴！黑手黨覆滅與 The LAW 執法崛起",
+      headline: "地下犯罪帝國崩塌，Lattice K 創立 The LAW 建立鐵腕秩序",
       details: {
         parrot: "被推舉為王位候選人，在黑手黨的暗殺威脅下發表廣場演說，以壓倒性票數加冕為王。",
         wemmbu: "面對黑手黨綁架摯友 Eggchan 的威脅，隻身血洗黑手黨總舵，在最後 3 秒救出夥伴。",
         spoke: "假意投誠黑手黨擔任雙面間諜，在教父首腦峰會時引爆共振瞬爆礦車，埋葬犯罪家族。",
-        flamefrags: "遭陷害被關入全服最殘酷死刑黑牢 Terminus，憑藉極限技巧破獄而出，化身復仇戰神。"
+        flamefrags: "在暗潮洶湧中磨礪原生極限戰技，拒絕受制於任何強權勢力，成為令各大陣營忌憚的自由戰神。"
       }
     },
     {
-      epoch: "第五紀元：王權興衰與萬人大內戰（終局之戰）",
-      headline: "四條命運之線匯聚，千人軍團在主城盆地打響宇宙決戰",
+      epoch: "第五紀元：千人大內戰風雲（Civil War Era）",
+      headline: "四條命運之線匯聚，千人軍團在主城盆地打響陣營大對決",
       details: {
-        parrot: "以國王身份統帥自由聯合軍團，發表最後戰鬥檄文，率眾直面腐敗殘餘勢力。",
+        parrot: "以國王身份統帥自由聯合軍團，發表戰鬥檄文，率眾直面腐敗殘餘與霸權干涉。",
         wemmbu: "攜帶軌道巨砲終端與 The Crucible 巨刃親臨戰場，充當同盟最強火力支柱摧毀敵城壘。",
         spoke: "在戰場後方切斷敵軍補給線，利用代碼圖騰突破敵軍結界，策應正面主力。",
         flamefrags: "手扛先鋒軍旗帶領敢死隊率先發起衝鋒，在漫天火砲中親自鑿穿敵軍三道核心防線。"
+      }
+    },
+    {
+      epoch: "第六紀元：幽冥深淵、維度爭霸與新秩序（持續連載中・未完結）",
+      headline: "世界絕無終局！四大主角在 2026 年下半年開啟全新維度篇章，抗衡 Lattice K 的 The LAW 統治",
+      details: {
+        parrot: "在礦場黑牢實驗後墜入深邃幽冥深淵（Underworld），在無光源死局中上演極限大逃生重見天日。",
+        wemmbu: "在千人肅清夜（The Purge）與尋找失蹤摯友 Eggchan 的苦戰中，親手修復過載核心拯救世界。",
+        spoke: "率千人進軍終界建立文明，組建最強軍隊探索失落維度，建立至高帝國抗衡 Lattice K 與 The LAW。",
+        flamefrags: "追尋虛空不存在的金庫後遭設伏囚禁，於 2026 年 10 月成功逃離特級黑牢 Terminus，戰神強勢歸來！"
       }
     }
   ],
@@ -1296,3 +1710,10 @@ const UNSTABLE_DATA = {
     ]
   }
 };
+
+if (typeof window !== 'undefined') {
+  window.UNSTABLE_DATA = UNSTABLE_DATA;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = UNSTABLE_DATA;
+}
