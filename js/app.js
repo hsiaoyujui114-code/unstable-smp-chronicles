@@ -3,15 +3,15 @@
  * 音效合成器、粒子背景、角色切換器、劇集影院與全域搜尋引擎
  */
 
-// 1. Web Audio API 音效合成引擎 (零外部依賴、純原生合成 Minecraft 與賽博音效)
+// 1. Web Audio API 音效合成引擎 (零外部依賴、純原生合成 Minecraft 音效，延遲初始化避免載入阻滯)
 class SoundEngine {
   constructor() {
     this.ctx = null;
     this.enabled = true;
-    this.initContext();
   }
 
   initContext() {
+    if (this.ctx) return;
     try {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       this.ctx = new AudioContext();
@@ -21,6 +21,7 @@ class SoundEngine {
   }
 
   ensureState() {
+    this.initContext();
     if (this.ctx && this.ctx.state === "suspended") {
       this.ctx.resume();
     }
@@ -33,8 +34,9 @@ class SoundEngine {
 
   // 點擊音效 (Minecraft 介面按鈕點擊聲)
   playClick() {
-    if (!this.enabled || !this.ctx) return;
+    if (!this.enabled) return;
     this.ensureState();
+    if (!this.ctx) return;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
@@ -54,11 +56,11 @@ class SoundEngine {
 
   // 獲得物品 / 升級音效 (Minecraft 拾取經驗球經典叮咚聲)
   playItemGain() {
-    if (!this.enabled || !this.ctx) return;
+    if (!this.enabled) return;
     this.ensureState();
+    if (!this.ctx) return;
     const now = this.ctx.currentTime;
     
-    // 兩段高頻音模擬經驗球叮聲
     const playNote = (freq, delay) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
@@ -82,8 +84,9 @@ class SoundEngine {
 
   // 伺服器異常 / 漏洞音效 (低音共振)
   playGlitchHum() {
-    if (!this.enabled || !this.ctx) return;
+    if (!this.enabled) return;
     this.ensureState();
+    if (!this.ctx) return;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
@@ -102,22 +105,26 @@ class SoundEngine {
   }
 }
 
-// 2. 懸浮粒子背景動畫 (模擬虛空塵埃、紅石火花與終界粒子)
+// 2. 懸浮粒子背景動畫 (極致性能優化：滾動時暫停、限制 30FPS、減少粒子數量)
 class ParticleCanvas {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext("2d");
     this.particles = [];
-    this.maxParticles = 65;
+    this.maxParticles = 18; // 精簡至 18 顆微粒，極大幅降低 CPU/GPU 負擔
     this.themeColor = "rgba(56, 189, 248, ";
     this.mouseX = null;
     this.mouseY = null;
+    this.lastFrameTime = 0;
+    this.isScrolling = false;
+    this.scrollTimeout = null;
+    this.isPaused = false;
 
     this.resize();
     this.initParticles();
     this.bindEvents();
-    this.animate();
+    this.animate(0);
   }
 
   setTheme(colorRgb) {
@@ -130,15 +137,40 @@ class ParticleCanvas {
   }
 
   bindEvents() {
-    window.addEventListener("resize", () => this.resize());
-    window.addEventListener("mousemove", (e) => {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => this.resize(), 200);
+    }, { passive: true });
+
+    // 滾動時立即暫停 Canvas 繪製，將 100% 算力留給頁面平滑滾動
+    window.addEventListener("scroll", () => {
+      this.isScrolling = true;
+      clearTimeout(this.scrollTimeout);
+      this.scrollTimeout = setTimeout(() => {
+        this.isScrolling = false;
+      }, 100);
+    }, { passive: true });
+
+    // 分頁切換到後台時完全停止渲染
+    document.addEventListener("visibilitychange", () => {
+      this.isPaused = document.hidden;
     });
+
+    let mouseMoveThrottle = false;
+    window.addEventListener("mousemove", (e) => {
+      if (!mouseMoveThrottle) {
+        this.mouseX = e.clientX;
+        this.mouseY = e.clientY;
+        mouseMoveThrottle = true;
+        setTimeout(() => { mouseMoveThrottle = false; }, 40);
+      }
+    }, { passive: true });
+
     window.addEventListener("mouseleave", () => {
       this.mouseX = null;
       this.mouseY = null;
-    });
+    }, { passive: true });
   }
 
   initParticles() {
@@ -147,16 +179,22 @@ class ParticleCanvas {
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
-        size: Math.random() * 2.8 + 1,
-        speedX: (Math.random() - 0.5) * 0.45,
-        speedY: (Math.random() - 0.5) * 0.45,
-        alpha: Math.random() * 0.6 + 0.2,
-        pulsing: Math.random() * 0.02
+        size: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: (Math.random() - 0.5) * 0.35,
+        alpha: Math.random() * 0.45 + 0.15
       });
     }
   }
 
-  animate() {
+  animate(timestamp) {
+    requestAnimationFrame((t) => this.animate(t));
+
+    // 當滾動中、分頁在後台、或未達 30FPS 刷新時間間隔時，直接跳過重繪
+    if (this.isScrolling || this.isPaused) return;
+    if (timestamp - this.lastFrameTime < 33) return; // 鎖定 30FPS，節省 50% 繪圖算力
+    this.lastFrameTime = timestamp;
+
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     for (let p of this.particles) {
@@ -169,24 +207,21 @@ class ParticleCanvas {
       if (p.y < 0) p.y = this.canvas.height;
       if (p.y > this.canvas.height) p.y = 0;
 
-      // 互動游標排斥微擾動
+      // 互動游標微排斥
       if (this.mouseX !== null && this.mouseY !== null) {
         const dx = p.x - this.mouseX;
         const dy = p.y - this.mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          p.x += (dx / dist) * 1.5;
-          p.y += (dy / dist) * 1.5;
+        const distSq = dx * dx + dy * dy;
+        if (distSq < 6400) { // 80px 距離內
+          const dist = Math.sqrt(distSq);
+          p.x += (dx / dist) * 1.2;
+          p.y += (dy / dist) * 1.2;
         }
       }
 
       this.ctx.fillStyle = `${this.themeColor}${p.alpha})`;
-      this.ctx.beginPath();
-      // 方塊形像素微粒 (Minecraft 像素風)
       this.ctx.fillRect(p.x, p.y, p.size, p.size);
     }
-
-    requestAnimationFrame(() => this.animate());
   }
 }
 
