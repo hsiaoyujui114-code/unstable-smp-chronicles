@@ -743,6 +743,51 @@ class AppController {
                   </div>
                 </div>
               ` : ''}
+
+              <!-- 官方劇情出處原片 (Official YouTube Source Video) -->
+              ${arc.sourceVideos && arc.sourceVideos.length > 0 ? `
+                <div class="arc-source-box">
+                  <div class="arc-source-header">
+                    <div class="arc-source-title-row">
+                      <div class="arc-source-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                        <span>本章劇情出處原片 (Official YouTube Source)</span>
+                      </div>
+                      <span class="arc-source-notice">※ 創作者 YouTube 官方原片（英文原名・無二創翻譯）</span>
+                    </div>
+                  </div>
+
+                  <div class="arc-source-cards-container">
+                    ${arc.sourceVideos.map(sv => `
+                      <div class="arc-source-card">
+                        <div class="arc-source-thumb-box" data-video-id="${sv.id}" data-video-title="${sv.title}">
+                          <img src="${sv.thumbnail}" alt="${sv.title}" class="arc-source-thumb" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault.jpg','hqdefault.jpg');">
+                          <div class="arc-source-play-overlay">
+                            <div class="arc-play-icon">▶</div>
+                          </div>
+                          <span class="arc-source-duration">${sv.duration}</span>
+                        </div>
+                        <div class="arc-source-content">
+                          <div class="arc-source-channel-tag">
+                            <span class="yt-dot">●</span> <strong>${sv.channel}</strong> 官方 YouTube 頻道
+                          </div>
+                          <div class="arc-source-en-title" title="${sv.title}">${sv.title}</div>
+                          <div class="arc-source-actions">
+                            <a href="${sv.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-source-link" title="前往 YouTube 觀看 ${sv.channel} 官方原片">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                              <span>前往 YouTube 觀看原片</span>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <button class="btn-source-theater btn-open-theater" data-video-id="${sv.id}" data-video-title="${sv.title}">
+                              ▶ 於影院播放
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
             </div>
           `).join("")}
         </div>
@@ -777,7 +822,7 @@ class AppController {
         <div class="videos-grid fade-in">
           ${char.videos.map(vid => `
             <div class="video-card">
-              <div class="video-thumb-container" data-video-id="${vid.id}" data-video-title="${vid.titleZh}">
+              <div class="video-thumb-container" data-video-id="${vid.id}" data-video-title="${vid.title}">
                 <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault.jpg','hqdefault.jpg');">
                 <div class="video-play-overlay">
                   <div class="play-circle">
@@ -787,9 +832,11 @@ class AppController {
                 <span class="video-duration">${vid.duration}</span>
               </div>
               <div class="video-meta-content">
+                <div class="video-channel-tag">
+                  <span class="yt-dot">●</span> <strong>${char.realHandle || char.name}</strong> 官方 YouTube 原片
+                </div>
                 <div class="video-title-row">
-                  <div class="video-title-en">${vid.title}</div>
-                  <div class="video-title-zh">${vid.titleZh}</div>
+                  <div class="video-title-en" style="font-weight: 700; color: #fff; font-size: 1.05rem;">${vid.title}</div>
                 </div>
                 <p class="video-summary">${vid.summary}</p>
                 <div class="video-loot-badge">
@@ -797,11 +844,13 @@ class AppController {
                   <strong>${vid.unexpectedLoot}</strong>
                 </div>
                 <div class="video-btn-row">
-                  <button class="btn-video-watch btn-open-theater" data-video-id="${vid.id}" data-video-title="${vid.titleZh}">
+                  <button class="btn-video-watch btn-open-theater" data-video-id="${vid.id}" data-video-title="${vid.title}">
                     ▶ 於影院播放解說
                   </button>
-                  <a href="${vid.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-watch" style="flex: 0 0 42px;" title="在 YouTube 上觀看">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                  <a href="${vid.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-watch btn-yt-direct" style="flex: 0 0 auto; padding: 0 14px; background: #dc2626; color: #fff; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;" title="前往 YouTube 觀看 ${char.realHandle || char.name} 官方原片">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                    <span>YouTube 原片</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                   </a>
                 </div>
               </div>
@@ -816,7 +865,7 @@ class AppController {
 
   bindSubtabDynamicEvents(scopeElement) {
     // 綁定影片彈窗播放
-    const playTriggers = scopeElement.querySelectorAll(".video-thumb-container, .btn-open-theater");
+    const playTriggers = scopeElement.querySelectorAll(".video-thumb-container, .btn-open-theater, .arc-source-thumb-box, .btn-source-theater");
     playTriggers.forEach(el => {
       el.addEventListener("click", () => {
         const vidId = el.getAttribute("data-video-id");
@@ -832,6 +881,13 @@ class AppController {
     const container = document.getElementById("timeline-mount");
     if (!container) return;
 
+    const chars = [
+      { key: "parrot", name: "Parrot", avatar: UNSTABLE_DATA.characters.parrot.avatar, colorVar: "--parrot-color" },
+      { key: "wemmbu", name: "Wemmbu", avatar: UNSTABLE_DATA.characters.wemmbu.avatar, colorVar: "--wemmbu-color" },
+      { key: "spoke", name: "Spoke", avatar: UNSTABLE_DATA.characters.spoke.avatar, colorVar: "--spoke-color" },
+      { key: "flamefrags", name: "FlameFrags", avatar: UNSTABLE_DATA.characters.flamefrags.avatar, colorVar: "--flame-color" }
+    ];
+
     container.innerHTML = `
       <div class="timeline-container fade-in">
         ${UNSTABLE_DATA.timelineMatrix.map((item, index) => `
@@ -842,41 +898,27 @@ class AppController {
               <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">${item.headline}</p>
             </div>
             <div class="epoch-pov-grid">
-              <!-- Parrot POV -->
-              <div class="pov-box" style="--pov-color: var(--parrot-color);">
-                <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.parrot.avatar}" class="pov-avatar" alt="Parrot" loading="lazy" decoding="async">
-                  <span class="pov-name">Parrot</span>
-                </div>
-                <p class="pov-action-text">${item.details.parrot}</p>
-              </div>
-
-              <!-- Wemmbu POV -->
-              <div class="pov-box" style="--pov-color: var(--wemmbu-color);">
-                <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.wemmbu.avatar}" class="pov-avatar" alt="Wemmbu" loading="lazy" decoding="async">
-                  <span class="pov-name">Wemmbu</span>
-                </div>
-                <p class="pov-action-text">${item.details.wemmbu}</p>
-              </div>
-
-              <!-- Spoke POV -->
-              <div class="pov-box" style="--pov-color: var(--spoke-color);">
-                <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.spoke.avatar}" class="pov-avatar" alt="Spoke" loading="lazy" decoding="async">
-                  <span class="pov-name">Spoke</span>
-                </div>
-                <p class="pov-action-text">${item.details.spoke}</p>
-              </div>
-
-              <!-- FlameFrags POV -->
-              <div class="pov-box" style="--pov-color: var(--flame-color);">
-                <div class="pov-char-tag">
-                  <img src="${UNSTABLE_DATA.characters.flamefrags.avatar}" class="pov-avatar" alt="FlameFrags" loading="lazy" decoding="async">
-                  <span class="pov-name">FlameFrags</span>
-                </div>
-                <p class="pov-action-text">${item.details.flamefrags}</p>
-              </div>
+              ${chars.map(c => {
+                const src = item.sources ? item.sources[c.key] : null;
+                return `
+                  <div class="pov-box" style="--pov-color: var(${c.colorVar});">
+                    <div class="pov-char-tag">
+                      <img src="${c.avatar}" class="pov-avatar" alt="${c.name}" loading="lazy" decoding="async">
+                      <span class="pov-name">${c.name}</span>
+                    </div>
+                    <p class="pov-action-text">${item.details[c.key]}</p>
+                    ${src ? `
+                      <div class="pov-source-row">
+                        <a href="${src.url}" target="_blank" rel="noopener noreferrer" class="pov-source-link" title="前往 YouTube 觀看 ${src.channel} 官方原片">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                          <span>原片：${src.title}</span>
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join('')}
             </div>
           </div>
         `).join("")}
