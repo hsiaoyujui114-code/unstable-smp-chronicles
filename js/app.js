@@ -778,7 +778,7 @@ class AppController {
           ${char.videos.map(vid => `
             <div class="video-card">
               <div class="video-thumb-container" data-video-id="${vid.id}" data-video-title="${vid.titleZh}">
-                <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy" decoding="async">
+                <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault.jpg','hqdefault.jpg');">
                 <div class="video-play-overlay">
                   <div class="play-circle">
                     <div class="play-triangle"></div>
