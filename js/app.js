@@ -391,6 +391,8 @@ class AppController {
     this.setupSearch();
     this.setupAudioToggle();
     this.setupPerformanceToggle();
+    this.setupKeyboardShortcuts();
+    this.setupFloatingDockObserver();
 
     // 初始化小遊戲
     new QuestGameEngine(UNSTABLE_DATA, this.soundEngine);
@@ -642,19 +644,53 @@ class AppController {
         if (contentBox) {
           contentBox.innerHTML = this.getSubtabHtml(char, tab);
           this.bindSubtabDynamicEvents(contentBox);
+          this.updateFloatingDock(char);
         }
       });
     });
 
     this.bindSubtabDynamicEvents(container);
+    this.updateFloatingDock(char);
   }
 
   getSubtabHtml(char, tabKey) {
     if (tabKey === "arcs") {
       return `
+        <!-- 章節快捷跳轉導覽條 -->
+        <div class="quick-nav-bar">
+          <div class="quick-nav-header">
+            <div class="quick-nav-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>章節快捷直達 (Quick Jump)</span>
+            </div>
+            <div class="quick-nav-hint">
+              <span>⌨️ 快捷鍵：按數字鍵</span>
+              <span class="key-badge">1</span> ~ <span class="key-badge">${char.storyArcs.length}</span>
+              <span>直達對應章節 · 按</span>
+              <span class="key-badge">0</span>
+              <span>最新章 · 按</span>
+              <span class="key-badge">T</span>
+              <span>回頂端</span>
+            </div>
+          </div>
+          <div class="quick-nav-pills">
+            ${char.storyArcs.map((arc, i) => {
+              const cleanTitle = arc.title.replace(/^第[一二三四五六七八九十]+章[：:]\s*/, '');
+              const isLatest = i === char.storyArcs.length - 1;
+              return `
+                <button class="quick-jump-pill ${isLatest ? 'latest' : ''}" data-jump-to="arc-chapter-${i + 1}" title="${arc.title}">
+                  <span class="jump-pill-num">0${i + 1}</span>
+                  <span class="jump-pill-text">${cleanTitle}</span>
+                  ${isLatest ? `<span class="jump-pill-badge">LATEST</span>` : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
         <div class="story-arcs-list fade-in">
           ${char.storyArcs.map((arc, i) => `
-            <div class="story-arc-card">
+            <div class="story-arc-card" id="arc-chapter-${i + 1}">
               <div class="arc-header">
                 <div class="arc-header-left">
                   <div class="arc-num-badge">CHAPTER 0${i + 1} // 紀元篇章</div>
@@ -819,9 +855,41 @@ class AppController {
 
     if (tabKey === "videos") {
       return `
+        <!-- 影片集數快捷跳轉導覽條 -->
+        <div class="quick-nav-bar">
+          <div class="quick-nav-header">
+            <div class="quick-nav-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>影片集數快捷直達 (Quick Jump)</span>
+            </div>
+            <div class="quick-nav-hint">
+              <span>共 ${char.videos.length} 支原片 · 鍵盤按</span>
+              <span class="key-badge">1</span> ~ <span class="key-badge">9</span>
+              <span>直達前 9 集 · 按</span>
+              <span class="key-badge">0</span>
+              <span>最新集 · 按</span>
+              <span class="key-badge">T</span>
+              <span>回頂端</span>
+            </div>
+          </div>
+          <div class="quick-nav-pills video-pills">
+            ${char.videos.map((vid, i) => {
+              const isLatest = i === char.videos.length - 1;
+              const epNum = i + 1 < 10 ? '0' + (i + 1) : i + 1;
+              return `
+                <button class="quick-jump-pill video-jump-pill ${isLatest ? 'latest' : ''}" data-jump-to="video-episode-${i + 1}" title="第 ${i + 1} 集：${vid.title}">
+                  <span class="jump-pill-num">EP ${epNum}</span>
+                  <span class="jump-pill-text">${vid.title}</span>
+                  ${isLatest ? `<span class="jump-pill-badge">LATEST</span>` : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
         <div class="videos-grid fade-in">
-          ${char.videos.map(vid => `
-            <div class="video-card">
+          ${char.videos.map((vid, i) => `
+            <div class="video-card" id="video-episode-${i + 1}">
               <div class="video-thumb-container" data-video-id="${vid.id}" data-video-title="${vid.title}">
                 <img src="${vid.thumbnail}" alt="${vid.title}" class="video-thumb" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault.jpg','hqdefault.jpg');">
                 <div class="video-play-overlay">
@@ -874,6 +942,150 @@ class AppController {
           this.openVideoTheater(vidId, vidTitle);
         }
       });
+    });
+
+    // 綁定快捷跳轉按鈕 (Quick Jump Pills)
+    const jumpPills = scopeElement.querySelectorAll(".quick-jump-pill");
+    jumpPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        const targetId = pill.getAttribute("data-jump-to");
+        if (targetId) {
+          this.jumpToElement(targetId);
+        }
+      });
+    });
+  }
+
+  jumpToElement(targetId) {
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+    this.soundEngine.playClick();
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    targetEl.classList.remove('jump-target-highlight');
+    void targetEl.offsetWidth; // 強制重繪觸發動畫
+    targetEl.classList.add('jump-target-highlight');
+    setTimeout(() => {
+      targetEl.classList.remove('jump-target-highlight');
+    }, 1800);
+  }
+
+  updateFloatingDock(char) {
+    const dock = document.getElementById("floating-quick-dock");
+    if (!dock || !char) return;
+
+    if (this.activeCharSubtab === "arcs") {
+      dock.innerHTML = `
+        <span class="dock-label">📜 章節:</span>
+        ${char.storyArcs.map((arc, i) => {
+          const isLatest = i === char.storyArcs.length - 1;
+          return `
+            <button class="dock-btn ${isLatest ? 'latest' : ''}" data-jump-to="arc-chapter-${i + 1}" title="${arc.title}">
+              ${i + 1}
+            </button>
+          `;
+        }).join('')}
+        <button class="dock-btn dock-btn-top" id="dock-btn-top" title="回到角色頂部">
+          ⬆ 頂部
+        </button>
+      `;
+    } else if (this.activeCharSubtab === "videos") {
+      dock.innerHTML = `
+        <span class="dock-label">🎬 集數:</span>
+        ${char.videos.map((vid, i) => {
+          const isLatest = i === char.videos.length - 1;
+          return `
+            <button class="dock-btn ${isLatest ? 'latest' : ''}" data-jump-to="video-episode-${i + 1}" title="第 ${i + 1} 部：${vid.title}">
+              ${i + 1}
+            </button>
+          `;
+        }).join('')}
+        <button class="dock-btn dock-btn-top" id="dock-btn-top" title="回到角色頂部">
+          ⬆ 頂部
+        </button>
+      `;
+    } else {
+      dock.innerHTML = `
+        <button class="dock-btn dock-btn-top" id="dock-btn-top" title="回到角色頂部">
+          ⬆ 頂部
+        </button>
+      `;
+    }
+
+    dock.querySelectorAll(".dock-btn[data-jump-to]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-jump-to");
+        if (targetId) this.jumpToElement(targetId);
+      });
+    });
+
+    const topBtn = dock.querySelector("#dock-btn-top");
+    if (topBtn) {
+      topBtn.addEventListener("click", () => {
+        this.soundEngine.playClick();
+        const section = document.getElementById("character-deep-dive-mount");
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
+  setupFloatingDockObserver() {
+    window.addEventListener("scroll", () => {
+      const dock = document.getElementById("floating-quick-dock");
+      if (!dock) return;
+      const charSection = document.getElementById("character-section");
+      if (!charSection) return;
+      const rect = charSection.getBoundingClientRect();
+      if (rect.top <= 200 && rect.bottom >= 300) {
+        dock.classList.remove("hidden");
+      } else {
+        dock.classList.add("hidden");
+      }
+    }, { passive: true });
+  }
+
+  setupKeyboardShortcuts() {
+    document.addEventListener("keydown", (e) => {
+      // 避免在輸入框、搜尋彈窗或影院彈窗開啟時觸發快捷鍵
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+      if (document.getElementById('theater-modal')?.classList.contains('open')) return;
+      if (document.getElementById('search-modal')?.classList.contains('open')) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      const char = UNSTABLE_DATA.characters[this.activeCharacterId];
+      if (!char) return;
+
+      // 數字鍵 1-9 跳轉
+      if (e.key >= '1' && e.key <= '9') {
+        const num = parseInt(e.key, 10);
+        if (this.activeCharSubtab === 'arcs') {
+          if (num <= char.storyArcs.length) {
+            e.preventDefault();
+            this.jumpToElement(`arc-chapter-${num}`);
+          }
+        } else if (this.activeCharSubtab === 'videos') {
+          if (num <= char.videos.length) {
+            e.preventDefault();
+            this.jumpToElement(`video-episode-${num}`);
+          }
+        }
+      } else if (e.key === '0') {
+        // 數字鍵 0 直達最新一章 / 最新一集
+        if (this.activeCharSubtab === 'arcs') {
+          e.preventDefault();
+          this.jumpToElement(`arc-chapter-${char.storyArcs.length}`);
+        } else if (this.activeCharSubtab === 'videos') {
+          e.preventDefault();
+          this.jumpToElement(`video-episode-${char.videos.length}`);
+        }
+      } else if (e.key.toLowerCase() === 't') {
+        // 按鍵 T 回到角色個人檔案頂端
+        const mount = document.getElementById('character-deep-dive-mount');
+        if (mount) {
+          e.preventDefault();
+          this.soundEngine.playClick();
+          mount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     });
   }
 

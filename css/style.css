@@ -783,6 +783,7 @@ body::before {
   padding: 1.5rem;
   position: relative;
   transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+  scroll-margin-top: 96px;
 }
 
 .story-arc-card:hover {
@@ -1112,6 +1113,7 @@ body::before {
   transform: translateZ(0);
   content-visibility: auto;
   contain-intrinsic-size: 380px;
+  scroll-margin-top: 96px;
 }
 
 .video-card:hover {
@@ -2077,3 +2079,276 @@ body.perf-mode .char-avatar-render {
     white-space: normal;
   }
 }
+
+/* ==========================================================================
+   Quick Jump Navigation & Floating Dock (快捷章節與集數直達導覽列)
+   ========================================================================== */
+
+/* 跳轉高亮脈衝動畫 */
+@keyframes jumpHighlightPulse {
+  0% {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.5), 0 0 30px rgba(56, 189, 248, 0.4);
+    transform: scale(1.015);
+  }
+  50% {
+    border-color: #facc15;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.6), 0 0 35px rgba(250, 204, 21, 0.45);
+    transform: scale(1.02);
+  }
+  100% {
+    border-color: var(--border-light);
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
+
+.jump-target-highlight {
+  animation: jumpHighlightPulse 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  z-index: 10;
+}
+
+/* 頂端快捷導覽條 */
+.quick-nav-bar {
+  background: rgba(14, 20, 34, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--theme-current, #38bdf8);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.quick-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-nav-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.quick-nav-title svg {
+  color: var(--theme-current, #38bdf8);
+}
+
+.quick-nav-hint {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.key-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #f8fafc;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quick-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-jump-pill {
+  background: rgba(25, 34, 52, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #e2e8f0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.quick-jump-pill:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--theme-current, #38bdf8);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.28);
+}
+
+.quick-jump-pill.latest {
+  border-color: rgba(245, 158, 11, 0.6);
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.quick-jump-pill.latest:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+.jump-pill-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--theme-current, #38bdf8);
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.jump-pill-text {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jump-pill-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: #f59e0b;
+  color: #000;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  animation: pulseLatest 2s infinite ease-in-out;
+}
+
+@keyframes pulseLatest {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(0.95); }
+}
+
+/* 影片集數專屬 Pills 排列 */
+.video-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 8px;
+}
+
+.video-jump-pill {
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+
+.video-jump-pill .jump-pill-text {
+  flex: 1;
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+
+/* 懸浮快捷跳轉導覽電梯 (Floating Quick Dock) */
+.floating-quick-dock {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 900;
+  background: rgba(10, 15, 26, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 30px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+.floating-quick-dock.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+}
+
+.dock-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+.dock-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f1f5f9;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.dock-btn:hover {
+  background: var(--theme-current, #38bdf8);
+  border-color: var(--theme-current, #38bdf8);
+  color: #000;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 3px 12px rgba(56, 189, 248, 0.45);
+}
+
+.dock-btn.latest {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.dock-btn.latest:hover {
+  background: #f59e0b;
+  color: #000;
+}
+
+.dock-btn.dock-btn-top {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 640px) {
+  .floating-quick-dock {
+    right: 8px;
+    bottom: 12px;
+    padding: 4px 6px;
+    max-width: 95vw;
+    overflow-x: auto;
+  }
+  .dock-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+}
+
