@@ -197,7 +197,7 @@ const UNSTABLE_DATA = {
         },
         {
           "id": "parrot_arc_5",
-          "title": "第五章：新文明重構、礦場黑牢實驗與幽冥深淵大逃亡（持續進行中）",
+          "title": "第五章：新文明重構、礦場黑牢實驗與幽冥深淵大逃亡",
           "subtitle": "戰後高科技懸浮衛城崛起、千人黑牢暴動與墜入地底幽冥世界",
           "summary": "內戰勝利後，Parrot 引領倖存者利用代碼重構技術，在平原廢墟上建立起空前繁榮的高科技現代化衛城。然而，對極限社會結構的探究促使他開展了震撼全服的「1000 人極限礦場黑牢社會實驗」。在實驗尾聲突發的未知世界代碼崩塌中，Parrot 墜入連基岩都不復存在的恐怖失落維度「幽冥地底深淵（Underworld）」。在無光死局與未知代碼實體的圍獵下，Parrot 再度憑藉鋼鐵意志殺回主世界，而更大的幕後黑手 The LAW 與 Lattice K 正步步逼近，故事持續連載中！",
           "genesis": "在千人大內戰的廢墟之上，如何防止下一次動亂成為全服共同的命題。Parrot 運用戰後發掘的遠古建築藍圖與紅石自動化技術，在短短數月內建造了一座漂浮於雲層之上的超級高科技衛城（I Built Minecraft's Most Advanced Civilization）。然而，隨著伺服器底層代碼的持續不穩定，新興霸權「The LAW」及其神祕領袖 Lattice K 開始在暗中布控。為了測試極限高壓環境下人類群體的心理耐受力與資源自組織機制，Parrot 主導並監管了一場前所未有的「1000 名玩家模擬極限礦場黑牢（1000 Players Simulate Mining Prison）」社會學實驗。然而，這場實驗卻意外觸碰到了伺服器底層最隱密的封印。",
@@ -239,6 +239,35 @@ const UNSTABLE_DATA = {
               "youtubeUrl": "https://www.youtube.com/watch?v=1EgS0othQe4",
               "thumbnail": "https://i.ytimg.com/vi/1EgS0othQe4/maxresdefault.jpg",
               "duration": "27:40"
+            }
+          ]
+        },
+        {
+          "id": "parrot_arc_6",
+          "title": "第六章：終界黑牢千人煉獄、代碼解密與宿命決鬥（最新連載中）",
+          "subtitle": "被俘墜入 Spoke 的終界煉獄、千人角鬥死鬥與 20 小時密碼門大突破",
+          "summary": "逃離幽冥地底深淵後，Parrot 遭未知勢力 NULL 重兵伏擊逮捕，押送至主要塞並投入由 Spoke 親手在終界維度建造的黑曜石心理煉獄「End Prison」。在這座關押了 1000 名編號囚犯的絕望死局中，囚徒被迫在競技場進行殘酷死鬥。Parrot 憑戰技力克刺客，奇蹟重逢戰友 MinuteTech 展開極限戰技與跑酷特訓。兩人耗費整整 20 餘小時破譯了極度複雜的機關密碼門，最終闖入深層殿堂直面黑牢守門冠軍 X，引爆震撼全服的宿命決戰！",
+          "genesis": "從地底幽冥深淵的極限死局生還後，Parrot 尚未能重組力量，便在主世界要塞廢墟周圍遭遇了未知勢力 NULL 的精銳重裝部隊伏擊。在多重緩速藥水與虛空壓制下，負傷的 Parrot 被解除武裝、押入終界傳送門。當他從昏迷中甦醒時，發現自己置身於一座拔地而起的無邊黑曜石巨塔——這是 Spoke 為了重現自己曾承受之苦難而親手設計的極限心理煉獄「End Prison」。超過 1000 名玩家被剝奪名字與裝備，僅以囚犯編號相稱，每天在冰冷的黑曜石牢房與全天候紅石探照燈下苟延殘喘。",
+          "conflict": "這座終界黑牢奉行殘酷的角鬥場輪選淘汰制，看守衛兵會隨機唱名囚徒，將其推入萬丈懸崖之上的競技擂台展開生死死鬥。Parrot 入獄不久便遭遇敵對陣營老囚徒的利刃突襲，他憑藉以往無數次極限血戰磨練出的近身纏鬥與空手奪刃技巧，成功反殺對手震撼牢區。\n\n隨後，他在底層牢房的陰影處奇蹟般重逢了失散已久的戰友 MinuteTech。兩人秘密締結反抗同盟，MinuteTech 為 Parrot 量身展開了地獄式的跑酷與競技身法特訓，幫助他在一輪又一輪更加凶險的競技場決鬥中連續斬獲全勝。\n\n然而，通往終界監獄外界的唯一退路被深處一道由古代紅石邏輯鎖死的巨型連鎖防爆密碼門阻隔。在看守換班巡邏的短暫縫隙中，Parrot 與 MinuteTech 廢寢忘食地推演密碼矩陣，整整耗費了 20 多個小時，終於在經歷數百次嘗試後成功解密並啟動液壓開關，轟然推開厚重無比的黑曜石大門！在門後的終極競技大廳中，終界監獄最強守門人格鬥之王「X」正拔劍靜候，一場決定 1000 名囚徒自由與全服維度命運的宿命決鬥全面引爆！",
+          "lootAndAnomaly": "起獲 Spoke 終界黑牢通行符印《End Purgatory Key & Cipher Slate（終界煉獄密鑰與解密石板）》，內部烙印著整座虛空監獄的底層紅石電路藍圖與終界文明維度座標。",
+          "impact": "終界千人黑牢的爆發徹底揭開了 Unstable SMP 的全新維度篇章。Spoke 的終界帝國與 Parrot 的反抗命運再度正面碰撞，1000 名囚犯的反抗怒火在終界虛空引發連鎖海嘯，預示著對抗 NULL 與 The LAW 統治的新秩序戰爭已進入白熱化階段！",
+          "keyPlotPoints": [
+            "自幽冥深淵生還後遭遇 NULL 勢力重裝伏擊，被強行押送至 Spoke 建造的終界千人黑曜石煉獄",
+            "在殘酷的角鬥場死鬥制度下，空手格擋反殺敵意刺客，名震牢區",
+            "奇蹟重逢戰友 MinuteTech，接受高強度極限戰技與跑酷特訓，連克競技場強敵",
+            "在紅石防線夾縫中連續推演超過 20 小時，成功破譯深層機關密碼門",
+            "推開防爆閘門闖入最終殿堂，正面迎戰終界守門格鬥冠軍「X」，宿命大戰未完待續"
+          ],
+          "psychology": "「Spoke 打造了這座煉獄想要困住所有人的靈魂，但他忘了，高牆與基岩只能關住怯懦，關不住對光芒的渴望。經歷了 20 個小時的黑暗解密與無數場生死死鬥，我們已經推開了最後的大門。這一次，終界的虛空將見證真正的自由！」",
+          "sourceVideos": [
+            {
+              "id": "9-j9GWjyWpY",
+              "title": "1000 Players Simulate End Prison in Minecraft",
+              "channel": "ParrotX2",
+              "channelUrl": "https://www.youtube.com/@ParrotX2",
+              "youtubeUrl": "https://www.youtube.com/watch?v=9-j9GWjyWpY",
+              "thumbnail": "https://i.ytimg.com/vi/9-j9GWjyWpY/maxresdefault.jpg",
+              "duration": "1:12:54"
             }
           ]
         }
@@ -480,6 +509,16 @@ const UNSTABLE_DATA = {
             "在光源熄滅的漆黑深淵中憑腳步回聲盲跳踩踏浮島",
             "在異獸圍攻的千鈞一髮之際投擲終界珍珠穿透引力奇點回歸主世界"
           ]
+        },
+        {
+          "id": "9-j9GWjyWpY",
+          "title": "1000 Players Simulate End Prison in Minecraft",
+          "titleZh": "1000 名玩家在終界黑牢模擬殘酷生存",
+          "duration": "1:12:54",
+          "thumbnail": "https://i.ytimg.com/vi/9-j9GWjyWpY/maxresdefault.jpg",
+          "youtubeUrl": "https://www.youtube.com/watch?v=9-j9GWjyWpY",
+          "summary": "逃離幽冥深淵後，Parrot 遭未知勢力 NULL 捕獲押入深處於終界維度的黑曜石萬人煉獄。這座由 Spoke 親手打造的心理煉獄關押了 1000 名編號囚犯，每日以角鬥場殘酷死鬥汰除弱者。Parrot 在生死擂台中力克刺客，奇蹟般重逢盟友 MinuteTech 展開極限戰技特訓，耗費 20 餘小時破解機關密碼門，最終直面終界守護者 X 打響震撼全服的宿命決戰。",
+          "unexpectedLoot": "End Purgatory Key & Cipher Slate（終界煉獄密鑰與解密石板）"
         }
       ],
       "channel": "ParrotX2",
@@ -1934,17 +1973,17 @@ const UNSTABLE_DATA = {
       "epoch": "第六紀元：幽冥深淵、維度爭霸與新秩序（持續連載中・未完結）",
       "headline": "世界絕無終局！四大主角在 2026 年下半年開啟全新維度篇章，抗衡 Lattice K 的 The LAW 統治",
       "details": {
-        "parrot": "在礦場黑牢社會實驗遭遇地脈崩塌墜入漆黑恐怖的『幽冥地底深淵（Underworld）』，在無光死局中靠回聲定位與極限珍珠盲投殺回陽間，帶回幽冥虛空催化石，抗爭持續進行中！",
+        "parrot": "在經歷幽冥深淵大逃亡後遭 NULL 勢力伏擊押入 Spoke 的終界千人黑曜石煉獄，聯手重逢的 MinuteTech 耗時 20 小時破解機關密碼門並力戰格鬥冠軍 X，終界維度反抗戰火持續燃燒！",
         "wemmbu": "為尋找離奇失蹤的摯友 Eggchan 闖入無規則千人肅清之夜，一人一刀鎮守避難所阻擊狂徒，並躍入熔岩核心在最後倒數極限修復記憶體溢出挽救世界，尋友征程未完待續！",
         "spoke": "率千人遠征終界虛空搭建黑曜石空島要塞與全服最強幽靈軍團，穿越基岩深淵發掘起源原始碼石板加冕終界帝皇，與 Lattice K 的 The LAW 鐵腕大軍隔空對峙，傳奇持續燃燒！",
         "flamefrags": "在座標失真的 404 虛空扇區奪取幽靈金庫卡後遭 The LAW 伏擊被押入最致命特級死刑黑牢 Terminus，徒手奪刃格殺看守並以破獄者神鎬炸穿基岩天井浴火越獄，戰神強勢歸來！"
       },
       "sources": {
         "parrot": {
-          "id": "BWmWZTDxFrk",
-          "title": "Escaping the Minecraft Underworld",
+          "id": "9-j9GWjyWpY",
+          "title": "1000 Players Simulate End Prison in Minecraft",
           "channel": "ParrotX2",
-          "url": "https://www.youtube.com/watch?v=BWmWZTDxFrk"
+          "url": "https://www.youtube.com/watch?v=9-j9GWjyWpY"
         },
         "wemmbu": {
           "id": "5hG_nAYEC2g",
