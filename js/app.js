@@ -378,6 +378,8 @@ class AppController {
     this.particleCanvas = new ParticleCanvas("particles-canvas");
     this.activeCharacterId = "parrot"; // 預設展示 Parrot
     this.activeCharSubtab = "arcs"; // 'arcs' | 'items' | 'videos'
+    this.timelineViewMode = "master"; // 'master' | 'epoch'
+    this.timelineFilterChar = "all"; // 'all' | 'parrot' | 'wemmbu' | 'spoke' | 'flamefrags'
     
     this.init();
   }
@@ -665,21 +667,22 @@ class AppController {
             </div>
             <div class="quick-nav-hint">
               <span>⌨️ 快捷鍵：按數字鍵</span>
-              <span class="key-badge">1</span> ~ <span class="key-badge">${char.storyArcs.length}</span>
+              <span class="key-badge">1</span> ~ <span class="key-badge">9</span>
               <span>直達對應章節 · 按</span>
               <span class="key-badge">0</span>
-              <span>最新章 · 按</span>
+              <span>最新章 (共 ${char.storyArcs.length} 章) · 按</span>
               <span class="key-badge">T</span>
               <span>回頂端</span>
             </div>
           </div>
           <div class="quick-nav-pills">
             ${char.storyArcs.map((arc, i) => {
-              const cleanTitle = arc.title.replace(/^第[一二三四五六七八九十]+章[：:]\s*/, '');
+              const cleanTitle = arc.title.replace(/^第.*?章[：:]\s*/, '');
               const isLatest = i === char.storyArcs.length - 1;
+              const epNumStr = (i + 1 < 10 ? '0' : '') + (i + 1);
               return `
-                <button class="quick-jump-pill ${isLatest ? 'latest' : ''}" data-jump-to="arc-chapter-${i + 1}" title="${arc.title}">
-                  <span class="jump-pill-num">0${i + 1}</span>
+                <button class="quick-jump-pill ${isLatest ? 'latest' : ''}" data-jump-to="arc-chapter-${i + 1}" title="${arc.title} (${arc.formattedDate || arc.publishDate})">
+                  <span class="jump-pill-num">${epNumStr}</span>
                   <span class="jump-pill-text">${cleanTitle}</span>
                   ${isLatest ? `<span class="jump-pill-badge">LATEST</span>` : ''}
                 </button>
@@ -689,13 +692,21 @@ class AppController {
         </div>
 
         <div class="story-arcs-list fade-in">
-          ${char.storyArcs.map((arc, i) => `
+          ${char.storyArcs.map((arc, i) => {
+            const epNumStr = (i + 1 < 10 ? '0' : '') + (i + 1);
+            return `
             <div class="story-arc-card" id="arc-chapter-${i + 1}">
               <div class="arc-header">
                 <div class="arc-header-left">
-                  <div class="arc-num-badge">CHAPTER 0${i + 1} // 紀元篇章</div>
+                  <div class="arc-num-badge">CHAPTER ${epNumStr} // 官方正篇</div>
                   <h4 class="arc-title">${arc.title}</h4>
                   ${arc.subtitle ? `<div class="arc-subtitle">${arc.subtitle}</div>` : ''}
+                </div>
+                <div class="arc-header-right">
+                  <span class="arc-date-badge" title="YouTube 官方原片發布日期">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>${arc.formattedDate || arc.publishDate}</span>
+                  </span>
                 </div>
               </div>
 
@@ -806,6 +817,7 @@ class AppController {
                         <div class="arc-source-content">
                           <div class="arc-source-channel-tag">
                             <span class="yt-dot">●</span> <strong>${sv.channel}</strong> 官方 YouTube 頻道
+                            <span class="arc-source-date-tag">📅 上映：${sv.formattedDate || sv.publishDate || arc.formattedDate || arc.publishDate}</span>
                           </div>
                           <div class="arc-source-en-title" title="${sv.title}">${sv.title}</div>
                           <div class="arc-source-actions">
@@ -825,7 +837,8 @@ class AppController {
                 </div>
               ` : ''}
             </div>
-          `).join("")}
+          `;
+          }).join("")}
         </div>
       `;
     }
@@ -901,7 +914,12 @@ class AppController {
               </div>
               <div class="video-meta-content">
                 <div class="video-channel-tag">
-                  <span class="yt-dot">●</span> <strong>${char.realHandle || char.name}</strong> 官方 YouTube 原片
+                  <div class="video-channel-left">
+                    <span class="yt-dot">●</span> <strong>${char.realHandle || char.name}</strong> 官方 YouTube 原片
+                  </div>
+                  <div class="video-channel-right">
+                    <span class="video-date-badge" title="YouTube 官方發布日期">📅 ${vid.formattedDate || vid.publishDate}</span>
+                  </div>
                 </div>
                 <div class="video-title-row">
                   <div class="video-title-en" style="font-weight: 700; color: #fff; font-size: 1.05rem;">${vid.title}</div>
@@ -1043,6 +1061,21 @@ class AppController {
     }, { passive: true });
   }
 
+  jumpToCharacterChapter(charId, chapterId) {
+    this.soundEngine.playClick();
+    this.activeCharSubtab = 'arcs';
+    if (this.activeCharacterId !== charId) {
+      this.switchCharacter(charId);
+    } else {
+      this.renderCharacterDeepDive(charId);
+    }
+    const section = document.getElementById("character-section");
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      this.jumpToElement(chapterId);
+    }, 250);
+  }
+
   setupKeyboardShortcuts() {
     document.addEventListener("keydown", (e) => {
       // 避免在輸入框、搜尋彈窗或影院彈窗開啟時觸發快捷鍵
@@ -1100,42 +1133,175 @@ class AppController {
       { key: "flamefrags", name: "FlameFrags", avatar: UNSTABLE_DATA.characters.flamefrags.avatar, colorVar: "--flame-color" }
     ];
 
+    // 依據角色過濾全時序影片列表
+    const masterItems = (UNSTABLE_DATA.masterChronology || []).filter(item => {
+      if (this.timelineFilterChar === "all") return true;
+      return item.characterKey === this.timelineFilterChar;
+    });
+
+    const isMasterView = this.timelineViewMode === "master";
+
     container.innerHTML = `
-      <div class="timeline-container fade-in">
-        ${UNSTABLE_DATA.timelineMatrix.map((item, index) => `
-          <div class="timeline-epoch-card">
-            <div class="epoch-header">
-              <span class="epoch-badge">EPOCH ${index + 1}</span>
-              <h3 class="epoch-headline">${item.epoch}</h3>
-              <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">${item.headline}</p>
-            </div>
-            <div class="epoch-pov-grid">
-              ${chars.map(c => {
-                const src = item.sources ? item.sources[c.key] : null;
-                return `
-                  <div class="pov-box" style="--pov-color: var(${c.colorVar});">
-                    <div class="pov-char-tag">
-                      <img src="${c.avatar}" class="pov-avatar" alt="${c.name}" loading="lazy" decoding="async">
-                      <span class="pov-name">${c.name}</span>
-                    </div>
-                    <p class="pov-action-text">${item.details[c.key]}</p>
-                    ${src ? `
-                      <div class="pov-source-row">
-                        <a href="${src.url}" target="_blank" rel="noopener noreferrer" class="pov-source-link" title="前往 YouTube 觀看 ${src.channel} 官方原片">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
-                          <span>原片：${src.title}</span>
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                      </div>
-                    ` : ''}
-                  </div>
-                `;
-              }).join('')}
-            </div>
-          </div>
-        `).join("")}
+      <!-- 視角切換器 (46 集全上映時序 / 經典六大紀元跨視角對照) -->
+      <div class="timeline-view-switch-bar">
+        <button class="timeline-view-btn ${isMasterView ? 'active' : ''}" data-timeline-view="master">
+          ⏱️ 官方 46 集全時序上映編年史 (Master Timeline)
+        </button>
+        <button class="timeline-view-btn ${!isMasterView ? 'active' : ''}" data-timeline-view="epoch">
+          📜 經典六大紀元跨視角對照 (Epoch Matrix)
+        </button>
       </div>
+
+      ${isMasterView ? `
+        <!-- 角色過濾 Chips -->
+        <div class="timeline-filter-bar">
+          <button class="timeline-filter-chip ${this.timelineFilterChar === 'all' ? 'active' : ''}" data-filter-char="all">
+            ✦ 全主角 46 集總時序 (46)
+          </button>
+          <button class="timeline-filter-chip ${this.timelineFilterChar === 'parrot' ? 'active' : ''}" data-filter-char="parrot">
+            🦜 Parrot (14)
+          </button>
+          <button class="timeline-filter-chip ${this.timelineFilterChar === 'wemmbu' ? 'active' : ''}" data-filter-char="wemmbu">
+            ⚡ Wemmbu (11)
+          </button>
+          <button class="timeline-filter-chip ${this.timelineFilterChar === 'spoke' ? 'active' : ''}" data-filter-char="spoke">
+            🗡️ Spoke (10)
+          </button>
+          <button class="timeline-filter-chip ${this.timelineFilterChar === 'flamefrags' ? 'active' : ''}" data-filter-char="flamefrags">
+            🔥 FlameFrags (11)
+          </button>
+        </div>
+
+        <div class="timeline-notice-banner">
+          📅 嚴格依據 YouTube 官方真實上映時間排列（2024 年 4 月 21 日 Spoke 開山首播 ➔ 2026 年 10 月 15 日 Parrot 終界黑牢最新作）· 現實仍持續連載中！
+        </div>
+
+        <!-- 46 集官方上映全時序卡片清單 -->
+        <div class="master-timeline-grid fade-in">
+          ${masterItems.map(item => `
+            <div class="master-timeline-card" style="--card-char-color: ${item.themeColor};">
+              <div class="master-card-thumb-wrap btn-open-theater" data-video-id="${item.videoId}" data-video-title="${item.title}">
+                <img src="${item.thumbnail}" alt="${item.title}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault.jpg','hqdefault.jpg');">
+                <div class="master-card-play-btn">▶</div>
+                <span class="master-card-duration">${item.duration}</span>
+              </div>
+
+              <div class="master-card-meta">
+                <div class="master-card-top-row">
+                  <span class="master-order-badge">#${item.globalOrder < 10 ? '0' + item.globalOrder : item.globalOrder}</span>
+                  <span class="master-date-badge">📅 ${item.formattedDate || item.publishDate}</span>
+                  <div class="master-char-tag">
+                    <img src="${item.characterAvatar}" alt="${item.characterName}" class="master-char-avatar">
+                    <span>${item.characterName}</span>
+                    <span class="master-char-ep">EP ${item.episodeIndex < 10 ? '0' + item.episodeIndex : item.episodeIndex}</span>
+                  </div>
+                </div>
+
+                <div class="master-card-title" title="${item.title}">${item.title}</div>
+                <div class="master-card-zh-title">${item.titleZh}</div>
+                <p class="video-summary" style="margin-bottom: 0.5rem; font-size: 0.85rem; line-height: 1.5;">${item.summary}</p>
+                
+                ${item.loot ? `
+                  <div class="master-card-loot">
+                    <span>✦ 關鍵收穫: </span><strong>${item.loot}</strong>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="master-card-actions">
+                <button class="btn-master-action btn-master-theater btn-open-theater" data-video-id="${item.videoId}" data-video-title="${item.title}">
+                  ▶ 於影院播放
+                </button>
+                <button class="btn-master-action btn-master-jump" data-jump-char="${item.characterKey}" data-jump-chapter="${item.chapterId}">
+                  👤 查看深度章節
+                </button>
+                <a href="${item.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-master-action btn-master-yt" title="前往 YouTube 觀看官方原片">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                  <span>YT 原片</span>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      ` : `
+        <!-- 經典六大紀元跨視角對照 -->
+        <div class="timeline-container fade-in">
+          ${UNSTABLE_DATA.timelineMatrix.map((item, index) => `
+            <div class="timeline-epoch-card">
+              <div class="epoch-header">
+                <span class="epoch-badge">EPOCH ${index + 1}</span>
+                <h3 class="epoch-headline">${item.epoch}</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">${item.headline}</p>
+              </div>
+              <div class="epoch-pov-grid">
+                ${chars.map(c => {
+                  const src = item.sources ? item.sources[c.key] : null;
+                  return `
+                    <div class="pov-box" style="--pov-color: var(${c.colorVar});">
+                      <div class="pov-char-tag">
+                        <img src="${c.avatar}" class="pov-avatar" alt="${c.name}" loading="lazy" decoding="async">
+                        <span class="pov-name">${c.name}</span>
+                      </div>
+                      <p class="pov-action-text">${item.details[c.key]}</p>
+                      ${src ? `
+                        <div class="pov-source-row">
+                          <a href="${src.url}" target="_blank" rel="noopener noreferrer" class="pov-source-link" title="前往 YouTube 觀看 ${src.channel} 官方原片">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                            <span>原片：${src.title}</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                          </a>
+                        </div>
+                      ` : ''}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `}
     `;
+
+    // 綁定時序檢視模式切換 (Master Timeline / Epoch Matrix)
+    container.querySelectorAll(".timeline-view-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        this.soundEngine.playClick();
+        this.timelineViewMode = btn.getAttribute("data-timeline-view");
+        this.renderTimelineMatrix();
+      });
+    });
+
+    // 綁定角色過濾 Chips
+    container.querySelectorAll(".timeline-filter-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        this.soundEngine.playClick();
+        this.timelineFilterChar = chip.getAttribute("data-filter-char");
+        this.renderTimelineMatrix();
+      });
+    });
+
+    // 綁定跳轉至角色章節
+    container.querySelectorAll(".btn-master-jump").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const cKey = btn.getAttribute("data-jump-char");
+        const chapId = btn.getAttribute("data-jump-chapter");
+        if (cKey && chapId) {
+          this.jumpToCharacterChapter(cKey, chapId);
+        }
+      });
+    });
+
+    // 綁定影院彈窗
+    container.querySelectorAll(".btn-open-theater").forEach(el => {
+      el.addEventListener("click", () => {
+        const vidId = el.getAttribute("data-video-id");
+        const vidTitle = el.getAttribute("data-video-title");
+        if (vidId) {
+          this.openVideoTheater(vidId, vidTitle);
+        }
+      });
+    });
   }
 
   setupModals() {
