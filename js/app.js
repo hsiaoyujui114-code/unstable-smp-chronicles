@@ -666,11 +666,9 @@ class AppController {
               <span>章節快捷直達 (Quick Jump)</span>
             </div>
             <div class="quick-nav-hint">
-              <span>⌨️ 快捷鍵：按數字鍵</span>
-              <span class="key-badge">1</span> ~ <span class="key-badge">9</span>
-              <span>直達對應章節 · 按</span>
-              <span class="key-badge">0</span>
-              <span>最新章 (共 ${char.storyArcs.length} 章) · 按</span>
+              <span>⌨️ 快捷鍵：鍵盤數字直達（支援 1 ~ ${char.storyArcs.length} 章及 0 最新章）· 按</span>
+              <span class="key-badge">[</span> / <span class="key-badge">]</span>
+              <span>前後翻閱 · 按</span>
               <span class="key-badge">T</span>
               <span>回頂端</span>
             </div>
@@ -876,11 +874,9 @@ class AppController {
               <span>影片集數快捷直達 (Quick Jump)</span>
             </div>
             <div class="quick-nav-hint">
-              <span>共 ${char.videos.length} 支原片 · 鍵盤按</span>
-              <span class="key-badge">1</span> ~ <span class="key-badge">9</span>
-              <span>直達前 9 集 · 按</span>
-              <span class="key-badge">0</span>
-              <span>最新集 · 按</span>
+              <span>共 ${char.videos.length} 支原片 · 鍵盤數字直達（支援 1 ~ ${char.videos.length} 集及 0 最新集）· 按</span>
+              <span class="key-badge">[</span> / <span class="key-badge">]</span>
+              <span>前後翻閱 · 按</span>
               <span class="key-badge">T</span>
               <span>回頂端</span>
             </div>
@@ -977,6 +973,8 @@ class AppController {
   jumpToElement(targetId) {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
+    const match = targetId.match(/-(\d+)$/);
+    if (match) this.currentTrackedIndex = parseInt(match[1], 10);
     this.soundEngine.playClick();
     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     targetEl.classList.remove('jump-target-highlight');
@@ -1077,6 +1075,9 @@ class AppController {
   }
 
   setupKeyboardShortcuts() {
+    this.keyBuffer = "";
+    this.keyBufferTimer = null;
+
     document.addEventListener("keydown", (e) => {
       // 避免在輸入框、搜尋彈窗或影院彈窗開啟時觸發快捷鍵
       if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
@@ -1087,29 +1088,47 @@ class AppController {
       const char = UNSTABLE_DATA.characters[this.activeCharacterId];
       if (!char) return;
 
-      // 數字鍵 1-9 跳轉
-      if (e.key >= '1' && e.key <= '9') {
-        const num = parseInt(e.key, 10);
-        if (this.activeCharSubtab === 'arcs') {
-          if (num <= char.storyArcs.length) {
-            e.preventDefault();
-            this.jumpToElement(`arc-chapter-${num}`);
-          }
-        } else if (this.activeCharSubtab === 'videos') {
-          if (num <= char.videos.length) {
-            e.preventDefault();
-            this.jumpToElement(`video-episode-${num}`);
-          }
-        }
-      } else if (e.key === '0') {
-        // 數字鍵 0 直達最新一章 / 最新一集
-        if (this.activeCharSubtab === 'arcs') {
+      const totalItems = this.activeCharSubtab === 'arcs' ? char.storyArcs.length : char.videos.length;
+      const prefix = this.activeCharSubtab === 'arcs' ? 'arc-chapter-' : 'video-episode-';
+
+      // 數字鍵跳轉（支援 1~9 直接直達，以及 10~14 雙位數快速鍵入）
+      if (e.key >= '0' && e.key <= '9') {
+        if (e.key === '0' && !this.keyBuffer) {
+          // 單獨按 0 直達最新一章 / 最新一集
           e.preventDefault();
-          this.jumpToElement(`arc-chapter-${char.storyArcs.length}`);
-        } else if (this.activeCharSubtab === 'videos') {
-          e.preventDefault();
-          this.jumpToElement(`video-episode-${char.videos.length}`);
+          this.jumpToElement(`${prefix}${totalItems}`);
+          return;
         }
+
+        e.preventDefault();
+        this.keyBuffer += e.key;
+        clearTimeout(this.keyBufferTimer);
+
+        const targetNum = parseInt(this.keyBuffer, 10);
+
+        // 如果當前緩衝數字若再加一位必定超出最大篇章（例如輸入 2~9，或者輸入 15+），立即跳轉
+        if (targetNum > 1 || this.keyBuffer.length >= 2 || totalItems < 10) {
+          if (targetNum >= 1 && targetNum <= totalItems) {
+            this.jumpToElement(`${prefix}${targetNum}`);
+          }
+          this.keyBuffer = "";
+        } else {
+          // 若輸入 1，等待 400ms 看是否有第二個數字（如 10, 11, 12, 13, 14）
+          this.keyBufferTimer = setTimeout(() => {
+            if (this.keyBuffer === "1") {
+              this.jumpToElement(`${prefix}1`);
+            }
+            this.keyBuffer = "";
+          }, 450);
+        }
+      } else if (e.key === '[' || e.key === 'ArrowLeft') {
+        // [ 或 左方向鍵：上一章 / 上一集
+        e.preventDefault();
+        this.navigatePrevNext(prefix, totalItems, -1);
+      } else if (e.key === ']' || e.key === 'ArrowRight') {
+        // ] 或 右方向鍵：下一章 / 下一集
+        e.preventDefault();
+        this.navigatePrevNext(prefix, totalItems, 1);
       } else if (e.key.toLowerCase() === 't') {
         // 按鍵 T 回到角色個人檔案頂端
         const mount = document.getElementById('character-deep-dive-mount');
@@ -1120,6 +1139,15 @@ class AppController {
         }
       }
     });
+  }
+
+  navigatePrevNext(prefix, total, delta) {
+    if (!this.currentTrackedIndex) this.currentTrackedIndex = 1;
+    let nextIdx = this.currentTrackedIndex + delta;
+    if (nextIdx < 1) nextIdx = total;
+    if (nextIdx > total) nextIdx = 1;
+    this.currentTrackedIndex = nextIdx;
+    this.jumpToElement(`${prefix}${nextIdx}`);
   }
 
   renderTimelineMatrix() {
@@ -1388,7 +1416,7 @@ class AppController {
       if (!searchResults) return;
 
       if (!q) {
-        searchResults.innerHTML = `<div style="padding: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.9rem;">輸入主角、影片、或意外物品關鍵字...</div>`;
+        searchResults.innerHTML = `<div style="padding: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.9rem;">輸入主角、章節、影片、或意外物品關鍵字...</div>`;
         return;
       }
 
@@ -1396,11 +1424,11 @@ class AppController {
 
       // 搜尋主角
       Object.values(UNSTABLE_DATA.characters).forEach(char => {
-        if (char.name.toLowerCase().includes(q) || char.roleTitle.toLowerCase().includes(q)) {
+        if (char.name.toLowerCase().includes(q) || char.roleTitle.toLowerCase().includes(q) || (char.realHandle && char.realHandle.toLowerCase().includes(q))) {
           results.push({
             type: "主角檔案",
             title: char.name,
-            sub: char.roleTitle,
+            sub: `${char.roleTitle} · 點擊前往個人專區`,
             action: () => {
               this.switchCharacter(char.id);
               document.getElementById("character-section")?.scrollIntoView({ behavior: "smooth" });
@@ -1409,13 +1437,40 @@ class AppController {
           });
         }
 
-        // 搜尋物品
+        // 搜尋 46 個專屬章節 (Story Arcs)
+        char.storyArcs.forEach((arc, idx) => {
+          if (
+            arc.title.toLowerCase().includes(q) ||
+            (arc.subtitle && arc.subtitle.toLowerCase().includes(q)) ||
+            (arc.summary && arc.summary.toLowerCase().includes(q)) ||
+            (arc.lootAndAnomaly && arc.lootAndAnomaly.toLowerCase().includes(q)) ||
+            (arc.publishDate && arc.publishDate.includes(q)) ||
+            (arc.formattedDate && arc.formattedDate.includes(q))
+          ) {
+            results.push({
+              type: "劇情章節",
+              title: `${char.name} // ${arc.title}`,
+              sub: `📅 ${arc.formattedDate || arc.publishDate} · ${arc.subtitle || arc.summary.substring(0, 45) + '...'}`,
+              action: () => {
+                this.jumpToCharacterChapter(char.id, `arc-chapter-${idx + 1}`);
+                closeSearchModal();
+              }
+            });
+          }
+        });
+
+        // 搜尋意外物品 (Unexpected Items)
         char.unexpectedItems.forEach(item => {
-          if (item.name.toLowerCase().includes(q) || item.howAcquired.toLowerCase().includes(q)) {
+          if (
+            item.name.toLowerCase().includes(q) ||
+            item.howAcquired.toLowerCase().includes(q) ||
+            item.effectDesc.toLowerCase().includes(q) ||
+            (item.rarity && item.rarity.toLowerCase().includes(q))
+          ) {
             results.push({
               type: "意外神器",
               title: item.name,
-              sub: `來自: ${char.name} · ${item.rarity}`,
+              sub: `來自: ${char.name} · ${item.rarity} · 點擊查看裝備庫`,
               action: () => {
                 this.switchCharacter(char.id);
                 this.activeCharSubtab = "items";
@@ -1427,15 +1482,22 @@ class AppController {
           }
         });
 
-        // 搜尋影片
-        char.videos.forEach(vid => {
-          if (vid.title.toLowerCase().includes(q) || vid.titleZh.toLowerCase().includes(q) || vid.summary.toLowerCase().includes(q)) {
+        // 搜尋官方原片 (Videos)
+        char.videos.forEach((vid, idx) => {
+          if (
+            vid.title.toLowerCase().includes(q) ||
+            (vid.titleZh && vid.titleZh.toLowerCase().includes(q)) ||
+            (vid.summary && vid.summary.toLowerCase().includes(q)) ||
+            (vid.unexpectedLoot && vid.unexpectedLoot.toLowerCase().includes(q)) ||
+            (vid.publishDate && vid.publishDate.includes(q)) ||
+            (vid.formattedDate && vid.formattedDate.includes(q))
+          ) {
             results.push({
-              type: "影片檔案",
-              title: vid.titleZh,
-              sub: `${char.name} · ${vid.title}`,
+              type: "官方原片",
+              title: vid.title,
+              sub: `🎬 ${char.name} EP ${idx + 1 < 10 ? '0' + (idx + 1) : idx + 1} (${vid.formattedDate || vid.publishDate}) · ${vid.titleZh || ''}`,
               action: () => {
-                this.openVideoTheater(vid.id, vid.titleZh);
+                this.openVideoTheater(vid.id, vid.title);
                 closeSearchModal();
               }
             });
@@ -1443,18 +1505,37 @@ class AppController {
         });
       });
 
+      // 搜尋六大史詩紀元 (Timeline Matrix)
+      if (UNSTABLE_DATA.timelineMatrix) {
+        UNSTABLE_DATA.timelineMatrix.forEach((epoch, idx) => {
+          if (epoch.epoch.toLowerCase().includes(q) || epoch.headline.toLowerCase().includes(q)) {
+            results.push({
+              type: "歷史紀元",
+              title: epoch.epoch,
+              sub: `${epoch.headline} · 點擊前往跨視角矩陣`,
+              action: () => {
+                this.timelineViewMode = "epoch";
+                this.renderTimelineMatrix();
+                document.getElementById("timeline-section")?.scrollIntoView({ behavior: "smooth" });
+                closeSearchModal();
+              }
+            });
+          }
+        });
+      }
+
       if (results.length === 0) {
         searchResults.innerHTML = `<div style="padding: 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.9rem;">未找到與「${q}」相符的結果</div>`;
         return;
       }
 
-      searchResults.innerHTML = results.slice(0, 8).map((r, i) => `
+      searchResults.innerHTML = results.slice(0, 12).map((r, i) => `
         <div class="search-result-item" data-res-idx="${i}">
-          <div>
-            <div style="font-weight: 600; color: #fff; font-size: 0.95rem;">${r.title}</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);">${r.sub}</div>
+          <div style="min-width: 0; flex: 1; padding-right: 12px;">
+            <div style="font-weight: 600; color: #fff; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${r.title}</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${r.sub}</div>
           </div>
-          <span style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--theme-current); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">
+          <span style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--theme-current); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 4px; flex-shrink: 0;">
             ${r.type}
           </span>
         </div>

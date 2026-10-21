@@ -1652,8 +1652,9 @@ body::before {
 }
 
 .search-results-list {
-  max-height: 380px;
+  max-height: 480px;
   overflow-y: auto;
+  scrollbar-width: thin;
   padding: 0.5rem;
 }
 
@@ -2267,11 +2268,14 @@ body.perf-mode .char-avatar-render {
   right: 24px;
   bottom: 24px;
   z-index: 900;
-  background: rgba(10, 15, 26, 0.92);
+  max-width: calc(100vw - 48px);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  background: rgba(10, 15, 26, 0.94);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 30px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   display: flex;
   align-items: center;
   gap: 6px;
