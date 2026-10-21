@@ -10,12 +10,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://minotar.net/helm/ParrotX2/64.png">
 
-  <!-- Google Fonts 非阻塞載入 (先用系統字型瞬間渲染，避免白屏卡頓) -->
+  <!-- Google Fonts 非阻塞載入 (包含 Minecraft 像素字體 Silkscreen 與 Press Start 2P) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"></noscript>
 
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -77,7 +77,7 @@
     <div class="container">
       <div class="hero-badge">
         <span class="pulse-dot"></span>
-        <span>100% UNSTABLE SMP EXCLUSIVE // 嚴格專注於 UNSTABLE 宇宙主線劇情與影片（熱烈連載中・已收錄至 2026 最新進度）</span>
+        <span class="mc-badge-font">⛏️ MINECRAFT HARDCORE SMP SERVER PORTAL // 官方正篇 46 集戰役全紀錄（持續連載中）</span>
       </div>
 
       <h1 class="hero-title">
@@ -90,44 +90,156 @@
         本站專為想要快速掌握故事全貌的冒險者打造——無論您是否完整看完每部動輒兩小時的長篇影片，都能在此一站式深度閱覽 Parrot、Wemmbu、Spoke、FlameFrags 四大主角的個人章節脈絡、所有官方劇集解析、意外禁忌神器，並體驗同步連載至 2026 年下半年的龐大宇宙！
       </p>
 
+      <!-- 麥塊私服專屬狀態與連線面板 (Minecraft Server HUD & MOTD) -->
+      <div class="mc-server-hud">
+        <div class="mc-hud-topbar">
+          <div class="mc-hud-status">
+            <span class="mc-live-dot"></span>
+            <span class="mc-hud-label">SERVER STATUS:</span>
+            <strong class="mc-hud-online">ONLINE</strong>
+          </div>
+          <div class="mc-hud-stat">
+            <span class="mc-icon">👥</span>
+            <span>PLAYERS: <strong class="mc-gold-text">1,000 / 1,000</strong> <span class="mc-tag-full">[FULL]</span></span>
+          </div>
+          <div class="mc-hud-stat">
+            <span class="mc-icon">⚡</span>
+            <span>TPS: <strong class="mc-green-text">19.98</strong></span>
+          </div>
+          <div class="mc-hud-stat">
+            <span class="mc-icon">📶</span>
+            <span>PING: <strong class="mc-green-text">20ms</strong></span>
+          </div>
+          <div class="mc-hud-stat mc-ver-stat">
+            <span>VERSION: <strong class="mc-cyan-text">1.20+ ~ 1.21 HARDCORE SMP</strong></span>
+          </div>
+        </div>
+
+        <div class="mc-hud-body">
+          <!-- Server IP Box with One-Click Copy -->
+          <div class="mc-ip-widget">
+            <div class="mc-ip-label">
+              <span class="mc-pixel-icon">⛏️</span>
+              <span>OFFICIAL SERVER ADDRESS</span>
+            </div>
+            <div class="mc-ip-value-box">
+              <code class="mc-ip-code" id="mc-server-ip">PLAY.UNSTABLESMP.NET</code>
+              <button class="mc-btn mc-btn-green mc-btn-copy" id="btn-copy-ip" title="點擊複製伺服器位址加入遊戲">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>複製伺服器位址 (COPY IP)</span>
+              </button>
+              <div class="mc-copy-success-badge" id="mc-copy-badge">✓ 已複製 IP 至剪貼簿！</div>
+            </div>
+          </div>
+
+          <!-- Minecraft MOTD (Message of the Day) Banner -->
+          <div class="mc-motd-box">
+            <div class="mc-motd-header">
+              <span class="mc-tab-icon">📜</span>
+              <span>SERVER MOTD // 今日伺服器公告</span>
+            </div>
+            <div class="mc-motd-content">
+              <div class="mc-motd-line line-1">
+                <span class="mc-code-red mc-code-bold">UNSTABLE SMP</span>
+                <span class="mc-code-darkgray">»</span>
+                <span class="mc-code-yellow">46 支官方戰役全紀錄</span>
+                <span class="mc-code-darkgray">«</span>
+                <span class="mc-code-aqua">[幽冥深淵與終界煉獄熱播中]</span>
+              </div>
+              <div class="mc-motd-line line-2">
+                <span class="mc-code-gray">四大主角交錯命運 · 揭發 </span><span class="mc-code-darkred mc-code-bold">Lattice K</span><span class="mc-code-gray"> 鐵腕秩序 · </span><span class="mc-code-green mc-code-underline">無規則硬核生存進行中</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minecraft Level 46 Experience Bar (46 集已解鎖經驗條) -->
+        <div class="mc-xp-container">
+          <div class="mc-xp-level-badge" title="全站已收錄 46 支官方正篇紀錄">46</div>
+          <div class="mc-xp-bar-frame">
+            <div class="mc-xp-bar-fill" style="width: 100%;"></div>
+            <div class="mc-xp-segments">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="mc-xp-label">CANONICAL PROGRESSION: 46 / 46 EPISODES ARCHIVED</div>
+        </div>
+      </div>
+
       <!-- 四大主角快速導覽卡片 (點擊切換視角) -->
       <div class="hero-characters-nav">
         <!-- Parrot -->
         <div class="hero-char-card active" data-char-id="parrot" style="--char-color: var(--parrot-color); --char-glow: var(--parrot-glow);">
-          <img src="assets/avatars/parrot.jpg" alt="Parrot" class="hero-char-avatar">
+          <div class="hero-char-avatar-box">
+            <img src="assets/avatars/parrot.jpg" alt="Parrot" class="hero-char-avatar">
+            <div class="mc-ping-meter" title="連線延遲: 20ms (極佳)">
+              <span class="pbar b1"></span><span class="pbar b2"></span><span class="pbar b3"></span><span class="pbar b4"></span><span class="pbar b5"></span>
+            </div>
+          </div>
           <div class="hero-char-meta">
-            <h3>Parrot</h3>
-            <span>第一任國王 · 智謀越獄</span>
+            <div class="hero-char-name-row">
+              <span class="mc-rank-tag mc-rank-king">[KING]</span>
+              <h3>Parrot</h3>
+              <span class="mc-ep-counter">14 篇章</span>
+            </div>
+            <span class="hero-char-subtitle">第一任國王 · 智謀越獄</span>
             <p>挖出毀滅按鈕、突破 Paragon 黑牢、登基加冕治世</p>
           </div>
         </div>
 
         <!-- Wemmbu -->
         <div class="hero-char-card" data-char-id="wemmbu" style="--char-color: var(--wemmbu-color); --char-glow: var(--wemmbu-glow);">
-          <img src="assets/avatars/wemmbu.jpg" alt="Wemmbu" class="hero-char-avatar">
+          <div class="hero-char-avatar-box">
+            <img src="assets/avatars/wemmbu.jpg" alt="Wemmbu" class="hero-char-avatar">
+            <div class="mc-ping-meter" title="連線延遲: 22ms (極佳)">
+              <span class="pbar b1"></span><span class="pbar b2"></span><span class="pbar b3"></span><span class="pbar b4"></span><span class="pbar b5"></span>
+            </div>
+          </div>
           <div class="hero-char-meta">
-            <h3>Wemmbu</h3>
-            <span>力量泰坦 · 金庫掠奪者</span>
+            <div class="hero-char-name-row">
+              <span class="mc-rank-tag mc-rank-titan">[TITAN]</span>
+              <h3>Wemmbu</h3>
+              <span class="mc-ep-counter">11 篇章</span>
+            </div>
+            <span class="hero-char-subtitle">力量泰坦 · 金庫掠奪者</span>
             <p>強襲基岩金庫、洗劫神兵、開創繁盛帝國</p>
           </div>
         </div>
 
         <!-- Spoke -->
         <div class="hero-char-card" data-char-id="spoke" style="--char-color: var(--spoke-color); --char-glow: var(--spoke-glow);">
-          <img src="assets/avatars/spoke.jpg" alt="Spoke" class="hero-char-avatar">
+          <div class="hero-char-avatar-box">
+            <img src="assets/avatars/spoke.jpg" alt="Spoke" class="hero-char-avatar">
+            <div class="mc-ping-meter" title="連線延遲: 18ms (極佳)">
+              <span class="pbar b1"></span><span class="pbar b2"></span><span class="pbar b3"></span><span class="pbar b4"></span><span class="pbar b5"></span>
+            </div>
+          </div>
           <div class="hero-char-meta">
-            <h3>Spoke</h3>
-            <span>漏洞神偷 · 黑手黨臥底</span>
+            <div class="hero-char-name-row">
+              <span class="mc-rank-tag mc-rank-chaos">[CHAOS]</span>
+              <h3>Spoke</h3>
+              <span class="mc-ep-counter">10 篇章</span>
+            </div>
+            <span class="hero-char-subtitle">漏洞神偷 · 黑手黨臥底</span>
             <p>偷走千萬複製裝備、搞垮全服首富、引爆教父</p>
           </div>
         </div>
 
         <!-- FlameFrags -->
         <div class="hero-char-card" data-char-id="flamefrags" style="--char-color: var(--flame-color); --char-glow: var(--flame-glow);">
-          <img src="assets/avatars/flamefrags.jpg" alt="FlameFrags" class="hero-char-avatar">
+          <div class="hero-char-avatar-box">
+            <img src="assets/avatars/flamefrags.jpg" alt="FlameFrags" class="hero-char-avatar">
+            <div class="mc-ping-meter" title="連線延遲: 25ms (極佳)">
+              <span class="pbar b1"></span><span class="pbar b2"></span><span class="pbar b3"></span><span class="pbar b4"></span><span class="pbar b5"></span>
+            </div>
+          </div>
           <div class="hero-char-meta">
-            <h3>FlameFrags</h3>
-            <span>極限戰神 · 越獄先鋒</span>
+            <div class="hero-char-name-row">
+              <span class="mc-rank-tag mc-rank-warlord">[WARLORD]</span>
+              <h3>FlameFrags</h3>
+              <span class="mc-ep-counter">11 篇章</span>
+            </div>
+            <span class="hero-char-subtitle">極限戰神 · 越獄先鋒</span>
             <p>單兵清剿毒瘤公會、逃離 Terminus 黑牢、鑿穿千人陣線</p>
           </div>
         </div>

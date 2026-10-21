@@ -395,9 +395,32 @@ class AppController {
     this.setupPerformanceToggle();
     this.setupKeyboardShortcuts();
     this.setupFloatingDockObserver();
+    this.setupServerHud();
 
     // 初始化小遊戲
     new QuestGameEngine(UNSTABLE_DATA, this.soundEngine);
+  }
+
+  setupServerHud() {
+    const copyBtn = document.getElementById("btn-copy-ip");
+    const ipCode = document.getElementById("mc-server-ip");
+    const badge = document.getElementById("mc-copy-badge");
+
+    if (copyBtn && ipCode) {
+      copyBtn.addEventListener("click", () => {
+        const text = ipCode.textContent.trim();
+        navigator.clipboard?.writeText(text).then(() => {
+          this.soundEngine.playItemGain(); // Minecraft 經典拾取經驗球叮咚聲！
+          if (badge) {
+            badge.classList.add("show");
+            setTimeout(() => badge.classList.remove("show"), 2500);
+          }
+        }).catch(() => {
+          this.soundEngine.playClick();
+          prompt("請手動複製伺服器位址：", text);
+        });
+      });
+    }
   }
 
   setupPerformanceToggle() {
@@ -778,13 +801,18 @@ class AppController {
                 </div>
               ` : ''}
 
-              <!-- 主角心境演變與獨白 -->
+              <!-- 主角心境演變與獨白 (Minecraft In-Game Chat HUD) -->
               ${arc.psychology ? `
-                <div class="arc-psychology-box">
-                  <div class="psychology-quote-icon">“</div>
-                  <div class="psychology-content">
-                    <div class="psychology-label">主角心境演變與內心審判</div>
-                    <p class="psychology-quote-text">${arc.psychology}</p>
+                <div class="arc-psychology-box mc-chat-box">
+                  <div class="mc-chat-header">
+                    <span class="mc-chat-channel">[LOCAL / SMP CHAT]</span>
+                    <span class="mc-chat-label">主角心境演變與內心審判</span>
+                  </div>
+                  <div class="mc-chat-body">
+                    <span class="mc-chat-rank" style="color: ${char.themeColor};">[${(char.badge || 'PLAYER').split('&')[0].trim()}]</span>
+                    <strong class="mc-chat-player" style="color: ${char.themeColor};">${char.name}</strong>
+                    <span class="mc-chat-arrow">&gt;</span>
+                    <span class="mc-chat-msg">${arc.psychology}</span>
                   </div>
                 </div>
               ` : ''}
@@ -845,8 +873,11 @@ class AppController {
       return `
         <div class="unexpected-items-grid fade-in">
           ${char.unexpectedItems.map(item => `
-            <div class="item-card" style="--item-rarity-color: ${item.rarityColor};">
+            <div class="item-card mc-item-tooltip-box" style="--item-rarity-color: ${item.rarityColor};">
               <div class="item-top-row">
+                <div class="mc-slot-icon-frame">
+                  <span class="mc-slot-sparkle">✦</span>
+                </div>
                 <div class="item-name">${item.name}</div>
                 <span class="item-rarity-tag" style="background: ${item.rarityColor}20; color: ${item.rarityColor}; border: 1px solid ${item.rarityColor}60;">
                   ${item.rarity}
@@ -857,7 +888,9 @@ class AppController {
                 <div class="item-origin-desc">${item.howAcquired}</div>
               </div>
               <p class="item-effect-desc">${item.effectDesc}</p>
-              <div class="item-nbt-code">${item.glitchCode}</div>
+              <div class="item-nbt-code">
+                <span class="mc-nbt-label">NBT // </span>${item.glitchCode}
+              </div>
             </div>
           `).join("")}
         </div>
